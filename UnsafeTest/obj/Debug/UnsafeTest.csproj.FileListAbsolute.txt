@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\UnsafeTest\bin\Debug\UnsafeTest.exe.config
+C:\Users\admin\Desktop\TEST\UnsafeTest\bin\Debug\UnsafeTest.exe
+C:\Users\admin\Desktop\TEST\UnsafeTest\bin\Debug\UnsafeTest.pdb
+C:\Users\admin\Desktop\TEST\UnsafeTest\obj\Debug\UnsafeTest.exe
+C:\Users\admin\Desktop\TEST\UnsafeTest\obj\Debug\UnsafeTest.pdb

@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\ReadText\bin\Debug\ReadText.exe.config
+C:\Users\admin\Desktop\TEST\ReadText\bin\Debug\ReadText.exe
+C:\Users\admin\Desktop\TEST\ReadText\bin\Debug\ReadText.pdb
+C:\Users\admin\Desktop\TEST\ReadText\obj\Debug\ReadText.exe
+C:\Users\admin\Desktop\TEST\ReadText\obj\Debug\ReadText.pdb

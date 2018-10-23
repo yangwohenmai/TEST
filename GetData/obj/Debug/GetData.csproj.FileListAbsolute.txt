@@ -1,0 +1,6 @@
+C:\Users\admin\Desktop\TEST\GetData\bin\Debug\GetData.exe.config
+C:\Users\admin\Desktop\TEST\GetData\bin\Debug\GetData.exe
+C:\Users\admin\Desktop\TEST\GetData\bin\Debug\GetData.pdb
+C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.exe
+C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.pdb
+C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.csprojResolveAssemblyReference.cache

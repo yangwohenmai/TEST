@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\Task\bin\Debug\Task.exe.config
+C:\Users\admin\Desktop\TEST\Task\bin\Debug\Task.exe
+C:\Users\admin\Desktop\TEST\Task\bin\Debug\Task.pdb
+C:\Users\admin\Desktop\TEST\Task\obj\Debug\Task.exe
+C:\Users\admin\Desktop\TEST\Task\obj\Debug\Task.pdb

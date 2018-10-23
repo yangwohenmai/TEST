@@ -1,0 +1,8 @@
+C:\Users\admin\Desktop\TEST\JSon\bin\Debug\JSon.exe.config
+C:\Users\admin\Desktop\TEST\JSon\bin\Debug\JSon.exe
+C:\Users\admin\Desktop\TEST\JSon\bin\Debug\JSon.pdb
+C:\Users\admin\Desktop\TEST\JSon\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\TEST\JSon\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.exe
+C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.pdb
+C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.csprojResolveAssemblyReference.cache

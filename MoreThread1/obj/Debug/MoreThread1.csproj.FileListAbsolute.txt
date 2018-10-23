@@ -1,0 +1,6 @@
+C:\Users\admin\Desktop\TEST\MoreThread1\bin\Debug\MoreThread1.exe.config
+C:\Users\admin\Desktop\TEST\MoreThread1\bin\Debug\MoreThread1.exe
+C:\Users\admin\Desktop\TEST\MoreThread1\bin\Debug\MoreThread1.pdb
+C:\Users\admin\Desktop\TEST\MoreThread1\obj\Debug\MoreThread1.exe
+C:\Users\admin\Desktop\TEST\MoreThread1\obj\Debug\MoreThread1.pdb
+C:\Users\admin\Desktop\TEST\MoreThread1\obj\Debug\MoreThread1.csprojResolveAssemblyReference.cache

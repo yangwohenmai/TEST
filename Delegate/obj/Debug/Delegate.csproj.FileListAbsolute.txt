@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.exe.config
+C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.exe
+C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.pdb
+C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.exe
+C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.pdb

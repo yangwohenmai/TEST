@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe.config
+C:\Users\admin\Desktop\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe
+C:\Users\admin\Desktop\TEST\OnlyForTest\bin\Debug\OnlyForTest.pdb
+C:\Users\admin\Desktop\TEST\OnlyForTest\obj\Debug\OnlyForTest.exe
+C:\Users\admin\Desktop\TEST\OnlyForTest\obj\Debug\OnlyForTest.pdb

@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\TEST\Lambda\bin\Debug\Lambda.exe.config
+C:\Users\admin\Desktop\TEST\Lambda\bin\Debug\Lambda.exe
+C:\Users\admin\Desktop\TEST\Lambda\bin\Debug\Lambda.pdb
+C:\Users\admin\Desktop\TEST\Lambda\obj\Debug\Lambda.exe
+C:\Users\admin\Desktop\TEST\Lambda\obj\Debug\Lambda.pdb

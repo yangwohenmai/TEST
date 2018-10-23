@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\MathNet.exe.config
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\MathNet.exe
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\MathNet.pdb
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\MathNet.Numerics.dll
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\System.Data.SqlClient.dll
+C:\Users\admin\Desktop\TEST\MathNet\bin\Debug\MathNet.Numerics.xml
+C:\Users\admin\Desktop\TEST\MathNet\obj\Debug\MathNet.exe
+C:\Users\admin\Desktop\TEST\MathNet\obj\Debug\MathNet.pdb
+C:\Users\admin\Desktop\TEST\MathNet\obj\Debug\MathNet.csprojResolveAssemblyReference.cache
