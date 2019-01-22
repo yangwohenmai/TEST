@@ -3,3 +3,8 @@ C:\Users\admin\Desktop\TEST\BpANNet\bin\Debug\BpANNet.exe
 C:\Users\admin\Desktop\TEST\BpANNet\bin\Debug\BpANNet.pdb
 C:\Users\admin\Desktop\TEST\BpANNet\obj\Debug\BpANNet.exe
 C:\Users\admin\Desktop\TEST\BpANNet\obj\Debug\BpANNet.pdb
+E:\MyGit\TEST\BpANNet\bin\Debug\BpANNet.exe.config
+E:\MyGit\TEST\BpANNet\bin\Debug\BpANNet.exe
+E:\MyGit\TEST\BpANNet\bin\Debug\BpANNet.pdb
+E:\MyGit\TEST\BpANNet\obj\Debug\BpANNet.exe
+E:\MyGit\TEST\BpANNet\obj\Debug\BpANNet.pdb

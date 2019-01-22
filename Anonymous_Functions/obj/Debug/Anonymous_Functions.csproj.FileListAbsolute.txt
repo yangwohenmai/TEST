@@ -3,3 +3,8 @@ C:\Users\admin\Desktop\TEST\Anonymous_Functions\bin\Debug\Anonymous_Functions.ex
 C:\Users\admin\Desktop\TEST\Anonymous_Functions\bin\Debug\Anonymous_Functions.pdb
 C:\Users\admin\Desktop\TEST\Anonymous_Functions\obj\Debug\Anonymous_Functions.exe
 C:\Users\admin\Desktop\TEST\Anonymous_Functions\obj\Debug\Anonymous_Functions.pdb
+E:\MyGit\TEST\Anonymous_Functions\bin\Debug\Anonymous_Functions.exe.config
+E:\MyGit\TEST\Anonymous_Functions\bin\Debug\Anonymous_Functions.exe
+E:\MyGit\TEST\Anonymous_Functions\bin\Debug\Anonymous_Functions.pdb
+E:\MyGit\TEST\Anonymous_Functions\obj\Debug\Anonymous_Functions.exe
+E:\MyGit\TEST\Anonymous_Functions\obj\Debug\Anonymous_Functions.pdb

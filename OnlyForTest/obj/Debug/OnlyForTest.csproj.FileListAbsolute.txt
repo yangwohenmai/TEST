@@ -3,3 +3,8 @@ C:\Users\admin\Desktop\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe
 C:\Users\admin\Desktop\TEST\OnlyForTest\bin\Debug\OnlyForTest.pdb
 C:\Users\admin\Desktop\TEST\OnlyForTest\obj\Debug\OnlyForTest.exe
 C:\Users\admin\Desktop\TEST\OnlyForTest\obj\Debug\OnlyForTest.pdb
+E:\MyGit\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe.config
+E:\MyGit\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe
+E:\MyGit\TEST\OnlyForTest\bin\Debug\OnlyForTest.pdb
+E:\MyGit\TEST\OnlyForTest\obj\Debug\OnlyForTest.exe
+E:\MyGit\TEST\OnlyForTest\obj\Debug\OnlyForTest.pdb

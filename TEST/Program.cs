@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,15 @@ namespace TEST
         {
             string b = "Begin";
             Console.WriteLine(b);
+
+            SortedList<int, string> list = new SortedList<int, string>();
+            list.Add(4, "sdf");
+            list.Add(2, "sfd");
+            list.Add(6, "sdfa");
+            list.Add(3, "sfaf");
+            int a11 = list.Keys.Min();
+
+
 
             try
             {

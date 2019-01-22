@@ -3,3 +3,8 @@ C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.exe
 C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.pdb
 C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.exe
 C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.pdb
+E:\MyGit\TEST\Delegate\bin\Debug\Delegate.exe.config
+E:\MyGit\TEST\Delegate\bin\Debug\Delegate.exe
+E:\MyGit\TEST\Delegate\bin\Debug\Delegate.pdb
+E:\MyGit\TEST\Delegate\obj\Debug\Delegate.exe
+E:\MyGit\TEST\Delegate\obj\Debug\Delegate.pdb

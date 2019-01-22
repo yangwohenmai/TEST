@@ -3,3 +3,8 @@ C:\Users\admin\Desktop\TEST\WebMapping\bin\Debug\WebMapping.exe
 C:\Users\admin\Desktop\TEST\WebMapping\bin\Debug\WebMapping.pdb
 C:\Users\admin\Desktop\TEST\WebMapping\obj\Debug\WebMapping.exe
 C:\Users\admin\Desktop\TEST\WebMapping\obj\Debug\WebMapping.pdb
+E:\MyGit\TEST\WebMapping\bin\Debug\WebMapping.exe.config
+E:\MyGit\TEST\WebMapping\bin\Debug\WebMapping.exe
+E:\MyGit\TEST\WebMapping\bin\Debug\WebMapping.pdb
+E:\MyGit\TEST\WebMapping\obj\Debug\WebMapping.exe
+E:\MyGit\TEST\WebMapping\obj\Debug\WebMapping.pdb
