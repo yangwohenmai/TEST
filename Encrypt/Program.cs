@@ -12,9 +12,9 @@ namespace Encrypt
     {
         static void Main(string[] args)
         {
-            //对文件加密
-            dESCSPSampleMemory();
             //对内存中的数据加密解密
+            dESCSPSampleMemory();
+            //对文件加密
             dESCSPSample();
             //使用密钥加密解密
             encrypt();

@@ -10,7 +10,13 @@ namespace Encrypt
 {
     class DESCSPSample
     {
-
+        /// <summary>
+        /// 加密
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <param name="FileName"></param>
+        /// <param name="Key"></param>
+        /// <param name="IV"></param>
         public static void EncryptTextToFile(String Data, String FileName, byte[] Key, byte[] IV)
         {
             try
@@ -47,7 +53,13 @@ namespace Encrypt
             }
 
         }
-
+        /// <summary>
+        /// 解密
+        /// </summary>
+        /// <param name="FileName"></param>
+        /// <param name="Key"></param>
+        /// <param name="IV"></param>
+        /// <returns></returns>
         public static string DecryptTextFromFile(String FileName, byte[] Key, byte[] IV)
         {
             try
