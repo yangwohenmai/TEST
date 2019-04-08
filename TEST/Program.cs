@@ -10,6 +10,7 @@ namespace TEST
         static void Main(string[] args)
         {
             string b = "Begin";
+
             Console.WriteLine(b);
 
             SortedList<int, string> list = new SortedList<int, string>();

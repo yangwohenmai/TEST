@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <!--用户配置-->
+  <UserList>
+    <User>
+      <!--下载账号-->
+      <UserName>123</UserName>
+      <!--密码-->
+      <Pwd>123456</Pwd>
+      <!--密码是否被加密-->
+      <IsEncrypt>false</IsEncrypt>
+      <!--数据库链接-->
+      <Conn>
+        <!--数据库链接标识，唯一-->
+        <Name>entdb</Name>
+        <!--数据库类型:oracle;sqlserver-->
+        <DbType>SqlServer</DbType>
+        <!--链接字符串-->
+        <ConnStr>data source=127.0.0.1;initial catalog =EntDT_test;user id=sa;password=pswd;connect timeout=120;pooling=true;max pool size=512;min pool size=1</ConnStr>
+        <!--链接字符串是否被加密-->
+        <IsEncrypt>false</IsEncrypt>
+        <!--数据库字符集编码-->
+        <Encoding>
+        </Encoding>
+      </Conn>
+    </User>
+  </UserList>
+  <!--通用配置-->
+  <CommConfig>
+    <!--Https接口地址-->
+    <HttpsAddr>http://10.15.97.65:8088</HttpsAddr>
+    <!--Sftp配置-->
+    <Sftp>
+      <!--Sftp标识，唯一-->
+      <Name>EntSftp</Name>
+      <!--Sftp地址-->
+      <FtpUri>10.15.97.65</FtpUri>
+      <!--Sftp端口-->
+      <FtpPort>22</FtpPort>
+      <!--Sftp用户-->
+      <FtpUserID>qydb</FtpUserID>
+      <!--Sftp密码-->
+      <FtpPassword>sP1Ptp3Vevk=</FtpPassword>
+      <!--Sftp密码是否被加密-->
+      <IsEncrypt>true</IsEncrypt>
+    </Sftp>
+  </CommConfig>
+</Root>
