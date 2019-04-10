@@ -28,19 +28,19 @@
   <!--通用配置-->
   <CommConfig>
     <!--Https接口地址-->
-    <HttpsAddr>http://10.15.97.65:8088</HttpsAddr>
+    <HttpsAddr>http://10.15.</HttpsAddr>
     <!--Sftp配置-->
     <Sftp>
       <!--Sftp标识，唯一-->
       <Name>EntSftp</Name>
       <!--Sftp地址-->
-      <FtpUri>10.15.97.65</FtpUri>
+      <FtpUri>10.15</FtpUri>
       <!--Sftp端口-->
       <FtpPort>22</FtpPort>
       <!--Sftp用户-->
       <FtpUserID>qydb</FtpUserID>
       <!--Sftp密码-->
-      <FtpPassword>sP1Ptp3Vevk=</FtpPassword>
+      <FtpPassword>sP1P</FtpPassword>
       <!--Sftp密码是否被加密-->
       <IsEncrypt>true</IsEncrypt>
     </Sftp>

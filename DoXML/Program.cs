@@ -12,11 +12,76 @@ namespace DoXML
     {
         static void Main(string[] args)
         {
-
+            GetCommonConfig();
             writeXML("123");
         }
 
-         private static  bool writeXML(string strTimeStamp)
+
+
+        /// <summary>
+        /// 读文件
+        /// </summary>
+        /// <returns></returns>
+        public static bool GetCommonConfig()
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            XmlNodeList xmlNodeList = null;
+            XmlNode xmlNode = null;
+            string str_Temp = string.Empty;
+
+            //XML配置文件路径
+            string str_ConfigFilePath = "E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config.xml";
+            if (!File.Exists(str_ConfigFilePath))
+            {
+                return false;
+            }
+
+            //XML配置部分
+            try
+            {
+                xmlDoc.Load(str_ConfigFilePath);
+
+                #region 加载配置
+                xmlNode = xmlDoc.SelectSingleNode("/Root/CommConfig/Sftp");
+                if (xmlNode != null)
+                {
+                    string Name = xmlNode.SelectSingleNode("Name").InnerText.Trim();
+                    string FtpUri = xmlNode.SelectSingleNode("FtpUri").InnerText.Trim();
+                    string FtpPort = xmlNode.SelectSingleNode("FtpPort").InnerText.Trim();
+                    string FtpUserID = xmlNode.SelectSingleNode("FtpUserID").InnerText.Trim();
+                    string FtpPassword = xmlNode.SelectSingleNode("FtpPassword").InnerText.Trim();
+                    bool IsEncrypt = xmlNode.SelectSingleNode("IsEncrypt").InnerText.Trim().ToLower() == "true" ? true : false;
+                }
+                else
+                {
+                    return false;
+                }
+                #endregion
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                xmlDoc = null;
+                xmlNodeList = null;
+                str_Temp = null;
+            }
+        }
+
+
+
+
+
+        /// <summary>
+        /// 写XML文件
+        /// </summary>
+        /// <param name="strTimeStamp"></param>
+        /// <returns></returns>
+        private static  bool writeXML(string strTimeStamp)
         {
             bool bool_Result = false;
 
@@ -37,11 +102,7 @@ namespace DoXML
             try
             {
                 xmlDoc.Load("E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config.xml");
-
-                //时间戳交替
-
                 envNode = xmlDoc.SelectSingleNode("/Root/UserList/User/UserName");
-                
 
                 if (envNode != null)
                 {
