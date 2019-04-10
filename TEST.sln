@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetConfig", "GetConfig\GetC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoXML", "DoXML\DoXML.csproj", "{1078AA67-2223-4D00-9B48-1803FE1A6FFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebText", "WebText\WebText.csproj", "{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -231,6 +233,16 @@ Global
 		{1078AA67-2223-4D00-9B48-1803FE1A6FFA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1078AA67-2223-4D00-9B48-1803FE1A6FFA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1078AA67-2223-4D00-9B48-1803FE1A6FFA}.Release|x64.ActiveCfg = Release|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

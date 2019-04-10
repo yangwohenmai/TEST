@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    setTimeout('CommentAll()', 5000);
+    var xmlHttp = new XMLHttpRequest();
+
+
+    function CommentAll() {
+        //第二步，注册回调函数
+        xmlHttp.onreadystatechange = callback1;
+        //{
+        //    if (xmlHttp.readyState == 4)
+        //        if (xmlHttp.status == 200) {
+        //            var responseText = xmlHttp.responseText;
+
+        //        }
+        //}
+        //第三步，配置请求信息，open(),get
+        //get请求下参数加在url后，.ashx?methodName = GetAllComment&str1=str1&str2=str2
+        xmlHttp.open("post", "/xmlHttpTest.ashx?methodName=GetAllComment", true);
+
+        //post请求下需要配置请求头信息
+        //xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        //第四步，发送请求,post请求下，要传递的参数放这
+        xmlHttp.send("methodName = GetAllComment&str1=str1&str2=str2");//"
+
+    }
+    //第五步，创建回调函数
+    function callback1() {
+        //4状态代表后台数据已经处理完成
+        if (xmlHttp.readyState == 4)
+            if (xmlHttp.status == 200) {
+                //取得返回的数据
+                var data = xmlHttp.responseText;
+                //json字符串转为json格式
+                alert(data);
+            }
+    }
+
+</script>
