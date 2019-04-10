@@ -3,3 +3,4 @@ E:\MyGit\TEST\WebText\bin\WebText.dll
 E:\MyGit\TEST\WebText\bin\WebText.pdb
 E:\MyGit\TEST\WebText\obj\Debug\WebText.dll
 E:\MyGit\TEST\WebText\obj\Debug\WebText.pdb
+E:\MyGit\TEST\WebText\obj\Debug\WebText.csprojResolveAssemblyReference.cache

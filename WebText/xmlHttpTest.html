@@ -15,6 +15,7 @@
 
     function CommentAll() {
         //第二步，注册回调函数
+        debugger
         xmlHttp.onreadystatechange = callback1;
         //{
         //    if (xmlHttp.readyState == 4)
@@ -25,13 +26,13 @@
         //}
         //第三步，配置请求信息，open(),get
         //get请求下参数加在url后，.ashx?methodName = GetAllComment&str1=str1&str2=str2
-        xmlHttp.open("post", "/xmlHttpTest.ashx?methodName=GetAllComment", true);
+        xmlHttp.open("post", "/xmlHttpTest.ashx?methodName=GetAllComment1", true);
 
         //post请求下需要配置请求头信息
-        //xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         //第四步，发送请求,post请求下，要传递的参数放这
-        xmlHttp.send("methodName = GetAllComment&str1=str1&str2=str2");//"
+        xmlHttp.send("methodName=GetAllComment&str1=str1&str2=str2");//"
 
     }
     //第五步，创建回调函数
