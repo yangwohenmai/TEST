@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sftp>
+  <info>
+    <password>1</password>
+    <Name>0</Name>
+  </info>
+  <FtpInfo>
+    <FtpUri>123</FtpUri>
+    <FtpPort>234</FtpPort>
+    <FtpUserID>345</FtpUserID>
+    <FtpPassword>456</FtpPassword>
+  </FtpInfo>
+</Sftp>

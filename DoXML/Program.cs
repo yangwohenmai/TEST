@@ -12,6 +12,7 @@ namespace DoXML
     {
         static void Main(string[] args)
         {
+            CreateXML("");
             GetCommonConfig();
             writeXML("123");
         }
@@ -89,7 +90,7 @@ namespace DoXML
             {
                 return bool_Result;
             }
-            //设置时间戳
+
             XmlDocument xmlDoc = new XmlDocument();
 
             if (!File.Exists("E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config.xml"))
@@ -116,12 +117,60 @@ namespace DoXML
             }
             catch (Exception ex)
             {
-                //记录日志
-                //Log4NetUtil.Error(this, "SetRsTimeStamp->设置资源时间戳异常:" + ex.ToString());
             }
 
             return bool_Result;
         }
+
+        public static void CreateXML(string xmlName)
+        {
+            //通过代码创建XML文档
+            //1、引用命名空间   System.Xml
+            //2、创建一个 xml 文档
+            XmlDocument xml = new XmlDocument();
+            //3、创建一行声明信息，并添加到 xml 文档顶部
+            XmlDeclaration decl = xml.CreateXmlDeclaration("1.0", "utf-8", null);
+            xml.AppendChild(decl);
+
+            //4、创建根节点
+            XmlElement rootEle = xml.CreateElement("Sftp");
+            xml.AppendChild(rootEle);
+            //5、创建子结点|属性：信息
+            XmlElement childEle = xml.CreateElement("info");
+            rootEle.AppendChild(childEle);
+
+            XmlElement c2Ele = xml.CreateElement("password");
+            c2Ele.InnerText = "1";
+            childEle.AppendChild(c2Ele);
+            c2Ele = xml.CreateElement("Name");
+            c2Ele.InnerText = "0";
+            childEle.AppendChild(c2Ele);
+
+
+            //6、创建子节点|属性：FTP信息
+            childEle = xml.CreateElement("FtpInfo");
+            rootEle.AppendChild(childEle);
+
+            c2Ele = xml.CreateElement("FtpUri");
+            c2Ele.InnerText = "123";
+            childEle.AppendChild(c2Ele);
+
+            c2Ele = xml.CreateElement("FtpPort");
+            c2Ele.InnerText = "234";
+            childEle.AppendChild(c2Ele);
+
+            c2Ele = xml.CreateElement("FtpUserID");
+            c2Ele.InnerText = "345";
+            childEle.AppendChild(c2Ele);
+
+            c2Ele = xml.CreateElement("FtpPassword");
+            c2Ele.InnerText = "456";
+            childEle.AppendChild(c2Ele);
+
+            xml.Save("E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config1.xml");
+
+        }
+
 
     }
 }
