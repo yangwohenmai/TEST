@@ -1,0 +1,25 @@
+{
+  "name": "dapper-net",
+  "version": "0.1.0",
+  "description": ".NET wrapper for dapper-dot-net used by dapper-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cchamberlain/dapper-net.git"
+  },
+  "keywords": [
+    "dapper",
+    "wrapper",
+    "dapper-js",
+    "node"
+  ],
+  "author": "Cole Chamberlain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cchamberlain/dapper-net/issues"
+  },
+  "homepage": "https://github.com/cchamberlain/dapper-net#readme"
+}

@@ -31,7 +31,8 @@ namespace DoXML
             string str_Temp = string.Empty;
 
             //XML配置文件路径
-            string str_ConfigFilePath = "E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config.xml";
+            string str_ConfigFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.xml");
+            str_ConfigFilePath = "E:\\MyGit\\TEST\\DoXML\\bin\\Debug\\config.xml";
             if (!File.Exists(str_ConfigFilePath))
             {
                 return false;
@@ -122,6 +123,10 @@ namespace DoXML
             return bool_Result;
         }
 
+        /// <summary>
+        /// 创建XML文件
+        /// </summary>
+        /// <param name="xmlName"></param>
         public static void CreateXML(string xmlName)
         {
             //通过代码创建XML文档
