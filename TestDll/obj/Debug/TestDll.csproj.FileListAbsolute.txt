@@ -5,6 +5,5 @@ C:\Users\admin\Desktop\TEST\TestDll\obj\Debug\TestDll.pdb
 C:\Users\admin\Desktop\TEST\TestDll\obj\Debug\TestDll.csprojResolveAssemblyReference.cache
 E:\MyGit\TEST\TestDll\bin\Debug\TestDll.dll
 E:\MyGit\TEST\TestDll\bin\Debug\TestDll.pdb
-E:\MyGit\TEST\TestDll\obj\Debug\TestDll.csprojResolveAssemblyReference.cache
 E:\MyGit\TEST\TestDll\obj\Debug\TestDll.dll
 E:\MyGit\TEST\TestDll\obj\Debug\TestDll.pdb

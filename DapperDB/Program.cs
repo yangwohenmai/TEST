@@ -14,7 +14,7 @@ namespace DapperDB
     {
         static void Main(string[] args)
         {
-            List<TaskDriverStru> list = GetTaskDriver1();
+            List<TaskDriverStru> list = GetTask();
             foreach(var item in list)
             {
                 Console.WriteLine(item.Id);
@@ -30,8 +30,11 @@ namespace DapperDB
 
 
 
-
-        public static List<TaskDriverStru> GetTaskDriver1()
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <returns></returns>
+        public static List<TaskDriverStru> GetTask()
         {
             List<TaskDriverStru> tempDataList = new List<TaskDriverStru>();
             string errorMsg = string.Empty;
@@ -85,7 +88,11 @@ namespace DapperDB
             return list;
         }
 
-
+        /// <summary>
+        /// 链接数据库
+        /// </summary>
+        /// <param name="connConfig"></param>
+        /// <returns></returns>
         public static IDbConnection GetConnection(string connConfig)
         {
             IDbConnection conn = null;
