@@ -10,7 +10,7 @@ namespace MaxPayBack
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("3,1,6,5,4,3,6,4,8,2");
+            Console.WriteLine("3,1,6,5,4,3,6,4,8,2,9");
             string listtext = Console.ReadLine();
             string[] Datelist = listtext.Split(',');
             decimal max = decimal.MinValue;
