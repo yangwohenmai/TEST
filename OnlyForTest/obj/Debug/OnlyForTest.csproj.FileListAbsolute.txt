@@ -8,3 +8,4 @@ E:\MyGit\TEST\OnlyForTest\bin\Debug\OnlyForTest.exe
 E:\MyGit\TEST\OnlyForTest\bin\Debug\OnlyForTest.pdb
 E:\MyGit\TEST\OnlyForTest\obj\Debug\OnlyForTest.exe
 E:\MyGit\TEST\OnlyForTest\obj\Debug\OnlyForTest.pdb
+E:\MyGit\TEST\OnlyForTest\obj\Debug\OnlyForTest.csprojResolveAssemblyReference.cache

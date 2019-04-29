@@ -49,7 +49,7 @@ namespace MoreThread
             }
             if (W2K) // 如果当前系统支持 ThreadPool 的方法. 
             {
-                for (int iItem = 1; iItem < MaxCount; iItem++)
+                for (int iItem = 1; iItem < MaxCount*5; iItem++)
                 {
                     // 插入队列元素 
                     Console.WriteLine("插入队元素进入缓冲池 {0}", iItem);
