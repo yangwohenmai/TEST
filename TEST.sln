@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxPayBack", "MaxPayBack\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResetEvent", "ResetEvent\ResetEvent.csproj", "{691A17FE-7228-4E3B-9BC2-23411986A2A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerTest", "TaskSchedulerTest\TaskSchedulerTest.csproj", "{3287AE67-F89D-478E-9457-FF580E9B0A2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,8 +293,21 @@ Global
 		{691A17FE-7228-4E3B-9BC2-23411986A2A9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{691A17FE-7228-4E3B-9BC2-23411986A2A9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{691A17FE-7228-4E3B-9BC2-23411986A2A9}.Release|x64.ActiveCfg = Release|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B383CDD3-5FD9-4B2E-9719-3AF9267F53F9}
 	EndGlobalSection
 EndGlobal

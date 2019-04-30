@@ -10,10 +10,14 @@ namespace ResetEvent
     class Program
     {
         static EventWaitHandle _tollStation = new ManualResetEvent(false);//改为ManualResetEvent,车闸默认关闭
-        static EventWaitHandle _tollStationAuto = new AutoResetEvent(true);//车闸默认关闭
+        static EventWaitHandle _tollStationAuto = new AutoResetEvent(false);//车闸默认关闭
         static void Main(string[] args)
         {
-            AutoResetEventTest();
+            //AutoResetEvent设置成true，在执行过一个线程后，自动变成false，
+            //继续阻塞线程，每次都要重新开启
+            //AutoResetEventTest();
+
+            //ManualResetEvent一旦打开后，只有手动Set才能关闭
             //ManualResetEventTest();
         }
 
@@ -21,10 +25,12 @@ namespace ResetEvent
         #region AutoResetEventTest
         public static void AutoResetEventTest()
         {
+            _tollStationAuto = new AutoResetEvent(true);
             new Thread(Car3).Start();//车辆3
             Thread.Sleep(1000);
             new Thread(Car4).Start();//车辆4
-            //_tollStationAuto.Set();
+            Console.ReadKey();//重新开启一次
+            _tollStationAuto.Set();
             Console.ReadKey();
         }
 
