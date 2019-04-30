@@ -1,0 +1,6 @@
+E:\MyGit\TEST\ResetEvent\bin\Debug\ResetEvent.exe.config
+E:\MyGit\TEST\ResetEvent\bin\Debug\ResetEvent.exe
+E:\MyGit\TEST\ResetEvent\bin\Debug\ResetEvent.pdb
+E:\MyGit\TEST\ResetEvent\obj\Debug\ResetEvent.csprojResolveAssemblyReference.cache
+E:\MyGit\TEST\ResetEvent\obj\Debug\ResetEvent.exe
+E:\MyGit\TEST\ResetEvent\obj\Debug\ResetEvent.pdb
