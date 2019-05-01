@@ -19,11 +19,11 @@ namespace TaskSchedulerTest
 
                 fac.StartNew(s =>
                 {
-                    Thread.Sleep(1000);
+                    //Thread.Sleep(1000);
                     Console.WriteLine("启动线程：" +s);
                     //Write_txt("启动线程：" + b);
                     b++;
-                    Thread.Sleep(20000);
+                    Thread.Sleep(2000);
                     Console.WriteLine("Current Index {0}, ThreadId {1}", s, Thread.CurrentThread.ManagedThreadId);
                     Console.WriteLine("结束线程：" +s);
                     //Write_txt("结束线程：" + b);
@@ -31,7 +31,7 @@ namespace TaskSchedulerTest
                 }, i);
             }
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
 
         private static void Write_txt(string log)

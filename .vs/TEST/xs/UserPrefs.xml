@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{3287AE67-F89D-478E-9457-FF580E9B0A2A}|Default">
   <MonoDevelop.Ide.ItemProperties.MoreThread PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebMapping/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OnlyForTest/Program.cs">
     <Files>
       <File FileName="TEST/Program.cs" Line="1" Column="1" />
       <File FileName="ResetEvent/Program.cs" Line="1" Column="14" />
@@ -9,25 +9,26 @@
       <File FileName="TaskSchedulerTest/Program.cs" Line="54" Column="9" />
       <File FileName="Task/Program.cs" Line="1" Column="1" />
       <File FileName="WebMapping/WEB.cs" Line="1" Column="1" />
-      <File FileName="WebMapping/Program.cs" Line="1" Column="1" />
+      <File FileName="WebMapping/Program.cs" Line="16" Column="37" />
+      <File FileName="TaskSchedulerTest/LimitedConcurrencyLevelTaskScheduler.cs" Line="55" Column="13" />
+      <File FileName="OnlyForTest/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TEST" expanded="True">
-            <Node name="ResetEvent" expanded="True" />
-            <Node name="TaskSchedulerTest" expanded="True" />
-            <Node name="Tasktest" expanded="True" />
-            <Node name="TEST" expanded="True" />
-            <Node name="WebMapping" expanded="True">
+            <Node name="OnlyForTest" expanded="True">
               <Node name="Program.cs" selected="True" />
             </Node>
+            <Node name="TaskSchedulerTest" expanded="True" />
+            <Node name="WebText" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.ResetEvent PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.OnlyForTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.TaskSchedulerTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
