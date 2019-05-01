@@ -3,3 +3,10 @@ E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
 E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
 E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
 E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb
+D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe.config
+D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
+D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
+D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csproj.CoreCompileInputs.cache
+D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
+D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb
+D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csprojAssemblyReference.cache
