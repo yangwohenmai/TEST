@@ -1,5 +1,11 @@
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe.config
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
-E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
-E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb
+E:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe.config
+E:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe
+E:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.pdb
+E:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.exe
+E:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.pdb
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe.config
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.pdb
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.csproj.CoreCompileInputs.cache
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.exe
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.pdb

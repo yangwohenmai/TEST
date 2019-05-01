@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,7 +19,7 @@ namespace TaskSchedulerTest
 
                 fac.StartNew(s =>
                 {
-                    //Thread.Sleep(1000);
+                    Thread.Sleep(1000);
                     Console.WriteLine("启动线程：" +s);
                     //Write_txt("启动线程：" + b);
                     b++;
@@ -34,7 +31,7 @@ namespace TaskSchedulerTest
                 }, i);
             }
 
-            Console.ReadKey();
+            //Console.ReadLine();
         }
 
         private static void Write_txt(string log)
