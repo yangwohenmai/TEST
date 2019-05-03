@@ -11,16 +11,12 @@ E:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.pdb
 /Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.exe
 /Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.pdb
 =======
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe.config
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
-E:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
-E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
-E:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb
-D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe.config
-D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
-D:\MyGit\TEST\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
-D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csproj.CoreCompileInputs.cache
-D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
-D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb
-D:\MyGit\TEST\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csprojAssemblyReference.cache
+D:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe.config
+D:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.exe
+D:/MyGit/TEST/TaskSchedulerTest/bin/Debug/TaskSchedulerTest.pdb
+D:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.csproj.CoreCompileInputs.cache
+D:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.exe
+D:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.pdb
+D:/MyGit/TEST/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.csprojAssemblyReference.cache
 >>>>>>> ba358562c7e8935b143e04547f0eae1cc8e72029
+/Users/yzx/Desktop/MyGit/Test/TaskSchedulerTest/obj/Debug/TaskSchedulerTest.csprojAssemblyReference.cache

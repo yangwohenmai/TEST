@@ -15,7 +15,7 @@ namespace ResetEvent
         {
             //AutoResetEvent设置成true，在执行过一个线程后，自动变成false，
             //继续阻塞线程，每次都要重新开启
-            AutoResetEventTest();
+            //AutoResetEventTest();
 
             //ManualResetEvent一旦打开后，只有手动Set才能关闭
             //ManualResetEventTest();
