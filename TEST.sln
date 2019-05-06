@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResetEvent", "ResetEvent\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerTest", "TaskSchedulerTest\TaskSchedulerTest.csproj", "{3287AE67-F89D-478E-9457-FF580E9B0A2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async_await", "async_await\Async_await.csproj", "{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +305,16 @@ Global
 		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3287AE67-F89D-478E-9457-FF580E9B0A2A}.Release|x64.ActiveCfg = Release|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6628F0EF-AC1E-4C3A-8BF7-DA40B53C33CC}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

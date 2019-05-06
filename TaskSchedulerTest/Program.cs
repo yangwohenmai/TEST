@@ -14,7 +14,7 @@ namespace TaskSchedulerTest
             //TaskTest1();
 
             //线程调度器
-            TaskScheduler();
+            //TaskScheduler();
         }
 
 

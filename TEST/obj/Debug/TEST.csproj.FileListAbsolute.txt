@@ -4,12 +4,6 @@ C:/Users/admin/Desktop/TEST/TEST/bin/Debug/TEST.pdb
 C:/Users/admin/Desktop/TEST/TEST/obj/Debug/TEST.exe
 C:/Users/admin/Desktop/TEST/TEST/obj/Debug/TEST.pdb
 C:/Users/admin/Desktop/TEST/TEST/obj/Debug/TEST.csprojResolveAssemblyReference.cache
-E:/MyGit/TEST/TEST/bin/Debug/TEST.exe.config
-E:/MyGit/TEST/TEST/bin/Debug/TEST.exe
-E:/MyGit/TEST/TEST/bin/Debug/TEST.pdb
-E:/MyGit/TEST/TEST/obj/Debug/TEST.csprojResolveAssemblyReference.cache
-E:/MyGit/TEST/TEST/obj/Debug/TEST.exe
-E:/MyGit/TEST/TEST/obj/Debug/TEST.pdb
 /Users/yzx/Desktop/MyGit/Test/TEST/bin/Debug/TEST.exe.config
 /Users/yzx/Desktop/MyGit/Test/TEST/bin/Debug/TEST.exe
 /Users/yzx/Desktop/MyGit/Test/TEST/bin/Debug/TEST.pdb
@@ -17,3 +11,8 @@ E:/MyGit/TEST/TEST/obj/Debug/TEST.pdb
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.csproj.CoreCompileInputs.cache
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.exe
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.pdb
+E:\MyGit\TEST\TEST\bin\Debug\TEST.exe.config
+E:\MyGit\TEST\TEST\bin\Debug\TEST.exe
+E:\MyGit\TEST\TEST\bin\Debug\TEST.pdb
+E:\MyGit\TEST\TEST\obj\Debug\TEST.exe
+E:\MyGit\TEST\TEST\obj\Debug\TEST.pdb

@@ -11,6 +11,5 @@ E:\MyGit\TEST\JSon\bin\Debug\JSon.exe
 E:\MyGit\TEST\JSon\bin\Debug\JSon.pdb
 E:\MyGit\TEST\JSon\bin\Debug\Newtonsoft.Json.dll
 E:\MyGit\TEST\JSon\bin\Debug\Newtonsoft.Json.xml
-E:\MyGit\TEST\JSon\obj\Debug\JSon.csprojResolveAssemblyReference.cache
 E:\MyGit\TEST\JSon\obj\Debug\JSon.exe
 E:\MyGit\TEST\JSon\obj\Debug\JSon.pdb
