@@ -1,6 +1,6 @@
 E:\MyGit\TEST\async_await\bin\Debug\async_await.exe.config
-E:\MyGit\TEST\async_await\obj\Debug\async_await.csprojResolveAssemblyReference.cache
 E:\MyGit\TEST\async_await\bin\Debug\async_await.exe
 E:\MyGit\TEST\async_await\bin\Debug\async_await.pdb
 E:\MyGit\TEST\async_await\obj\Debug\async_await.exe
 E:\MyGit\TEST\async_await\obj\Debug\async_await.pdb
+E:\MyGit\TEST\async_await\obj\Debug\async_await.csprojResolveAssemblyReference.cache

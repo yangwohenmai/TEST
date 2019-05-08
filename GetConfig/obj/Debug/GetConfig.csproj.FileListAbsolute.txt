@@ -3,3 +3,4 @@ E:\MyGit\TEST\GetConfig\bin\Debug\GetConfig.exe
 E:\MyGit\TEST\GetConfig\bin\Debug\GetConfig.pdb
 E:\MyGit\TEST\GetConfig\obj\Debug\GetConfig.exe
 E:\MyGit\TEST\GetConfig\obj\Debug\GetConfig.pdb
+E:\MyGit\TEST\GetConfig\obj\Debug\GetConfig.csprojResolveAssemblyReference.cache
