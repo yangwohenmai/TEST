@@ -22,15 +22,25 @@ namespace MoreThread
     }
     class Program
     {
+        private readonly LinkedList<Task> _tasks = new LinkedList<Task>(); // protected by lock(_tasks) 
+        private  LinkedList<Task> _taskslist = new LinkedList<Task>(); // protected by lock(_tasks) 
+        static int _maxDegreeOfParallelism = 0;
+        static int _delegatesQueuedOrRunning = 0;
+        static int count = 0;
+        static EventWaitHandle _tollStation = new ManualResetEvent(false);//改为ManualResetEvent,车闸默认关闭
         public static void Main(string[] args)
         {
 
 
-
+            int MaxThread = 0;
             Console.WriteLine("Main thread: Queuing an asynchronous operation.");
             AutoResetEvent asyncOpIsDone = new AutoResetEvent(false);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 1);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 2);
+            for (int i = 0; i < 100; i++)
+            {
+                ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), i);
+            }
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 1);
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 2);
             Console.WriteLine("Main thread: Performing other operations.");
 
             
@@ -48,7 +58,7 @@ namespace MoreThread
 
 
 
-
+            #region
             Console.WriteLine("简单的线程池:");
             bool W2K = false;
 
@@ -95,6 +105,85 @@ namespace MoreThread
                 //}
             }
             Console.ReadLine();
+            #endregion
+        }
+
+        protected void ADD()
+        {
+            Task aaa;
+            while (true)
+            {
+                if (count < _maxDegreeOfParallelism)
+                {
+                    if (_taskslist.Count > 0)
+                    {
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(aaa), 1);
+                    }
+                }
+            }
+        }
+
+
+        protected sealed override void QueueTask(Task task)
+        {
+            // Add the task to the list of tasks to be processed. If there aren't enough 
+            // delegates currently queued or running to process tasks, schedule another. 
+            lock (_tasks)
+            {
+                Console.WriteLine("Task Count : {0} ", _tasks.Count);
+                _tasks.AddLast(task);
+                if (_delegatesQueuedOrRunning < _maxDegreeOfParallelism)
+                {
+                    ++_delegatesQueuedOrRunning;
+                    NotifyThreadPoolOfPendingWork();
+                }
+            }
+        }
+
+
+
+
+        private void NotifyThreadPoolOfPendingWork()
+        {
+            ThreadPool.UnsafeQueueUserWorkItem(_ =>
+            {
+                // Note that the current thread is now processing work items. 
+                // This is necessary to enable inlining of tasks into this thread. 
+                // 当前线程现在正在处理工作项。这对于在此线程中启用内联任务是必要的。
+                //_currentThreadIsProcessingItems = true;
+                try
+                {
+                    // Process all available items in the queue. 
+                    // 循环执行队列中的所有可执行的item。
+                    while (true)
+                    {
+                        Task item;
+                        lock (_tasks)
+                        {
+                            // When there are no more items to be processed, 
+                            // note that we're done processing, and get out. 
+                            // 当没有其他item需要处理时，提示我们已完成处理，然后退出。
+                            if (_tasks.Count == 0)
+                            {
+                                --_delegatesQueuedOrRunning;
+
+                                break;
+                            }
+
+                            // 从线程队列中获取下一个待执行的Task
+                            item = _tasks.First.Value;
+                            _tasks.RemoveFirst();
+                        }
+
+
+                        // 执行这个从线程队列中取出来的Task 
+                        base.TryExecuteTask(item);
+                    }
+                }
+                // We're done processing items on the current thread 
+                // 我们在当前线程上完成了执行item
+                finally { _currentThreadIsProcessingItems = false; }
+            }, null);
         }
 
 
