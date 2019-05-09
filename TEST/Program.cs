@@ -13,15 +13,11 @@ namespace TEST
 
             Console.WriteLine(b);
 
-
-
-
-
             SortedList<int, string> list = new SortedList<int, string>();
             list.Add(4, "sdf");
             list.Add(2, "sfd");
             list.Add(6, "sdfa");
-            list.Add(3, "sfaf"); 
+            list.Add(3, "sfaf");
             int a11 = list.Keys.Min();
             string a12 = list[3];
 

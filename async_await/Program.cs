@@ -16,7 +16,7 @@ namespace async_await
         public static bool control = true;
         private static void Main(string[] args)
         {
-            //启动计时器
+            //启动打点计时器
             Watch.Start();
             Task.Run(() => {
                 while (control)
@@ -43,6 +43,7 @@ namespace async_await
             //int aa = t1.Result;
             //t1.GetAwaiter();
 
+
             //Task.WhenAll(t1).ContinueWith(o => Console.WriteLine("执行完成，进入ContinueWith,{0}mm", Watch.ElapsedMilliseconds));
             //Task.WaitAll(t1);
 
@@ -56,7 +57,7 @@ namespace async_await
             //Console.WriteLine("主进程t1 获取等待的返回值：{0},{1}mm", t1.Result, Watch.ElapsedMilliseconds);
             Console.WriteLine("主进程下面开始等待await，{0}", Watch.ElapsedMilliseconds);
             //Console.WriteLine("主进程t3 获取等待的返回值：{0},{1}mm", t3.Result, Watch.ElapsedMilliseconds);
-            //Console.WriteLine("主进程t4 获取等待的返回值：{0},{1}mm", t4, Watch.ElapsedMilliseconds);
+            Console.WriteLine("主进程t4 获取等待的返回值：{0},{1}mm", t4, Watch.ElapsedMilliseconds);
             
 
             Console.WriteLine("主进程再次休眠，{0}", Watch.ElapsedMilliseconds);
@@ -80,9 +81,9 @@ namespace async_await
         {
             Console.WriteLine("线程1开始调用 id = {0}：{1} ms", id, Watch.ElapsedMilliseconds);
             
-            Console.WriteLine("线程1开始调用await，{0}mm", Watch.ElapsedMilliseconds);
+            Console.WriteLine("线程1开始调用await，休眠15s，{0}mm", Watch.ElapsedMilliseconds);
             var result = await Task.Run(()=>gosleep15());
-
+            Console.WriteLine("线程1休眠15s完成，{0}mm", Watch.ElapsedMilliseconds);
             Console.WriteLine("线程1先睡1秒，{0}mm", Watch.ElapsedMilliseconds);
             Thread.Sleep(1000);
             Console.WriteLine("线程1先睡1秒，{0}mm", Watch.ElapsedMilliseconds);
@@ -99,9 +100,9 @@ namespace async_await
             Console.WriteLine("线程2先睡2秒，{0}mm", Watch.ElapsedMilliseconds);
             Thread.Sleep(2000);
             Console.WriteLine("线程2睡完2秒，{0}mm", Watch.ElapsedMilliseconds);
-            Console.WriteLine("线程2开始await，{0}mm", Watch.ElapsedMilliseconds);
+            Console.WriteLine("线程2开始await，休眠20s，{0}mm", Watch.ElapsedMilliseconds);
             var result = await Task.Run(() => gosleep20());
-
+            Console.WriteLine("线程2休眠20s完成，{0}mm", Watch.ElapsedMilliseconds);
             Console.WriteLine("线程2调用完成 id = {0}：{1} ms", id, Watch.ElapsedMilliseconds);
 
             return result;
