@@ -3,3 +3,4 @@ E:\MyGit\TEST\SetConfiguration\bin\Debug\SetConfiguration.exe
 E:\MyGit\TEST\SetConfiguration\bin\Debug\SetConfiguration.pdb
 E:\MyGit\TEST\SetConfiguration\obj\Debug\SetConfiguration.exe
 E:\MyGit\TEST\SetConfiguration\obj\Debug\SetConfiguration.pdb
+E:\MyGit\TEST\SetConfiguration\obj\Debug\SetConfiguration.csproj.CoreCompileInputs.cache

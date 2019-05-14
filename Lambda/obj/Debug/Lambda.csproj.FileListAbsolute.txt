@@ -8,3 +8,4 @@ E:\MyGit\TEST\Lambda\bin\Debug\Lambda.exe
 E:\MyGit\TEST\Lambda\bin\Debug\Lambda.pdb
 E:\MyGit\TEST\Lambda\obj\Debug\Lambda.exe
 E:\MyGit\TEST\Lambda\obj\Debug\Lambda.pdb
+E:\MyGit\TEST\Lambda\obj\Debug\Lambda.csproj.CoreCompileInputs.cache

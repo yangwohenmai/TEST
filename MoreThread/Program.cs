@@ -6,20 +6,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Collections;
 
-namespace MoreThread
+namespace MoreThread  
 {
-
-    /// <summary>
-    /// 这是用来保存信息的数据结构，将作为参数被传递
-    /// </summary>
-    public class SomeState
-    {
-        public int Cookie;
-        public SomeState(int iCookie)
-        {
-            Cookie = iCookie;
-        }
-    }
     class Program
     {
         private readonly LinkedList<Task> _tasks = new LinkedList<Task>(); // protected by lock(_tasks) 
@@ -30,14 +18,14 @@ namespace MoreThread
         static EventWaitHandle _tollStation = new ManualResetEvent(false);//改为ManualResetEvent,车闸默认关闭
         public static void Main(string[] args)
         {
-
+            //Action A = new Action();
 
             int MaxThread = 0;
             Console.WriteLine("Main thread: Queuing an asynchronous operation.");
             AutoResetEvent asyncOpIsDone = new AutoResetEvent(false);
             for (int i = 0; i < 100; i++)
             {
-                ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), i);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(t=>()), i);
             }
             //ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 1);
             //ThreadPool.QueueUserWorkItem(new WaitCallback(MyAsyncOperation), 2);
@@ -108,84 +96,125 @@ namespace MoreThread
             #endregion
         }
 
-        protected void ADD()
+
+
+        private static ILog log = new LogHelper("SeqService"); // 日志
+        private static Dictionary<int, DateTime> dic_thread = new Dictionary<int, DateTime>(); // 线程列表
+
+        private static long Num = 0; // 线程个数
+        private static object lock_Num = 0;  // 共享数据-锁
+
+        /// <summary>
+        /// 在线申请流水号
+        /// </summary>
+        /// <returns></returns>
+        //[WebGet(UriTemplate = "GetSeqNum/Json", ResponseFormat = WebMessageFormat.Json)]
+        public string GetSeqNumber()
         {
-            Task aaa;
-            while (true)
+            lock (lock_Num)
             {
-                if (count < _maxDegreeOfParallelism)
+                Num++;
+                int id_thread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+                DateTime now = DateTime.Now;
+                if (!dic_thread.TryGetValue(id_thread, out now))
                 {
-                    if (_taskslist.Count > 0)
-                    {
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(aaa), 1);
-                    }
+                    dic_thread.Add(id_thread, DateTime.Now);
                 }
+
             }
+            string ret = DateTime.Now.ToString("yyyyMMdd") + Num.ToString(new string('0', 9));
+
+            log.Info(string.Format("{0}, Thread={1}/{2}", ret, System.Threading.Thread.CurrentThread.ManagedThreadId, dic_thread.Count));
+            return ret;
         }
 
 
-        protected sealed override void QueueTask(Task task)
+
+
+
+
+        /// <summary>
+        /// 多线程调用WCF
+        /// </summary>
+        /// <param name="select">调用WCF的方式，1=Restful，2=Tcp</param>
+        /// <param name="num"></param>
+        static void DoTest_MultiThread(string select, long num)
         {
-            // Add the task to the list of tasks to be processed. If there aren't enough 
-            // delegates currently queued or running to process tasks, schedule another. 
-            lock (_tasks)
+            int n_max_thread = 10; // 设置并行最大为10个线程
+            int n_total_thread = 0; // 用来控制：主程序的结束执行，当所有任务线程执行完毕
+
+            ILog log_add = new LogHelper("Add_Thread");
+            ILog log_del = new LogHelper("Del_Thread");
+            ILog log_wait = new LogHelper("Wait_Thread");
+            ILog log_set = new LogHelper("Set_Thread");
+            ILog log_for = new LogHelper("For_Thread");
+
+            Console.Title = string.Format("调用WCF的方式 => {0}, 调用次数=> {1}"
+                , select == "1" ? "Restful" : "Socket"
+                , num);
+
+            List<int> list_Thread = new List<int>();
+
+            System.Threading.AutoResetEvent wait_sync = new System.Threading.AutoResetEvent(false); // 用来控制：并发最大个数线程=n_max_thread
+            System.Threading.AutoResetEvent wait_main = new System.Threading.AutoResetEvent(false); // 用来控制：主程序的结束执行，当所有任务线程执行完毕
+
+            DateTime date_step = DateTime.Now;
+            for (long i = 0; i < num; i++)
             {
-                Console.WriteLine("Task Count : {0} ", _tasks.Count);
-                _tasks.AddLast(task);
-                if (_delegatesQueuedOrRunning < _maxDegreeOfParallelism)
+                Num_Query_Static++;
+                if (i > 0 && (i + 1 - 1) % n_max_thread == 0) // -1 表示第max个线程尚未开始
                 {
-                    ++_delegatesQueuedOrRunning;
-                    NotifyThreadPoolOfPendingWork();
+                    //log_wait.Info(string.Format("thread n= {0},for i= {1}", dic_Thread.Count, i + 1));
+                    wait_sync.WaitOne(); // 每次并发10个线程，等待处理完毕后，在发送下一次并发线程
                 }
-            }
-        }
+                log_for.Info(string.Format("thread n= {0},for i= {1}", list_Thread.Count, i + 1));
 
-
-
-
-        private void NotifyThreadPoolOfPendingWork()
-        {
-            ThreadPool.UnsafeQueueUserWorkItem(_ =>
-            {
-                // Note that the current thread is now processing work items. 
-                // This is necessary to enable inlining of tasks into this thread. 
-                // 当前线程现在正在处理工作项。这对于在此线程中启用内联任务是必要的。
-                //_currentThreadIsProcessingItems = true;
-                try
-                {
-                    // Process all available items in the queue. 
-                    // 循环执行队列中的所有可执行的item。
-                    while (true)
+                System.Threading.ThreadPool.QueueUserWorkItem
+                    ((data) =>
                     {
-                        Task item;
-                        lock (_tasks)
-                        {
-                            // When there are no more items to be processed, 
-                            // note that we're done processing, and get out. 
-                            // 当没有其他item需要处理时，提示我们已完成处理，然后退出。
-                            if (_tasks.Count == 0)
-                            {
-                                --_delegatesQueuedOrRunning;
+                        int id = System.Threading.Thread.CurrentThread.ManagedThreadId;
+                        System.Threading.Monitor.Enter(list_Thread);
+                        list_Thread.Add(id);
+                        System.Threading.Monitor.Exit(list_Thread);
 
-                                break;
-                            }
+                        log_add.Info(string.Format("id={0}, count={1}", id, list_Thread.Count)); // 日志
 
-                            // 从线程队列中获取下一个待执行的Task
-                            item = _tasks.First.Value;
-                            _tasks.RemoveFirst();
-                        }
-
-
-                        // 执行这个从线程队列中取出来的Task 
-                        base.TryExecuteTask(item);
-                    }
+                if (select == "1") // Restful方式调用
+                {
+                    Query_Htty();
                 }
-                // We're done processing items on the current thread 
-                // 我们在当前线程上完成了执行item
-                finally { _currentThreadIsProcessingItems = false; }
-            }, null);
-        }
+                else
+                {
+                    Query_Socket();
+                }
 
+                n_total_thread += 1;
+                if (list_Thread.Count == (n_max_thread) || n_total_thread == num)
+                {
+                    list_Thread.Clear();
+            //log_set.Info(string.Format("thread n= {0},for i= {1}", dic_Thread.Count, i + 1));
+            //wait_sync.Set(); 
+                if (n_total_thread != num)
+                {
+                    wait_sync.Set(); // 任务线程，继续执行
+                }
+                else
+                {
+                    wait_main.Set(); // 主程序线程，继续执行
+                }
+                }
+                }, list_Thread);
+            }
+
+            wait_main.WaitOne();
+
+            Console.WriteLine(string.Format("总测试{0}次，总耗时{1}, 平均耗时{2}"
+                , num
+                , (DateTime.Now - date_step).ToString()
+                , (DateTime.Now - date_step).TotalMilliseconds / num));
+
+            Query_Thread();
+        }
 
 
         static void MyAsyncOperation(Object state)

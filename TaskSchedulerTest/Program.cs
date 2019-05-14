@@ -11,7 +11,7 @@ namespace TaskSchedulerTest
         static void Main(string[] args)
         {
             //线程调度测试
-            //TaskTest1();
+            TaskTest1();
 
             //线程调度器
             //TaskScheduler();
