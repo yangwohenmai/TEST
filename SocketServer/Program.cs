@@ -20,7 +20,6 @@ namespace SocketServer
         }
 
 
-
         public static void SocketServie()
         {
             Console.WriteLine("服务端已启动");
@@ -67,7 +66,7 @@ namespace SocketServer
                     string sendStr = "已成功接到您发送的消息";
                     byte[] bs = Encoding.UTF8.GetBytes(sendStr);//Encoding.UTF8.GetBytes()不然中文会乱码
                     myClientSocket.Send(bs, bs.Length, 0);  //返回信息给客户端
-                    //myClientSocket.Close(); //发送完数据关闭Socket并释放资源
+                    //myClientSocket.Close(); //发送完数据关闭Socket并释放资源//长连接的话就不关闭
                     //Console.ReadLine();
                 }
                 catch (Exception ex)
