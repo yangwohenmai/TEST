@@ -21,9 +21,14 @@ namespace MoreThread
             }
             Console.Read();
 
-            
+            //new Thread(new ThreadStart(aa));
+            //new Thread(aa).Start();
+            //new Thread(()=>aa()).Start();
         }
 
+        static void aa()
+        {
+        }
 
         static void SemaphoreTest(int i)
         {

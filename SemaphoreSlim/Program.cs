@@ -9,8 +9,9 @@ namespace SemaphoreSlimTest
 {
     class Program
     {
+        //SemaphoreSlim是轻量级的
         static SemaphoreSlim _semaphorSlim = new SemaphoreSlim(4);
-        static Semaphore _semaphor = new Semaphore(2,4);
+        static Semaphore _semaphor = new Semaphore(1,16);
         static void Main(string[] args)
         {
 
@@ -44,7 +45,7 @@ namespace SemaphoreSlimTest
             Console.WriteLine("{0} 获得信号量，开始执行", name);
             Thread.Sleep(1000 * seconds);
             Console.WriteLine("{0} 结束", name);
-            _semaphor.Release();
+            _semaphor.Release(5);
         }
 
 
@@ -54,7 +55,6 @@ namespace SemaphoreSlimTest
             Console.WriteLine("{0} 等待信号量", name);
             _semaphorSlim.Wait();
             Console.WriteLine("{0} 获得信号量，开始执行", name);
-            //Thread.Sleep(TimeSpan.FromSeconds(seconds));
             Thread.Sleep(1000* seconds);
             Console.WriteLine("{0} 结束", name);
             _semaphorSlim.Release();
