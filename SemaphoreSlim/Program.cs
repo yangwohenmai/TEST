@@ -11,12 +11,12 @@ namespace SemaphoreSlimTest
     {
         //SemaphoreSlim是轻量级的
         static SemaphoreSlim _semaphorSlim = new SemaphoreSlim(4);
-        static Semaphore _semaphor = new Semaphore(1,16);
+        static Semaphore _semaphor = new Semaphore(2,6);
         static void Main(string[] args)
         {
 
 
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= 6; i++)
             {
                 string threadName = "Thread" + i;
                 int secondsToWait = 2 + 2 * i;
@@ -42,10 +42,12 @@ namespace SemaphoreSlimTest
         {
             Console.WriteLine("{0} 等待信号量", name);
             _semaphor.WaitOne();
+            _semaphor.WaitOne();
+            //_semaphor.WaitOne();
             Console.WriteLine("{0} 获得信号量，开始执行", name);
             Thread.Sleep(1000 * seconds);
             Console.WriteLine("{0} 结束", name);
-            _semaphor.Release(5);
+            _semaphor.Release(3);
         }
 
 

@@ -56,11 +56,13 @@ namespace Tasktest
             ////使用TaskFactory创建一个任务
             //TaskFactory tf = new TaskFactory();
             //Task t1 = tf.StartNew(NewTask);
+
             ////使用Task类de Factory创建一个任务
             //Task t2 = Task.Factory.StartNew(NewTask);
 
             //Task t3 = new Task(NewTask);
             //t3.Start();
+
             //Task t4 = new Task(NewTask, TaskCreationOptions.PreferFairness);
             //t4.Start();
             //Thread.Sleep(1000);//因为任务是后台线程，所以我们这里阻塞主线程一秒钟来等待任务全部执行完成

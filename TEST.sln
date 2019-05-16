@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketServer", "SocketServe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreSlimTest", "SemaphoreSlim\SemaphoreSlimTest.csproj", "{DF63C0FD-6D58-40B9-B170-A116D0D4C321}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskStart", "TaskStart\TaskStart.csproj", "{90A28970-C2B3-4039-BA63-1C26611845AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -357,6 +359,18 @@ Global
 		{DF63C0FD-6D58-40B9-B170-A116D0D4C321}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DF63C0FD-6D58-40B9-B170-A116D0D4C321}.Release|x64.ActiveCfg = Release|Any CPU
 		{DF63C0FD-6D58-40B9-B170-A116D0D4C321}.Release|x64.Build.0 = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
