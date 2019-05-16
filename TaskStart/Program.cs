@@ -12,9 +12,6 @@ namespace TaskStart
     {
         static void Main(string[] args)
         {
-            //tasktest2();
-
-
             //有参数，没有返回值
             (new Task(() => Test.ExecuteFun())).Start();
 
@@ -22,6 +19,11 @@ namespace TaskStart
             t1_2.Start();
             Task t1_3 = new Task(() => Test.taskPara("1","2"));
             t1_3.Start();
+
+
+            //有返回值
+            Task<string> t0_1 = new Task<string>(() => Test.taskPara("1", "2"));
+            t0_1.Start();
 
 
             TaskFactory tf = new TaskFactory();
@@ -43,79 +45,81 @@ namespace TaskStart
             Task t4_3 = Task.Run(() => Test.taskPara("1", "2"));
             Task t4_4 = Task.Run(() => { Test.taskPara("1", "2"); });
             Task t4_5 = Task.Run(() => { Console.WriteLine("hehe"); });
-            //t4_3.Start();
+
 
             //Task是接收不到返回值的，只有Task<TResult>才能接收到返回值（即：t1是没有Result属性的）
             Task<string> t5_1 = Task.Factory.StartNew<string>(() => Test.taskPara("1", "2"));
             Console.WriteLine(t5_1.Result); 
-            Task<string> t5_2 = Task.Factory.StartNew<string>(() => { Console.WriteLine("1|2"); Thread.Sleep(3000); return "3|4"; });
+            Task<string> t5_2 = Task.Factory.StartNew<string>(() => { Console.WriteLine("1|2"); Thread.Sleep(2000); return "3|4"; });
             Console.WriteLine(t5_2.Result);
 
-
+            
+            //有返回值
             Task<string> t6_1 = Task.Run<string>(() => Test.taskPara("1", "2"));
             Console.WriteLine(t6_1.Result);
-            Task<string> t6_2 = Task.Run<string>(() => { Console.WriteLine("1|2"); Thread.Sleep(3000); return "3|4"; });
+            Task<string> t6_2 = Task.Run<string>(() => { Console.WriteLine("1|2"); Thread.Sleep(2000); return "3|4"; });
             Console.WriteLine(t6_2.Result);
 
 
 
-            //一下表达式：表示在执行完t3这个任务后在执行Task.Run<int>(()=>Test.GetAge())这个任务【ContinueWith其实就相当于回调】
-            var userAge = t6_2.ContinueWith(r => Task.Run<string>(() => Test.taskPara("1", "2"))).Result.Result; //得到“23”
-            Console.WriteLine(userAge);
+            //表示在执行完t6_1这个任务后在执行Task.Run<int>(()=>Test.taskPara()),[ContinueWith其实就相当于回调]
+            Task<Task<string>> t6_3 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6")));
+            //t6_4和t6_5两种返回值是一样的，但是t6_5这种方法获取返回值速度更快
+            Task<string> t6_4 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
+            Task t6_5 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
+            
+            
+            
+            string t6_6 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result.Result; //得到“23”
+            Console.WriteLine(t6_6);
 
 
+            //RunSynchronously以主进程的方式运行线程的方法
+            Task<string> t7 = new Task<string>(() => Test.taskPara("1", "2"));
+            t7.Start();
+            //运行在主线程中，等同于直接运行TaskMethod("Task 2"),不再是异步线程
+            t7.RunSynchronously();
+            string result = t7.Result;
 
-            ////有返回值的Task
-            //Task<string> t2 = Task.Factory.StartNew<string>(() => Test.GetUserName());
-            ////这里不能再次Start()了，因为StartNew就已经Start()了
-            //var userNameA = t2.Result; //得到“刘德华”
-            //Console.WriteLine(userNameA);
 
-
+            //定义线程调度的策略
+            Task t8 = new Task(Test.ExecuteFun, TaskCreationOptions.PreferFairness);
+            t8.Start();
 
             ////Task.Run的跟Task.Factory.StarNew和new Task相差不多，不同的是前两种是放进线程池立即执行，而Task.Run则是等线程池空闲后再执行。
 
-            ////启动一个任务的方法三：（就会立即启动任务）
-            //Task<string> t3 = Task.Run<string>(() => Test.GetUserName());
-            ////Task.Run方法是Task类中的静态方法，接受的参数是委托。返回值是为该Task对象。
-            ////这种方式是直接运行了Task,不像第一种方法那样还需要Start();			
-            //var userNameB = t3.Result; //得到“刘德华”
+
+
 
 
 
             System.Console.ReadLine();
-
-
             tasktest1();
             System.Console.ReadLine();
 
 
 
 
-            #region 创建和启动一个Task的四种方法
-            Task t4 = new Task(Test.ExecuteFun, TaskCreationOptions.PreferFairness);
-            t4.Start();
+            
             //Thread.Sleep(1000);//因为任务是后台线程，所以我们这里阻塞主线程一秒钟来等待任务全部执行完成
             //Console.ReadLine();
-            #endregion
 
         }
 
 
+        static string TaskMethod(string name)
+        {
+            Console.WriteLine("Task {0} 运行在线程id为{1}的线程上。是否是线程池中线程？:{2}",
+            name, Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.IsThreadPoolThread);
+            Thread.Sleep(2000);
+            return "4";
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        static Task<string> CreateTask(string name)
+        {
+            return new Task<string>(() => TaskMethod(name));
+        }
 
 
 
@@ -291,6 +295,7 @@ namespace TaskStart
         public static void ExecuteFun()
         {
             Console.WriteLine("哈哈");
+            //return "A";
         }
         public static int GetAge()
         {
