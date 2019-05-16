@@ -60,11 +60,10 @@ namespace TaskStart
             Task<string> t6_2 = Task.Run<string>(() => { Console.WriteLine("1|2"); Thread.Sleep(2000); return "3|4"; });
             Console.WriteLine(t6_2.Result);
 
-
-
+            
             //表示在执行完t6_1这个任务后在执行Task.Run<int>(()=>Test.taskPara()),[ContinueWith其实就相当于回调]
             Task<Task<string>> t6_3 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6")));
-            //t6_4和t6_5两种返回值是一样的，但是t6_5这种方法获取返回值速度更快
+            //t6_4和t6_5两种获取的线程是一样的，但是t6_5这种方法获取返回值速度更快
             Task<string> t6_4 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
             Task t6_5 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
             
@@ -95,32 +94,11 @@ namespace TaskStart
 
             System.Console.ReadLine();
             tasktest1();
-            System.Console.ReadLine();
-
-
 
 
             
-            //Thread.Sleep(1000);//因为任务是后台线程，所以我们这里阻塞主线程一秒钟来等待任务全部执行完成
-            //Console.ReadLine();
 
         }
-
-
-        static string TaskMethod(string name)
-        {
-            Console.WriteLine("Task {0} 运行在线程id为{1}的线程上。是否是线程池中线程？:{2}",
-            name, Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.IsThreadPoolThread);
-            Thread.Sleep(2000);
-            return "4";
-        }
-
-
-        static Task<string> CreateTask(string name)
-        {
-            return new Task<string>(() => TaskMethod(name));
-        }
-
 
 
 

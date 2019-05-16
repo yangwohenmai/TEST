@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemaphoreSlimTest", "Semaph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskStart", "TaskStart\TaskStart.csproj", "{90A28970-C2B3-4039-BA63-1C26611845AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellationToken", "TaskCancellationToken\TaskCancellationToken.csproj", "{A413DADF-567C-42BD-A0E7-A68682885F5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -371,6 +373,18 @@ Global
 		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|x64.ActiveCfg = Release|Any CPU
 		{90A28970-C2B3-4039-BA63-1C26611845AB}.Release|x64.Build.0 = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Debug|x64.Build.0 = Debug|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|x64.ActiveCfg = Release|Any CPU
+		{A413DADF-567C-42BD-A0E7-A68682885F5E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
