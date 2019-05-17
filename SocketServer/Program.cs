@@ -72,8 +72,8 @@ namespace SocketServer
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    myClientSocket.Shutdown(SocketShutdown.Both);//禁止发送和上传
                     myClientSocket.Close();//关闭Socket并释放资源
+                    myClientSocket.Shutdown(SocketShutdown.Both);//禁止发送和上传
                     break;
                 }
             }

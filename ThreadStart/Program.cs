@@ -12,23 +12,6 @@ namespace ThreadStartTest
         //static SemaphoreSlim semLim = new SemaphoreSlim(4); //3表示最多只能有三个线程同时访问
         public static void Main(string[] args)
         {
-            ParameterizedThreadStart p = m =>
-            {
-                Thread.Sleep(1000);
-                Console.WriteLine("参数为{0},{1},{2},当前线程为{3}", ((Tuple<string, int, bool>)m).Item1, ((Tuple<string, int, bool>)m).Item2, ((Tuple<string, int, bool>)m).Item3, Thread.CurrentThread.ManagedThreadId);
-            };
-            List<string> list = new List<string>();
-            list.Add("aaa");
-            //Tuple tp = new Tuple<string, int, string, int, bool>("1", 2, "3", 4, false);
-            var tp = Tuple.Create<string, int, bool>("1", 2, false);
-            for (int i = 0; i < 10; i++)
-            {
-                Thread t = new Thread(p);
-                t.Start(tp);
-            }
-            Console.ReadLine();
-
-
             //1.无参数线程
             for (int i = 0; i < 10; i++)
             {
@@ -48,7 +31,8 @@ namespace ThreadStartTest
             //3.无参数线程
             for (int i = 0; i < 10; i++)
             {
-                new Thread(new ThreadStart(aa));
+                Thread t = new Thread(new ThreadStart(aa));
+                t.Start();
             }
 
 
@@ -66,21 +50,25 @@ namespace ThreadStartTest
             }
 
 
-            //ParameterizedThreadStart p = m =>
-            //{
-            //    Thread.Sleep(1000);
-            //    Console.WriteLine("参数为{0},当前线程为{1}", ((List<string>)m)[0], Thread.CurrentThread.ManagedThreadId);
-            //};
-            //List<string> list = new List<string>();
-            //list.Add("aaa");
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    Thread t = new Thread(p);
-            //    t.Start(list);
-            //}
+            #region 一种怪异的启动方法
+            //定义一个元组作为参数
+            var tp = Tuple.Create<string, int, bool>("1", 2, false);
+            //定义一个线程的方法，p是线程名称，m是参数
+            ParameterizedThreadStart p = m =>
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine("参数为{0},{1},{2},当前线程为{3}", ((Tuple<string, int, bool>)m).Item1, ((Tuple<string, int, bool>)m).Item2, ((Tuple<string, int, bool>)m).Item3, Thread.CurrentThread.ManagedThreadId);
+            };
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread t = new Thread(p);
+                t.Start(tp);
+            }
+            #endregion
             Console.ReadLine();
 
-
+            
             #region 等待线列表中所有线程执行完毕
             List<Thread> tList = new List<Thread>();
             for (int i = 0; i < 10; i++)
@@ -101,8 +89,6 @@ namespace ThreadStartTest
             #endregion
 
             Console.ReadLine();
-
-
         }
 
         /// <summary>
@@ -111,6 +97,11 @@ namespace ThreadStartTest
         static void aa()
         {
             Console.WriteLine("我没有参数");
+            //for (int a = 0; a < 100; a++)
+            //{
+            //    Thread.Sleep(1000);
+            //    Console.WriteLine(a);
+            //}
         }
 
         /// <summary>
