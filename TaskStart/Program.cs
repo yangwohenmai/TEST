@@ -26,17 +26,19 @@ namespace TaskStart
             t0_1.Start();
 
 
+            //TaskFactory的调用方式
             TaskFactory tf = new TaskFactory();
             Task t2_1 = tf.StartNew(Test.ExecuteFun);
             Task t2_2 = new TaskFactory().StartNew(() => Test.ExecuteFun());
             Task t2_3 = new TaskFactory().StartNew(() => Test.taskPara("1", "2"));
 
 
+            //Task.Factory.StartNew的调用方式
             Task t3_1 = Task.Factory.StartNew(Test.ExecuteFun);
             Task t3_2 = Task.Factory.StartNew(() => Test.ExecuteFun());
             Task t3_3 = Task.Factory.StartNew(() => Test.taskPara("1", "2"));
             Task t3_4 = Task.Factory.StartNew(() => { Test.taskPara("1", "2"); });
-            Task t3_5 = Task.Factory.StartNew(() => { Console.WriteLine("hehe"); });
+            Task t3_5 = Task.Factory.StartNew(() => { Console.WriteLine("hehe");return "3|4"; });
 
 
             //t4_1的Task.Run方法有重载，加上Action指定调用函数，否则报错有二义性
@@ -66,9 +68,6 @@ namespace TaskStart
             //t6_4和t6_5两种获取的线程是一样的，但是t6_5这种方法获取返回值速度更快
             Task<string> t6_4 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
             Task t6_5 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result;
-            
-            
-            
             string t6_6 = t6_1.ContinueWith(r => Task.Run<string>(() => Test.taskPara("5", "6"))).Result.Result; //得到“23”
             Console.WriteLine(t6_6);
 
@@ -89,9 +88,6 @@ namespace TaskStart
 
 
 
-
-
-
             System.Console.ReadLine();
             tasktest1();
 
@@ -99,63 +95,6 @@ namespace TaskStart
             
 
         }
-
-
-
-        #region Task测试2，使用IsCancellationRequested终止一个线程
-        /// <summary>
-        /// 
-        /// </summary>
-        public static void tasktest2()
-        {
-            //通知 System.Threading.CancellationToken，告知其应被取消。
-            var TokenSource = new CancellationTokenSource();
-
-            //获取与此 System.Threading.CancellationTokenSource 关联的 System.Threading.CancellationToken。
-            var Token = TokenSource.Token;
-
-            var task = Task.Factory.StartNew(() => test2(Token), Token);
-
-            //在这里还可以给token注册了一个方法，输出一条信息  用户输入0后，执行tokenSource.Cancel方法取消任务。这个取消任务执行后，会执行这个代码.
-            Token.Register(() => Console.WriteLine("取消"));
-
-            //等待用户输入
-            var input = Console.ReadLine();
-
-            if (Convert.ToInt32(input) == 0)
-            {
-                //如果输入了0，则取消这个任务;
-                //一旦cancel被调用。task将会抛出OperationCanceledException来中断此任务的执行，最后将当前task的Status的IsCanceled属性设为true
-                TokenSource.Cancel();
-            }
-            Console.ReadLine();
-        }
-
-        /// <summary>
-        /// 使用IsCancellationRequested终止一个线程
-        /// </summary>
-        /// <param name="Token"></param>
-        public static void test2(CancellationToken Token)
-        {
-            int count = 0;
-            for (var i = 1; i < 1000; i++)
-            {
-                Console.WriteLine("i:" + i);
-                Thread.Sleep(1000);
-                //判断是否取消任务，取消为true；不取消为false
-                if (Token.IsCancellationRequested)
-                {
-                    count++;
-                    Console.WriteLine("取消任务成功！" + count);
-                    if (count == 5)
-                    {
-                        return;
-                    }
-
-                }
-            }
-        }
-        #endregion
 
 
         public static void tasktest1()
@@ -268,6 +207,9 @@ namespace TaskStart
     }
 
 
+    /// <summary>
+    /// 测试类
+    /// </summary>
     public class Test
     {
         public static void ExecuteFun()
