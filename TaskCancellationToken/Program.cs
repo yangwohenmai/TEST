@@ -16,13 +16,14 @@ namespace TaskCancellationToken
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             // 取消任意一个任务，则所有任务都取消
             CancellationTokenAllTest();
             // 取消单个任务
             //CancellationTokenTest();
         }
 
+
+        #region 取消任意一个任务，所有的任务都取消
         /// <summary>
         /// 取消任意一个任务，则所有任务都取消
         /// </summary>
@@ -54,6 +55,10 @@ namespace TaskCancellationToken
                 c1.Cancel();
             }
         }
+        #endregion
+
+
+
 
 
         /// <summary>

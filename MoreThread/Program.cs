@@ -11,17 +11,22 @@ namespace MoreThread
 {
     class Program
     {
-        //static SemaphoreSlim semLim = new SemaphoreSlim(4); //3表示最多只能有三个线程同时访问
         public static void Main(string[] args)
         {
             //通过Wait捕获异常
             WaitException();
+            //通过WaitAll捕获异常
             //WaitAllException();
+            //直接从线程结果中获取异常信息
             //GetException(6, 0);
             Console.ReadLine();
         }
 
+
         #region 通过Wait捕获异常
+        /// <summary>
+        /// 通过wait可以捕获Task内部的异常
+        /// </summary>
         public static void WaitException()
         {
             try
