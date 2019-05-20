@@ -17,11 +17,16 @@ namespace TaskCancellationToken
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            test();
+            // 取消任意一个任务，则所有任务都取消
+            CancellationTokenAllTest();
+            // 取消单个任务
             //CancellationTokenTest();
         }
 
-        public static void test()
+        /// <summary>
+        /// 取消任意一个任务，则所有任务都取消
+        /// </summary>
+        public static void CancellationTokenAllTest()
         {
             var task = Task.Factory.StartNew(() =>
             {
@@ -42,11 +47,10 @@ namespace TaskCancellationToken
             //等待用户输入
             var input = Console.ReadLine();
 
-            //如果输入了0，则取消这个任务;
+            //如果输入了0，则取消c1这个任务，c1取消后，符合管理compositeCancel的状态都取消
             if (Convert.ToInt32(input) == 0)
             {
-
-                //任意一个 CancellationTokenSource 取消任务，那么所有任务都会被取消。
+                //任意一个 CancellationTokenSource 取消任务，那么所有任务都会被取消
                 c1.Cancel();
             }
         }
