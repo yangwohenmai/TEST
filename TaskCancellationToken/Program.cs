@@ -6,17 +6,56 @@ namespace TaskCancellationToken
 {
     class Program
     {
+        //声明CancellationTokenSource对象
+        static CancellationTokenSource c1 = new CancellationTokenSource();
+        static CancellationTokenSource c2 = new CancellationTokenSource();
+        static CancellationTokenSource c3 = new CancellationTokenSource();
+
+        //使用多个CancellationTokenSource进行复合管理
+        static CancellationTokenSource compositeCancel = CancellationTokenSource.CreateLinkedTokenSource(c1.Token, c2.Token, c3.Token);
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            tasktest2();
+            test();
+            //CancellationTokenTest();
+        }
+
+        public static void test()
+        {
+            var task = Task.Factory.StartNew(() =>
+            {
+                for (var i = 1; i < 1000; i++)
+                {
+                    Console.WriteLine("Hello World!");
+                    Thread.Sleep(1000);
+                    //判断是否取消任务，取消为true；不取消为false
+                    if (compositeCancel.IsCancellationRequested)
+                    {
+                        Console.Write("取消任务成功！");
+                        return;
+                    }
+                }
+            }, compositeCancel.Token);
+
+
+            //等待用户输入
+            var input = Console.ReadLine();
+
+            //如果输入了0，则取消这个任务;
+            if (Convert.ToInt32(input) == 0)
+            {
+
+                //任意一个 CancellationTokenSource 取消任务，那么所有任务都会被取消。
+                c1.Cancel();
+            }
         }
 
 
         /// <summary>
         /// 
         /// </summary>
-        public static void tasktest2()
+        public static void CancellationTokenTest()
         {
             //通知 System.Threading.CancellationToken，告知其应被取消。
             CancellationTokenSource TokenSource = new CancellationTokenSource();
