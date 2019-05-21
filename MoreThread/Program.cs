@@ -14,11 +14,14 @@ namespace MoreThread
         public static void Main(string[] args)
         {
             //通过Wait捕获异常
-            WaitException();
+            //WaitException();
             //通过WaitAll捕获异常
             //WaitAllException();
+            //通过ContinueWith设置TaskContinuationOptions参数来捕获异常
+            ContinueWithException(6, 0);
             //直接从线程结果中获取异常信息
             //GetException(6, 0);
+            Console.WriteLine("主线程完毕");
             Console.ReadLine();
         }
 
@@ -83,17 +86,59 @@ namespace MoreThread
 
 
 
+        #region 通过ContinueWith设置TaskContinuationOptions参数来捕获异常
+        public static void ContinueWithException(int x, int y)
+        {
+            Task<string> t = Task.Run<string>(() => 
+            {
+                Thread.Sleep(3000);
+                Console.WriteLine("我是线程还在异步执行");
+                return Sumt(x, y).ToString();
+            });
+            
+            //NotOnFaulted表示如果没有异常，才会执行ContinueWith内部的代码，但此时线程不会阻塞
+            //t.ContinueWith(r => 
+            //{
+            //    string Exception = Convert.ToString(t.Exception); 
+            //    Console.WriteLine("异常信息1：" + Exception);
+            //}, TaskContinuationOptions.NotOnFaulted);
+            //Console.WriteLine("继续异步执行1");
+
+            //OnlyOnFaulted表示如果有异常，才会执行ContinueWith内部的代码，但此时线程不会被阻塞
+            t.ContinueWith(r =>
+            {
+                //Thread.Sleep(3000);
+                string Exception = Convert.ToString(t.Exception);
+                Console.WriteLine("异常信息2：" + Exception);
+            }, TaskContinuationOptions.OnlyOnFaulted);
+            
+            Console.WriteLine("继续异步执行2");
+
+
+            //askContinuationOptions.OnlyOnFaulted表示：指定只应在延续任务前面的任务引发了未处理异常的情况下才安排延续任务。 此选项对多任务延续无效。【即：只有在发生异常的情况下才将异常信息记录到日志】
+        }
+        private static int Sumt(int x, int y)
+        {
+            return x / y;
+        }
+        #endregion
+
+
+
+
+
+
         #region 对于线程，外层的catch抓不住线程的报错，通过t.Exception对象获取线程的异常
         public static void GetException(int x, int y)
         {
             Task<string> t = Task.Run<string>(() => { return Sum(x, y).ToString(); });
             Thread.Sleep(8000);
-            t.ContinueWith(r => { Console.WriteLine("异常信息：" + t.Exception.InnerException.Message); });
+            //t.ContinueWith(r => { Console.WriteLine("异常信息：" + t.Exception.InnerException.Message); });
             if (t.IsCompleted == true)
             {
                 if (t.Exception != null)//Exception对象不为null
                     if (t.Exception.InnerExceptions.Count > 0)//内部异常信息数量大于0
-                        if (string.IsNullOrEmpty(t.Exception.Message))//ErrorMessage不为空
+                        if (!string.IsNullOrEmpty(t.Exception.Message))//ErrorMessage不为空
                             Console.WriteLine("异常信息：" + t.Exception.InnerException.Message);
             }
 

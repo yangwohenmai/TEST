@@ -13,11 +13,11 @@ namespace TaskException
         public static void Main(string[] args)
         {
             //通过Wait捕获异常
-            WaitException();
+            //WaitException();
             //通过WaitAll捕获异常
             //WaitAllException();
             //直接从线程结果中获取异常信息
-            //GetException(6, 0);
+            GetException(6, 0);
             Console.ReadLine();
         }
 
@@ -87,7 +87,7 @@ namespace TaskException
         {
             Task<string> t = Task.Run<string>(() => { return Sum(x, y).ToString(); });
             Thread.Sleep(8000);
-            t.ContinueWith(r => { Console.WriteLine("异常信息：" + t.Exception.InnerException.Message); });
+            //t.ContinueWith(r => { Console.WriteLine("异常信息：" + t.Exception.InnerException.Message); });
             if (t.IsCompleted == true)
             {
                 if (t.Exception != null)//Exception对象不为null
