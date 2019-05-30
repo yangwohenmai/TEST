@@ -17,7 +17,7 @@ namespace TaskCancellationToken
         static void Main(string[] args)
         {
             // 取消任意一个任务，则所有任务都取消
-            CancellationTokenAllTest();
+            //CancellationTokenAllTest();
             // 取消单个任务
             //CancellationTokenTest();
         }
@@ -60,7 +60,7 @@ namespace TaskCancellationToken
 
 
 
-
+        #region 取消单个任务
         /// <summary>
         /// 
         /// </summary>
@@ -72,7 +72,12 @@ namespace TaskCancellationToken
             var task = Task.Factory.StartNew(() => DoWork(TokenSource.Token), TokenSource.Token);
 
             //在这里还可以给token注册了一个方法，输出一条信息  用户输入0后，执行tokenSource.Cancel方法取消任务。这个取消任务执行后，会执行这个代码.
-            TokenSource.Token.Register(() => { Console.WriteLine("取消");Console.WriteLine("我点击了取消");return; });
+            TokenSource.Token.Register(() => 
+            {
+                Console.WriteLine("取消");
+                Console.WriteLine("我点击了取消");
+                return;
+            });
 
             //等待用户输入
             var input = Console.ReadLine();
@@ -118,5 +123,6 @@ namespace TaskCancellationToken
                 }
             }
         }
+        #endregion
     }
 }

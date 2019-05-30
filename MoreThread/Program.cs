@@ -86,7 +86,7 @@ namespace MoreThread
 
 
 
-        #region 通过ContinueWith设置TaskContinuationOptions参数来捕获异常
+        #region 通过ContinueWith设置TaskContinuationOptions参数来捕获异常（推荐）
         public static void ContinueWithException(int x, int y)
         {
             Task<string> t = Task.Run<string>(() => 
