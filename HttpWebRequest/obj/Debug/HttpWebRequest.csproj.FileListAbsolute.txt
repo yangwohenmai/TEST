@@ -5,3 +5,6 @@ E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csprojAssemblyReference.ca
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.exe
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.pdb
+E:\MyGit\TEST\HttpWebRequest\bin\Debug\Newtonsoft.Json.dll
+E:\MyGit\TEST\HttpWebRequest\bin\Debug\Newtonsoft.Json.xml
+E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CopyComplete

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -14,7 +16,29 @@ namespace HttpWebRequest1
         static void Main(string[] args)
         {
             var hp = new HttpRequestClient();
-            hp.httpGet("https://www.baidu.com/s?wd=java", HttpRequestClient.defaultHeaders);
+            //访问网站
+            string reslut = hp.httpGet("https://www.hkex.com.hk/?sc_lang=EN", HttpRequestClient.defaultHeaders);
+            //定位token字符串头
+            int index_head = reslut.IndexOf("evLtsLs");
+            string InitToken = reslut.Substring(index_head, 100);
+            //定位token字符串尾
+            int index_last = InitToken.IndexOf('"');
+            //截取token
+            string Token = reslut.Substring(index_head, index_last);
+            //拼接链接字符串
+            string link = string.Format("https://www1.hkex.com.hk/hkexwidget/data/getequityquote?sym=1&token={0}&lang=eng&qid=NULL&callback=0", Token);
+            //从港交所接口获取数据
+            string data = hp.httpGet(link, HttpRequestClient.defaultHeaders);
+            //解析Json数据
+            JObject lastdata = JsonConvert.DeserializeObject<JObject>(data.Substring(2,data.Length-3));
+            Console.WriteLine("hi:" + lastdata["data"]["quote"]["hi"]);
+            Console.WriteLine("fiscal_year_end:" + lastdata["data"]["quote"]["fiscal_year_end"]);
+            Console.WriteLine("amt_os:" + lastdata["data"]["quote"]["amt_os"]);
+            Console.WriteLine("primaryexch:" + lastdata["data"]["quote"]["primaryexch"]);
+            Console.WriteLine("db_updatetime:" + lastdata["data"]["quote"]["db_updatetime"]);
+            Console.WriteLine("ric:" + lastdata["data"]["quote"]["ric"]);
+            Console.WriteLine("eps:" + lastdata["data"]["quote"]["eps"]);
+            Console.ReadLine();
         }
 
 
@@ -49,13 +73,13 @@ namespace HttpWebRequest1
         /// 默认的头
         /// </summary>
         public static string defaultHeaders = @"Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Encoding:gzip, deflate, sdch
-Accept-Language:zh-CN,zh;q=0.8
-Cache-Control:no-cache
-Connection:keep-alive
-Pragma:no-cache
-Upgrade-Insecure-Requests:1
-User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
+        Accept-Encoding:gzip, deflate, sdch
+        Accept-Language:zh-CN,zh;q=0.8
+        Cache-Control:no-cache
+        Connection:keep-alive
+        Pragma:no-cache
+        Upgrade-Insecure-Requests:1
+        User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
 
         /// <summary>
         /// 是否跟踪cookies
@@ -156,7 +180,7 @@ User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like G
                     {
                         var kv = item.Split('=');
                         if (kv.Length == 2)
-                            cc.Add(new Cookie(kv[0].Trim(), kv[1].Trim()));
+                            cc.Add(new Cookie(kv[0].Trim().ToString().Replace(",","|*|"), kv[1].Trim()));
                     }
                 }
                 trackCookies(cc);
@@ -165,7 +189,7 @@ User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like G
             {
                 sw.Stop();
                 AvgResponseMilliseconds = sw.ElapsedMilliseconds;
-                return "";
+                return ex.Message;
             }
 
             string result = getResponseBody(response);
