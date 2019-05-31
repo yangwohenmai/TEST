@@ -9,7 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpWebRequest1
+namespace HttpWebRequestTest
 {
     class Program
     {
@@ -30,18 +30,16 @@ namespace HttpWebRequest1
             //从港交所接口获取数据
             string data = hp.httpGet(link, HttpRequestClient.defaultHeaders);
             //解析Json数据
-            JObject lastdata = JsonConvert.DeserializeObject<JObject>(data.Substring(2,data.Length-3));
-            Console.WriteLine("hi:" + lastdata["data"]["quote"]["hi"]);
-            Console.WriteLine("fiscal_year_end:" + lastdata["data"]["quote"]["fiscal_year_end"]);
-            Console.WriteLine("amt_os:" + lastdata["data"]["quote"]["amt_os"]);
-            Console.WriteLine("primaryexch:" + lastdata["data"]["quote"]["primaryexch"]);
-            Console.WriteLine("db_updatetime:" + lastdata["data"]["quote"]["db_updatetime"]);
-            Console.WriteLine("ric:" + lastdata["data"]["quote"]["ric"]);
-            Console.WriteLine("eps:" + lastdata["data"]["quote"]["eps"]);
+            JObject JsonData = JsonConvert.DeserializeObject<JObject>(data.Substring(2,data.Length-3));
+            Console.WriteLine("hi:" + JsonData["data"]["quote"]["hi"]);
+            Console.WriteLine("fiscal_year_end:" + JsonData["data"]["quote"]["fiscal_year_end"]);
+            Console.WriteLine("amt_os:" + JsonData["data"]["quote"]["amt_os"]);
+            Console.WriteLine("primaryexch:" + JsonData["data"]["quote"]["primaryexch"]);
+            Console.WriteLine("db_updatetime:" + JsonData["data"]["quote"]["db_updatetime"]);
+            Console.WriteLine("ric:" + JsonData["data"]["quote"]["ric"]);
+            Console.WriteLine("eps:" + JsonData["data"]["quote"]["eps"]);
             Console.ReadLine();
         }
-
-
     }
 
     //zetee
