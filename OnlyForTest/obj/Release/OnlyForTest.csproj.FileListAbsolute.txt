@@ -1,0 +1,7 @@
+E:\MyGit\TEST\OnlyForTest\bin\Release\OnlyForTest.exe.config
+E:\MyGit\TEST\OnlyForTest\bin\Release\OnlyForTest.exe
+E:\MyGit\TEST\OnlyForTest\bin\Release\OnlyForTest.pdb
+E:\MyGit\TEST\OnlyForTest\obj\Release\OnlyForTest.csprojAssemblyReference.cache
+E:\MyGit\TEST\OnlyForTest\obj\Release\OnlyForTest.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\OnlyForTest\obj\Release\OnlyForTest.exe
+E:\MyGit\TEST\OnlyForTest\obj\Release\OnlyForTest.pdb

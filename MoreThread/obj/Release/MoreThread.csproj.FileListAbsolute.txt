@@ -1,7 +1,6 @@
 E:\MyGit\TEST\MoreThread\bin\Release\MoreThread.exe.config
 E:\MyGit\TEST\MoreThread\bin\Release\MoreThread.exe
 E:\MyGit\TEST\MoreThread\bin\Release\MoreThread.pdb
-E:\MyGit\TEST\MoreThread\obj\Release\MoreThread.csprojAssemblyReference.cache
 E:\MyGit\TEST\MoreThread\obj\Release\MoreThread.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\MoreThread\obj\Release\MoreThread.exe
 E:\MyGit\TEST\MoreThread\obj\Release\MoreThread.pdb

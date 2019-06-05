@@ -1,0 +1,6 @@
+E:\MyGit\TEST\SetConfiguration\bin\Release\SetConfiguration.exe.config
+E:\MyGit\TEST\SetConfiguration\bin\Release\SetConfiguration.exe
+E:\MyGit\TEST\SetConfiguration\bin\Release\SetConfiguration.pdb
+E:\MyGit\TEST\SetConfiguration\obj\Release\SetConfiguration.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\SetConfiguration\obj\Release\SetConfiguration.exe
+E:\MyGit\TEST\SetConfiguration\obj\Release\SetConfiguration.pdb

@@ -1,0 +1,6 @@
+E:\MyGit\TEST\ThreadStart\bin\Release\ThreadStart.exe.config
+E:\MyGit\TEST\ThreadStart\bin\Release\ThreadStart.exe
+E:\MyGit\TEST\ThreadStart\bin\Release\ThreadStart.pdb
+E:\MyGit\TEST\ThreadStart\obj\Release\ThreadStart.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\ThreadStart\obj\Release\ThreadStart.exe
+E:\MyGit\TEST\ThreadStart\obj\Release\ThreadStart.pdb

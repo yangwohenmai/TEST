@@ -1,0 +1,7 @@
+E:\MyGit\TEST\TEST\bin\Release\TEST.exe.config
+E:\MyGit\TEST\TEST\bin\Release\TEST.exe
+E:\MyGit\TEST\TEST\bin\Release\TEST.pdb
+E:\MyGit\TEST\TEST\obj\Release\TEST.csprojAssemblyReference.cache
+E:\MyGit\TEST\TEST\obj\Release\TEST.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\TEST\obj\Release\TEST.exe
+E:\MyGit\TEST\TEST\obj\Release\TEST.pdb

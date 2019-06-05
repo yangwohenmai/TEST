@@ -1,0 +1,11 @@
+E:\MyGit\TEST\MathNet\bin\Release\MathNet.exe.config
+E:\MyGit\TEST\MathNet\bin\Release\MathNet.exe
+E:\MyGit\TEST\MathNet\bin\Release\MathNet.pdb
+E:\MyGit\TEST\MathNet\bin\Release\MathNet.Numerics.dll
+E:\MyGit\TEST\MathNet\bin\Release\System.Data.SqlClient.dll
+E:\MyGit\TEST\MathNet\bin\Release\MathNet.Numerics.xml
+E:\MyGit\TEST\MathNet\obj\Release\MathNet.csprojAssemblyReference.cache
+E:\MyGit\TEST\MathNet\obj\Release\MathNet.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\MathNet\obj\Release\MathNet.csproj.CopyComplete
+E:\MyGit\TEST\MathNet\obj\Release\MathNet.exe
+E:\MyGit\TEST\MathNet\obj\Release\MathNet.pdb

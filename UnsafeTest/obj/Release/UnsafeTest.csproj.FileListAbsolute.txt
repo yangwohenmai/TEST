@@ -1,0 +1,1 @@
+E:\MyGit\TEST\UnsafeTest\obj\Release\UnsafeTest.csproj.CoreCompileInputs.cache

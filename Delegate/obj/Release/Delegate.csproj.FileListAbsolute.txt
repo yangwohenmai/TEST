@@ -1,0 +1,6 @@
+E:\MyGit\TEST\Delegate\bin\Release\Delegate.exe.config
+E:\MyGit\TEST\Delegate\bin\Release\Delegate.exe
+E:\MyGit\TEST\Delegate\bin\Release\Delegate.pdb
+E:\MyGit\TEST\Delegate\obj\Release\Delegate.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\Delegate\obj\Release\Delegate.exe
+E:\MyGit\TEST\Delegate\obj\Release\Delegate.pdb

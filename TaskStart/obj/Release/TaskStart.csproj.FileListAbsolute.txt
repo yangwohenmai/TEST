@@ -1,0 +1,6 @@
+E:\MyGit\TEST\TaskStart\bin\Release\TaskStart.exe.config
+E:\MyGit\TEST\TaskStart\bin\Release\TaskStart.exe
+E:\MyGit\TEST\TaskStart\bin\Release\TaskStart.pdb
+E:\MyGit\TEST\TaskStart\obj\Release\TaskStart.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\TaskStart\obj\Release\TaskStart.exe
+E:\MyGit\TEST\TaskStart\obj\Release\TaskStart.pdb

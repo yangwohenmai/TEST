@@ -1,0 +1,6 @@
+E:\MyGit\TEST\DoXML\bin\Release\DoXML.exe.config
+E:\MyGit\TEST\DoXML\bin\Release\DoXML.exe
+E:\MyGit\TEST\DoXML\bin\Release\DoXML.pdb
+E:\MyGit\TEST\DoXML\obj\Release\DoXML.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\DoXML\obj\Release\DoXML.exe
+E:\MyGit\TEST\DoXML\obj\Release\DoXML.pdb

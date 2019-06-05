@@ -1,0 +1,6 @@
+E:\MyGit\TEST\WebMapping\bin\Release\WebMapping.exe.config
+E:\MyGit\TEST\WebMapping\bin\Release\WebMapping.exe
+E:\MyGit\TEST\WebMapping\bin\Release\WebMapping.pdb
+E:\MyGit\TEST\WebMapping\obj\Release\WebMapping.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\WebMapping\obj\Release\WebMapping.exe
+E:\MyGit\TEST\WebMapping\obj\Release\WebMapping.pdb

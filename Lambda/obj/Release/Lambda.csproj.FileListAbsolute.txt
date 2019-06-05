@@ -1,0 +1,6 @@
+E:\MyGit\TEST\Lambda\bin\Release\Lambda.exe.config
+E:\MyGit\TEST\Lambda\bin\Release\Lambda.exe
+E:\MyGit\TEST\Lambda\bin\Release\Lambda.pdb
+E:\MyGit\TEST\Lambda\obj\Release\Lambda.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\Lambda\obj\Release\Lambda.exe
+E:\MyGit\TEST\Lambda\obj\Release\Lambda.pdb

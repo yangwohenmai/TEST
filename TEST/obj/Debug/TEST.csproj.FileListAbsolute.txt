@@ -14,7 +14,6 @@ C:/Users/admin/Desktop/TEST/TEST/obj/Debug/TEST.csprojResolveAssemblyReference.c
 E:\MyGit\TEST\TEST\bin\Debug\TEST.exe.config
 E:\MyGit\TEST\TEST\bin\Debug\TEST.exe
 E:\MyGit\TEST\TEST\bin\Debug\TEST.pdb
+E:\MyGit\TEST\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\TEST\obj\Debug\TEST.exe
 E:\MyGit\TEST\TEST\obj\Debug\TEST.pdb
-E:\MyGit\TEST\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\TEST\obj\Debug\TEST.csprojAssemblyReference.cache

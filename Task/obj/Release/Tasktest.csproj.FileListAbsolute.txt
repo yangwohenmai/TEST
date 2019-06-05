@@ -1,0 +1,6 @@
+E:\MyGit\TEST\Task\bin\Release\Task.exe.config
+E:\MyGit\TEST\Task\bin\Release\Task.exe
+E:\MyGit\TEST\Task\bin\Release\Task.pdb
+E:\MyGit\TEST\Task\obj\Release\Tasktest.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\Task\obj\Release\Task.exe
+E:\MyGit\TEST\Task\obj\Release\Task.pdb

@@ -1,0 +1,6 @@
+E:\MyGit\TEST\GetData\bin\Release\GetData.exe.config
+E:\MyGit\TEST\GetData\bin\Release\GetData.exe
+E:\MyGit\TEST\GetData\bin\Release\GetData.pdb
+E:\MyGit\TEST\GetData\obj\Release\GetData.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\GetData\obj\Release\GetData.exe
+E:\MyGit\TEST\GetData\obj\Release\GetData.pdb

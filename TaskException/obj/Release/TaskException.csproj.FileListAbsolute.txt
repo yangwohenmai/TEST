@@ -1,0 +1,6 @@
+E:\MyGit\TEST\TaskException\bin\Release\TaskException.exe.config
+E:\MyGit\TEST\TaskException\bin\Release\TaskException.exe
+E:\MyGit\TEST\TaskException\bin\Release\TaskException.pdb
+E:\MyGit\TEST\TaskException\obj\Release\TaskException.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\TaskException\obj\Release\TaskException.exe
+E:\MyGit\TEST\TaskException\obj\Release\TaskException.pdb

@@ -1,0 +1,6 @@
+E:\MyGit\TEST\ResetEvent\bin\Release\ResetEvent.exe.config
+E:\MyGit\TEST\ResetEvent\bin\Release\ResetEvent.exe
+E:\MyGit\TEST\ResetEvent\bin\Release\ResetEvent.pdb
+E:\MyGit\TEST\ResetEvent\obj\Release\ResetEvent.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\ResetEvent\obj\Release\ResetEvent.exe
+E:\MyGit\TEST\ResetEvent\obj\Release\ResetEvent.pdb

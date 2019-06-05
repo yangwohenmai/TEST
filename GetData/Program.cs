@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GetData
 {
@@ -13,18 +15,244 @@ namespace GetData
     {
         static void Main(string[] args)
         {
-            cal();
+            Console.WriteLine("BEGIN");
+            Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
+            Dictionary<string, SortedList<string, string>> listnew = getdatago(list, "select * from chdquote with(nolock) where tdate <20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            Console.WriteLine("GET");
+            Dictionary<string, SortedList<string, string>> listnew1 = getdatago(listnew, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            //DataTable dt = GetChdquote();
+            Console.WriteLine("GET1");
+            foreach (var sort in listnew1)
+            {
+                foreach (var item in sort.Value)
+                {
+                    AddLog(sort.Key, item.Value);
+                }
+            }
+            //creatTxt(dt);
+            Console.WriteLine("FINISH");
+            //string ColumnName = "";
+            //for (int i = 0; i < dt.Columns.Count; i++)
+            //{
+            //    ColumnName += dt.Columns[i].ColumnName.ToString()+",";
+            //}
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    string a = dt.Rows[i]["TDATE"].ToString();
+            //    string a = dt.Rows[i]["EXCHANGE"].ToString();
+            //    string a = dt.Rows[i]["SYMBOL"].ToString();
+            //    string a = dt.Rows[i]["SNAME"].ToString();
+            //    string a = dt.Rows[i]["LCLOSE"].ToString();
+            //    string a = dt.Rows[i]["TOPEN"].ToString();
+            //    string a = dt.Rows[i]["TCLOSE"].ToString();
+            //    string a = dt.Rows[i]["HIGH"].ToString();
+            //    string a = dt.Rows[i]["LOW"].ToString();
+            //    string a = dt.Rows[i]["VOTURNOVER"].ToString();
+            //    string a = dt.Rows[i]["VATURNOVER"].ToString();
+            //    string a = dt.Rows[i]["NDEALS"].ToString();
+            //    string a = dt.Rows[i]["AVGPRICE"].ToString();
+            //    string a = dt.Rows[i]["AVGVOLPD"].ToString();
+            //    string a = dt.Rows[i]["AVGVAPD"].ToString();
+            //    string a = dt.Rows[i]["CHG"].ToString();
+            //    string a = dt.Rows[i]["PCHG"].ToString();
+            //    string a = dt.Rows[i]["PRANGE"].ToString();
+            //    string a = dt.Rows[i]["MCAP"].ToString();
+            //    string a = dt.Rows[i]["TCAP"].ToString();
+            //    string a = dt.Rows[i]["TURNOVER"].ToString();
+            //    string a = dt.Rows[i]["ENTRYDATE"].ToString();
+            //    string a = dt.Rows[i]["ENTRYTIME"].ToString();
+
+            //}
+            //cal();
+        }
+
+        public static void AddLog(string filename, string message)
+        {
+            //StreamWriter sw = null;
+            string logFile = "D:\\logs\\" + filename + ".txt";
+            //FileStream fs = new FileStream(logFile, FileMode.Create, FileAccess.ReadWrite);
+            //StreamWriter sw = new StreamWriter(fs, Encoding.GetEncoding("GB2312"));
+            try
+            {
+                File.AppendAllText(logFile, message + "\r\n", Encoding.GetEncoding("GB2312"));
+                //if (File.Exists(logFile))
+                //{
+                //    File.AppendAllText(logFile, message + "\r\n", Encoding.GetEncoding("GB2312"));
+                //    //File.AppendAllLines
+                //}
+                //else
+                //{
+                //    //File.CreateText(logFile);
+                //    File.AppendAllText(logFile, message + "\r\n", Encoding.GetEncoding("GB2312"));
+                //}
+                //sw.WriteLine(message);
+                //sw.WriteLine(message + "\r\n");
+            }
+            catch (Exception ex)
+            {
+                string a = ex.ToString();
+
+            }
+            finally
+            {
+                //if (sw != null)
+                //{
+                    //sw.Close();
+                //}
+            }
         }
 
 
-        public static DataTable getdata()
+        public static DataTable GetChdquote()
+        {
+            DataTable dt = getdata("select * from chdquote with(nolock) WHERE TDATE>20160101");
+            return dt;
+        }
+
+        public static void creatTxt(DataTable dt)
+        {
+            string fn = DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + "PO014" + ".txt";
+            //String conStr = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=C:\\Users\\yangzo\\Desktop\\C5S6\\CID.xls;" + "Extended Properties=Excel 8.0;";
+            //OleDbConnection con = new OleDbConnection(conStr);
+            //con.Open();
+            //string sql = "select code,name,type from [Sheet2$]";
+            ////OleDbCommand mycom = new OleDbCommand("select * from TSD_PO014", mycon);
+            ////OleDbDataReader myreader = mycom.ExecuteReader(); //也可以用Reader读取数据
+            //DataSet ds = new DataSet();
+            //OleDbDataAdapter oda = new OleDbDataAdapter(sql, con);
+            //oda.Fill(ds, "PO014");
+
+
+
+            //DataTable dt = ds.Tables[0];
+            FileStream fs = new FileStream("D:\\" + fn, FileMode.Create, FileAccess.ReadWrite);
+            StreamWriter strmWriter = new StreamWriter(fs, Encoding.GetEncoding("GB2312"));    //存入到文本文件中 
+            //把标题写入.txt文件中
+            string str = ",";
+            string ColumnName = "";
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                ColumnName += dt.Columns[i].ColumnName.ToString() + ",";
+            }
+            strmWriter.Write(ColumnName);
+            strmWriter.WriteLine(); //换行
+
+            //数据用"|"分隔开
+            foreach (DataRow dr in dt.Rows)
+            {
+                strmWriter.Write(dr[0].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[1].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[2].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[3].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[4].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[5].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[6].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[7].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[8].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[9].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[10].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[11].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[12].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[13].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[14].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[15].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[16].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[17].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[18].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[19].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[20].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[21].ToString());
+                strmWriter.Write(str);
+                strmWriter.Write(dr[22].ToString());
+                strmWriter.Write(str);
+                strmWriter.WriteLine(); //换行
+            }
+            strmWriter.Flush();
+            strmWriter.Close();
+            //if (con.State == ConnectionState.Open)
+            //{
+            //    con.Close();
+            //}
+        }
+
+        public static Dictionary<string, SortedList<string, string>> getdatago(Dictionary<string, SortedList<string, string>> list, string sql,string dbcon)
+        {
+            SqlConnection conn = null;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr = null;
+
+            try
+            {
+                conn = new SqlConnection(dbcon);
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.CommandTimeout = 1200;
+                conn.Open();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                //conn.Close();
+            }
+
+            Dictionary<string, SortedList<string,string>> ListDic = list;
+            while (dr.Read())
+            {
+                string str = "";
+                for (int i = 0; i < 23; i++)
+                {
+                    str += dr[i] + ",";
+                }
+                if (!ListDic.ContainsKey(dr[2].ToString()))
+                {
+                    SortedList<string, string> sort = new SortedList<string, string>();
+                    sort.Add(dr[0].ToString(), str);
+                    ListDic[dr[2].ToString()] = sort;
+                }
+                else
+                {
+                    ListDic[dr[2].ToString()][dr[0].ToString()] = str;
+                }
+            }
+            return ListDic;
+        }
+
+
+        public static DataTable getdata(string sql)
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection())
             {
                 conn.ConnectionString = "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1";
                 conn.Open(); // 打开数据库连接
-                String sql = "select tdate,chg from cihdquote with (nolock) where symbol='000001' order by tdate desc"; // 查询语句
+                
+                //String sql = "select tdate,chg from cihdquote with (nolock) where symbol='000001' order by tdate desc"; // 查询语句
+
                 SqlDataAdapter myda = new SqlDataAdapter(sql, conn); // 实例化适配器
                 myda.Fill(dt); // 保存数据 
                 conn.Close(); // 关闭数据库连接
@@ -47,7 +275,7 @@ namespace GetData
 
 
             DataTable dt = new DataTable();
-            dt = getdata();
+            dt = getdata("");
             int T = 0;
             Dictionary<string, string> dicData = new Dictionary<string, string>();
             

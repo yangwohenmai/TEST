@@ -1,6 +1,6 @@
 E:\MyGit\TEST\DoXML\bin\Debug\DoXML.exe.config
 E:\MyGit\TEST\DoXML\bin\Debug\DoXML.exe
 E:\MyGit\TEST\DoXML\bin\Debug\DoXML.pdb
+E:\MyGit\TEST\DoXML\obj\Debug\DoXML.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\DoXML\obj\Debug\DoXML.exe
 E:\MyGit\TEST\DoXML\obj\Debug\DoXML.pdb
-E:\MyGit\TEST\DoXML\obj\Debug\DoXML.csproj.CoreCompileInputs.cache

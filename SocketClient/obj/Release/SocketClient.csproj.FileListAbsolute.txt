@@ -1,0 +1,6 @@
+E:\MyGit\TEST\SocketClient\bin\Release\SocketClient.exe.config
+E:\MyGit\TEST\SocketClient\bin\Release\SocketClient.exe
+E:\MyGit\TEST\SocketClient\bin\Release\SocketClient.pdb
+E:\MyGit\TEST\SocketClient\obj\Release\SocketClient.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\SocketClient\obj\Release\SocketClient.exe
+E:\MyGit\TEST\SocketClient\obj\Release\SocketClient.pdb

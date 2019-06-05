@@ -1,0 +1,6 @@
+E:\MyGit\TEST\MaxPayBack\bin\Release\MaxPayBack.exe.config
+E:\MyGit\TEST\MaxPayBack\bin\Release\MaxPayBack.exe
+E:\MyGit\TEST\MaxPayBack\bin\Release\MaxPayBack.pdb
+E:\MyGit\TEST\MaxPayBack\obj\Release\MaxPayBack.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\MaxPayBack\obj\Release\MaxPayBack.exe
+E:\MyGit\TEST\MaxPayBack\obj\Release\MaxPayBack.pdb

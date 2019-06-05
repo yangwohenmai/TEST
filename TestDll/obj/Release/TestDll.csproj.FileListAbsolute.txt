@@ -1,0 +1,5 @@
+E:\MyGit\TEST\TestDll\bin\Release\TestDll.dll
+E:\MyGit\TEST\TestDll\bin\Release\TestDll.pdb
+E:\MyGit\TEST\TestDll\obj\Release\TestDll.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\TestDll\obj\Release\TestDll.dll
+E:\MyGit\TEST\TestDll\obj\Release\TestDll.pdb

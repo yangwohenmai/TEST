@@ -13,8 +13,7 @@ E:\MyGit\TEST\MathNet\bin\Debug\MathNet.pdb
 E:\MyGit\TEST\MathNet\bin\Debug\MathNet.Numerics.dll
 E:\MyGit\TEST\MathNet\bin\Debug\System.Data.SqlClient.dll
 E:\MyGit\TEST\MathNet\bin\Debug\MathNet.Numerics.xml
-E:\MyGit\TEST\MathNet\obj\Debug\MathNet.exe
-E:\MyGit\TEST\MathNet\obj\Debug\MathNet.pdb
-E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csprojAssemblyReference.cache
 E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csproj.CopyComplete
+E:\MyGit\TEST\MathNet\obj\Debug\MathNet.exe
+E:\MyGit\TEST\MathNet\obj\Debug\MathNet.pdb

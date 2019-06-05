@@ -4,4 +4,3 @@ E:\MyGit\TEST\TaskException\bin\Debug\TaskException.pdb
 E:\MyGit\TEST\TaskException\obj\Debug\TaskException.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\TaskException\obj\Debug\TaskException.exe
 E:\MyGit\TEST\TaskException\obj\Debug\TaskException.pdb
-E:\MyGit\TEST\TaskException\obj\Debug\TaskException.csprojAssemblyReference.cache
