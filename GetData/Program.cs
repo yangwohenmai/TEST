@@ -13,22 +13,41 @@ namespace GetData
 {
     class Program
     {
+        static string title = "";
         static void Main(string[] args)
         {
             Console.WriteLine("BEGIN");
-            Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
-            Dictionary<string, SortedList<string, string>> listnew = getdatago(list, "select * from chdquote with(nolock) where tdate <20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+
+            Dictionary<string, SortedList<string, string>> listnew = CHDQUOTE.GetCHDQUOTE();
+            #region 读取股票数据
+            //Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
+            //Dictionary<string, SortedList<string, string>> listnew = getdatago(list, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            #endregion
+
             Console.WriteLine("GET");
-            Dictionary<string, SortedList<string, string>> listnew1 = getdatago(listnew, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            //Dictionary<string, SortedList<string, string>> listnew1 = getdatago(listnew, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
             //DataTable dt = GetChdquote();
-            Console.WriteLine("GET1");
-            foreach (var sort in listnew1)
+            //Console.WriteLine("GET1");
+            foreach (var sort in listnew)
             {
                 foreach (var item in sort.Value)
                 {
                     AddLog(sort.Key, item.Value);
                 }
             }
+
+
+            //list = new Dictionary<string, SortedList<string, string>>();
+            //Dictionary<string, SortedList<string, string>> listnew1 = getdatago(listnew, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            //foreach (var sort in listnew1)
+            //{
+            //    foreach (var item in sort.Value)
+            //    {
+            //        AddLog(sort.Key, item.Value);
+            //    }
+            //}
+
+
             //creatTxt(dt);
             Console.WriteLine("FINISH");
             //string ColumnName = "";
@@ -260,7 +279,10 @@ namespace GetData
             return dt;
         }
 
-
+        /// <summary>
+        /// 大盘统计
+        /// </summary>
+        /// <returns></returns>
         public static DataTable cal()
         {
             DataTable dtWeek = new DataTable();

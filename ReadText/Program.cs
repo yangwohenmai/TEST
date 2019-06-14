@@ -21,6 +21,40 @@ namespace ReadText
             Console.ReadKey();
         }
 
+        public void read()
+        {
+            FileStream fs = new FileStream("C:\\Users\\yangzo\\Desktop\\C5S6\\CID.csv", FileMode.Open, FileAccess.Read, FileShare.None);
+            //StreamReader sr = new StreamReader(fs, System.Text.Encoding.GetEncoding(936));
+            StreamReader sr = new StreamReader(fs, Encoding.GetEncoding("GB2312"));
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("f");
+            dt.Columns.Add("s");
+            dt.Columns.Add("d");
+            string str = "";
+            string s = Console.ReadLine();
+            while (str != null)
+            {
+
+                str = sr.ReadLine();
+                string[] xu = new String[3];
+                if (str != null)
+                {
+                    xu = str.Split(',');
+                    string ser = xu[0];
+                    string dse = xu[1];
+                    dt.Rows.Add(xu[0], xu[1], xu[2]);
+                }
+                //if (ser == s)
+                //{
+                //    Console.WriteLine(dse); 
+                //    break;
+                //}
+            }
+            sr.Close();
+            DataTable dtt = new DataTable();
+            dtt = dt;
+        }
 
 
         static private bool OpenCSVFile(ref DataTable mycsvdt, string filepath)
