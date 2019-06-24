@@ -75,7 +75,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadQueueWinFrom", "Threa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteText", "WriteText\WriteText.csproj", "{20B5BAFB-658F-494A-BA77-F425C9C38717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis", "Redis\Redis.csproj", "{57C07890-31F6-4582-921E-3CD85DA60B03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisMessageQueen", "Redis\RedisMessageQueen.csproj", "{57C07890-31F6-4582-921E-3CD85DA60B03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

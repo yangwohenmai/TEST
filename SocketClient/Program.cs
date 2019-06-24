@@ -13,9 +13,9 @@ namespace SocketClient
         static void Main(string[] args)
         {
             //短连接
-            shotlink("");
+            //shotlink("");
             //长连接
-            //longlink();
+            longlink();
         }
 
 
