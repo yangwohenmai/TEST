@@ -87,6 +87,7 @@ namespace RedisMessageQueen
             Console.ReadLine();
         }
 
+        //差集
         private static void CJ(RedisClient client)
         {
             var hashD = client.GetDifferencesFromSet("Set8001", new string[] { "Set8002" });  //[返回存在于第一个集合，但是不存在于其他集合的数据。差集]
@@ -96,6 +97,7 @@ namespace RedisMessageQueen
             }
         }
 
+        //交集
         private static void JJ(RedisClient client)
         {
             var hashG = client.GetIntersectFromSets(new string[] { "Set8001", "Set8002" });
@@ -105,6 +107,7 @@ namespace RedisMessageQueen
             }
         }
 
+        //合集
         private static void Union(RedisClient client)
         {
             client.AddItemToSet("Set8001", "A");
@@ -125,7 +128,7 @@ namespace RedisMessageQueen
         }
 
 
-
+        //加入有序集合
         private static void AddSortSet(RedisClient client)
         {
             client.AddItemToSortedSet("SetSorted1001", "1.qhh");
@@ -153,6 +156,7 @@ namespace RedisMessageQueen
 
         }
 
+        //加入Set
         private static void AddSet(RedisClient client)
         {
             client.AddItemToSet("Set1001", "qhh");
@@ -165,6 +169,7 @@ namespace RedisMessageQueen
             }
         }
 
+        //加入栈
         private static void AddStack(RedisClient client)
         {
             client.PushItemToList("StackListId", "1.qhh");  //入栈
@@ -177,6 +182,7 @@ namespace RedisMessageQueen
             }
         }
 
+        //加入队列
         private static void AddQueue(RedisClient client)
         {
             client.EnqueueItemOnList("QueueListId", "1.qhh");
@@ -189,6 +195,7 @@ namespace RedisMessageQueen
             }
         }
 
+        //加入哈希
         private static void Addhash(RedisClient client)
         {
             client.SetEntryInHash("HashId", "Name", "QHH");
@@ -201,6 +208,7 @@ namespace RedisMessageQueen
 
         }
 
+        //添加对象
         private static void AddPerson(RedisClient client)
         {
             var person = new Person() { Name = "qhh", Age = 26 };
@@ -209,6 +217,7 @@ namespace RedisMessageQueen
             Console.WriteLine("name=" + cachePerson.Name + "----age=" + cachePerson.Age);
         }
 
+        //添加字符串
         private static void AddString(RedisClient client)
         {
             client.Add("qhh", "qihaohao");
