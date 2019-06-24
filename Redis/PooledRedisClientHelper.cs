@@ -182,7 +182,6 @@ namespace RedisMessageQueen
         #endregion
 
         #region hash
-
         /// <summary>
         /// 获得某个hash型key下的所有字段
         /// </summary>
@@ -591,6 +590,10 @@ namespace RedisMessageQueen
             }
         }
     }
+
+    /// <summary>
+    /// 配置文件
+    /// </summary>
     public class ConfigHelper
     {
         /// <summary>
@@ -598,7 +601,11 @@ namespace RedisMessageQueen
         /// </summary>
         public static string ReadWriteHosts
         {
-            get { return "127.0.0.1:6379"; }
+            get
+            {
+                return "127.0.0.1:6379";
+                //<add key="ReadWriteHosts" value="127.0.0.1:6379" />
+            }
         }
 
         /// <summary>
@@ -607,17 +614,22 @@ namespace RedisMessageQueen
         /// <returns></returns>
         public static string ReadOnlyHosts
         {
-            get { return ConfigurationManager.AppSettings["ReadOnlyHosts"]; }
+            get
+            {
+                return "127.0.0.1:6379";
+                //<add key="ReadOnlyHosts" value="127.0.0.1:6379" />
+            }
         }
 
         /// <summary>
-        /// 服务项目验证GUID 的过期时间
+        /// 服务项目验证GUID 的过期时间以秒为单位
         /// </summary>
         public static int GuidPastTime
         {
             get
             {
-                return Convert.ToInt32(ConfigurationManager.AppSettings["GuidPastTime"]);
+                return Convert.ToInt32("5000");
+                //<add key="GuidPastTime" value="5000" />
             }
         }
     }
