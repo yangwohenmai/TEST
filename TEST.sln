@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteText", "WriteText\Writ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisMessageQueen", "Redis\RedisMessageQueen.csproj", "{57C07890-31F6-4582-921E-3CD85DA60B03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisSomeHelper", "RedisSomeHelper\RedisSomeHelper.csproj", "{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -483,6 +485,18 @@ Global
 		{57C07890-31F6-4582-921E-3CD85DA60B03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{57C07890-31F6-4582-921E-3CD85DA60B03}.Release|x64.ActiveCfg = Release|Any CPU
 		{57C07890-31F6-4582-921E-3CD85DA60B03}.Release|x64.Build.0 = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Debug|x64.Build.0 = Debug|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|x64.ActiveCfg = Release|Any CPU
+		{FCE921FD-CF3A-47F5-B31D-8AE85BA4CF49}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
