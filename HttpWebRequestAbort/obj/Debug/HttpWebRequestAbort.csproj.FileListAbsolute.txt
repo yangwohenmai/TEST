@@ -1,0 +1,7 @@
+E:\MyGit\TEST\HttpWebRequestAbort\bin\Debug\HttpWebRequestAbort.exe.config
+E:\MyGit\TEST\HttpWebRequestAbort\bin\Debug\HttpWebRequestAbort.exe
+E:\MyGit\TEST\HttpWebRequestAbort\bin\Debug\HttpWebRequestAbort.pdb
+E:\MyGit\TEST\HttpWebRequestAbort\obj\Debug\HttpWebRequestAbort.csprojAssemblyReference.cache
+E:\MyGit\TEST\HttpWebRequestAbort\obj\Debug\HttpWebRequestAbort.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\HttpWebRequestAbort\obj\Debug\HttpWebRequestAbort.exe
+E:\MyGit\TEST\HttpWebRequestAbort\obj\Debug\HttpWebRequestAbort.pdb
