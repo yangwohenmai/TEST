@@ -513,7 +513,7 @@ namespace RedisSomeHelper
         }
         #endregion
 
-        #region list operation
+        #region list
         /// <summary>
         /// 移除并返回key所对应列表的第一个元素
         /// </summary>
@@ -881,7 +881,7 @@ namespace RedisSomeHelper
 
         #endregion
 
-        #region key operation
+        #region key
         /// <summary>
         /// 移除指定key
         /// </summary>

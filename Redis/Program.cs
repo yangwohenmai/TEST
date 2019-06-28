@@ -45,12 +45,12 @@ namespace RedisMessageQueen
 
             #region 消息队列方法2，在cmd客户端通过 SUBSCRIBE <通道名称> 命令来监听
             Thread.Sleep(10000);
-            sub.Publish("redisMessages", "This message from C# program123");
+            sub.Publish("redisMessages", "This message from C# program");
             string pub = Console.ReadLine();
-            //连发十条消息
-            for (int i = 0; i < 10; i++)
+            //连发3条消息
+            for (int i = 0; i < 3; i++)
             {
-                sub.Publish("redisMessages", pub);
+                sub.Publish("redisMessages", pub + i);
             }
             #endregion
 
