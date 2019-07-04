@@ -7,3 +7,4 @@ E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CoreCompileInputs.c
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CopyComplete
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.exe
 E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.pdb
+E:\MyGit\TEST\HttpWebRequest\obj\Debug\HttpWebRequest.csprojAssemblyReference.cache

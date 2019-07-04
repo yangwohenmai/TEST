@@ -17,3 +17,4 @@ E:\MyGit\TEST\MoreThread1\bin\Debug\MoreThread1.pdb
 E:\MyGit\TEST\MoreThread1\obj\Debug\MoreThread1.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\MoreThread1\obj\Debug\MoreThread1.exe
 E:\MyGit\TEST\MoreThread1\obj\Debug\MoreThread1.pdb
+E:\MyGit\TEST\MoreThread1\obj\Debug\MoreThread1.csprojAssemblyReference.cache

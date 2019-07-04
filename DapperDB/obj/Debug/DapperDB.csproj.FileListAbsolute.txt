@@ -18,3 +18,4 @@ E:\MyGit\TEST\DapperDB\obj\Debug\DapperDB.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\DapperDB\obj\Debug\DapperDB.csproj.CopyComplete
 E:\MyGit\TEST\DapperDB\obj\Debug\DapperDB.exe
 E:\MyGit\TEST\DapperDB\obj\Debug\DapperDB.pdb
+E:\MyGit\TEST\DapperDB\obj\Debug\DapperDB.csprojAssemblyReference.cache

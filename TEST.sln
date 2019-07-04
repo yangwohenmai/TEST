@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisSomeHelper", "RedisSom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpWebRequestAbort", "HttpWebRequestAbort\HttpWebRequestAbort.csproj", "{3D71D819-DEE5-4D19-973B-6B74D387643F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCallPython", "CSharpCallPython\CSharpCallPython.csproj", "{4C047A36-47A2-4E36-A268-8DF4BA852CE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -511,6 +513,18 @@ Global
 		{3D71D819-DEE5-4D19-973B-6B74D387643F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3D71D819-DEE5-4D19-973B-6B74D387643F}.Release|x64.ActiveCfg = Release|Any CPU
 		{3D71D819-DEE5-4D19-973B-6B74D387643F}.Release|x64.Build.0 = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
