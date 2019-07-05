@@ -17,7 +17,7 @@ namespace GetData
         static void Main(string[] args)
         {
             Console.WriteLine("BEGIN");
-
+            aa();
             Dictionary<string, SortedList<string, string>> listnew = CHDQUOTE.GetCHDQUOTE();
             #region 读取股票数据
             //Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
@@ -215,6 +215,13 @@ namespace GetData
             //}
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="sql"></param>
+        /// <param name="dbcon"></param>
+        /// <returns></returns>
         public static Dictionary<string, SortedList<string, string>> getdatago(Dictionary<string, SortedList<string, string>> list, string sql,string dbcon)
         {
             SqlConnection conn = null;
@@ -261,7 +268,79 @@ namespace GetData
             return ListDic;
         }
 
+        #region SqlDataReader
+        public static void aa()
+        {
+            SqlDataReader dr = QueryDr("SELECT TOP 11 id,FileList,rs0001_002 FROM rs0001 WITH (NOLOCK) WHERE rscode = '7786585327' -- FileList = ''", 300, "");
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    string b = Convert.ToString(dr["id"]);
+                    string a = Convert.ToString(dr["FileList"]);
+                    string b1 = Convert.ToString(dr["id"]);
+                }
+            }
+        }
 
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="timeOut"></param>
+        /// <param name="strConnStr"></param>
+        /// <returns></returns>
+        public static SqlDataReader QueryDr(string sql, int timeOut, string strConnStr = "")
+        {
+            SqlConnection conn = null;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr = null;
+            
+            try
+            {
+                //取得数据库连接
+                conn = new SqlConnection("server=10.10.13.97;database=BASICDB;uid=read;pwd=read;connect Timeout=60;pooling = true;max pool size=10;min pool size=2;Application Name=newsPlatform");
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+
+                //等待命令执行的时间（以秒为单位）,默认值为 30 秒。 
+                if (timeOut <= 30)
+                {
+                    cmd.CommandTimeout = 30;
+                }
+                else
+                {
+                    cmd.CommandTimeout = timeOut;
+                }
+
+                conn.Open();
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+            
+
+            return dr;
+        }
+        #endregion
+
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public static DataTable getdata(string sql)
         {
             DataTable dt = new DataTable();

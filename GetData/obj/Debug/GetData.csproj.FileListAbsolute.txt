@@ -10,3 +10,4 @@ E:\MyGit\TEST\GetData\bin\Debug\GetData.pdb
 E:\MyGit\TEST\GetData\obj\Debug\GetData.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\GetData\obj\Debug\GetData.exe
 E:\MyGit\TEST\GetData\obj\Debug\GetData.pdb
+E:\MyGit\TEST\GetData\obj\Debug\GetData.csprojAssemblyReference.cache
