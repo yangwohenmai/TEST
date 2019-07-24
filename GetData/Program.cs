@@ -17,7 +17,7 @@ namespace GetData
         static void Main(string[] args)
         {
             Console.WriteLine("BEGIN");
-            aa();
+            //aa();
             Dictionary<string, SortedList<string, string>> listnew = CHDQUOTE.GetCHDQUOTE();
             #region 读取股票数据
             //Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
@@ -271,16 +271,19 @@ namespace GetData
         #region SqlDataReader
         public static void aa()
         {
-            SqlDataReader dr = QueryDr("SELECT TOP 11 id,FileList,rs0001_002 FROM rs0001 WITH (NOLOCK) WHERE rscode = '7786585327' -- FileList = ''", 300, "");
+            SqlDataReader dr = QueryDr("SELECT id,filelist as name,rs0001_002 as picture FROM rs0001 WITH (NOLOCK) WHERE rscode = '7786585327'", 300, "");
             if (dr != null)
             {
                 while (dr.Read())
                 {
+                    Console.WriteLine(DateTime.Now+" begin");
                     string b = Convert.ToString(dr["id"]);
-                    string a = Convert.ToString(dr["FileList"]);
-                    string b1 = Convert.ToString(dr["id"]);
+                    Console.WriteLine(DateTime.Now + " id");
+                    string a = Convert.ToString(dr["name"]);
+                    Console.WriteLine(DateTime.Now + " name");
+                    Console.WriteLine(DateTime.Now + " end");
                 }
-            }
+           }
         }
 
 

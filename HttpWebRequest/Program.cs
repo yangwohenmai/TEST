@@ -6,6 +6,8 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace HttpWebRequestTest
@@ -14,6 +16,7 @@ namespace HttpWebRequestTest
     {
         static void Main(string[] args)
         {
+            getUrlResponse("https://222.73.12.20/tableInfo/EI_TableInfo?ver=1000");
             var hp = new HttpRequestClient();
             //访问网站
             string reslut = hp.httpGet("https://www.hkex.com.hk/?sc_lang=EN", HttpRequestClient.defaultHeaders);
@@ -38,6 +41,47 @@ namespace HttpWebRequestTest
             Console.WriteLine("ric:" + JsonData["data"]["quote"]["ric"]);
             Console.WriteLine("eps:" + JsonData["data"]["quote"]["eps"]);
             Console.ReadLine();
+        }
+
+        //处理安全连接问题
+        private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+        {
+            return true;// Always accept
+        }
+
+        /// <summary>
+        /// 访问安全的https网站时要SSL验证，用回调安全验证的方法，解决这个问题
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static StringBuilder getUrlResponse(string url)
+        {
+            HttpWebResponse resp = null;
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            if (url.StartsWith("https", StringComparison.OrdinalIgnoreCase))
+            {
+                ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
+            }
+            
+            resp = (HttpWebResponse)req.GetResponse();
+
+            Stream responseStream = resp.GetResponseStream();
+            // 对接响应流(以"GBK"字符集)
+            StreamReader sReader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
+
+            Char[] sReaderBuffer = new Char[256];
+            int count = sReader.Read(sReaderBuffer, 0, 256);
+            StringBuilder content = new StringBuilder();
+            while (count > 0)
+            {
+                String tempStr = new String(sReaderBuffer, 0, count);
+                content.Append(tempStr);
+                count = sReader.Read(sReaderBuffer, 0, 256);
+            }
+            // 读取结束
+            sReader.Close();
+            
+            return content;
         }
     }
 

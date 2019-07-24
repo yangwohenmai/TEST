@@ -15,8 +15,8 @@ namespace CSharpCallPython
         static void Main(string[] args)
         {
             Program p = new Program();
-            //string result = p.runPython("E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test2.py", "\"Form C#:\"");
-            string result = p.runPyFunc(@"E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\", "test2", "add", "3,4");
+            string result = p.runPython("E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test2.py", "\"Form C#:\"");
+            //string result = p.runPyFunc(@"E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\", "test2", "add", "3,4");
             //string result = p.run_cmd("ping.exe", "8.8.8.8 -n 2");
             //string result = p.run_cmd("ipconfig ", "");
             Console.WriteLine(result);
@@ -74,8 +74,8 @@ namespace CSharpCallPython
         /// <summary>
         /// 执行现有的python脚本文件,可传参
         /// </summary>
-        /// <param name="filename"></param>
-        /// <param name="cmd"></param>
+        /// <param name="filename">执行的文件名</param>
+        /// <param name="cmd">参数</param>
         /// <returns></returns>
         public string runPython(string filename, string cmd)
         {
@@ -92,6 +92,23 @@ namespace CSharpCallPython
         /// <param name="parameter"></param>
         /// <returns></returns>
         public string runPyFunc(string path, string filename, string functionname, string parameter)
+        {
+            string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2}({3}))\"", path, filename, functionname, parameter);
+            cmd = string.Format("-c \"import sys;print(sys.path);\"");
+            return run_cmd("python.exe", cmd);
+        }
+
+
+
+        /// <summary>
+        /// 动态生成python脚本语句
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="filename"></param>
+        /// <param name="functionname"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public string runPyFunc1(string path, string filename, string functionname, string parameter)
         {
             string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2}({3}))\"", path, filename, functionname, parameter);
             cmd = string.Format("-c \"import sys;print(sys.path);\"");
