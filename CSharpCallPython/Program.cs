@@ -14,32 +14,68 @@ namespace CSharpCallPython
     {
         static void Main(string[] args)
         {
-            Program p = new Program();
-            string result = p.runPython("E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test2.py", "\"Form C#:\"");
-            //string result = p.runPyFunc(@"E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\", "test2", "add", "3,4");
-            //string result = p.run_cmd("ping.exe", "8.8.8.8 -n 2");
-            //string result = p.run_cmd("ipconfig ", "");
-            Console.WriteLine(result);
-            Console.ReadKey();
-
-
-
             #region 调用python脚本、传参
             ScriptEngine pyEngine = Python.CreateEngine();//创建Python解释器对象
             dynamic py = pyEngine.ExecuteFile(@"test1.py");//读取脚本文件
-            string dd = py.fun("1234");//调用脚本文件中对应的函数
+            int[] array = new int[4] { 1, 2, 3, 4 };
+            string dd = py.main(array);
+            dd = py.mainF("12345");//调用脚本文件中对应的函数名称
             Console.WriteLine(dd);
             Console.ReadLine();
             #endregion
 
-
             #region 动态执行输入的python语句
             ScriptEngine pyEngine1 = Python.CreateEngine();//创建一个Python引擎
-            string str = "print(1+2+3)";
+            string str = "import sys;print(sys.path);";
             dynamic da = pyEngine1.CreateScriptSourceFromString(str);//读取脚本源码字符串
             da.Execute();//执行脚本;winForm程序中执行结果会在输出中显示;控制台程序中执行结果会显示在控制台中
             string a = Console.ReadLine();
             #endregion
+
+            #region 执行拼接的python脚本
+            string Path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug";//脚本文件路径
+            string Filename = "test2";//执行脚本文件名称
+            string functionname = "add(2,4)";//脚本中要调用的方法
+            //1.调用现有的python脚本
+            string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2})\"", Path, Filename, functionname);
+            //2.直接动态传入要执行的sql脚本
+            cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));\"");
+
+            string result = run_cmd("python.exe", cmd);
+            Console.WriteLine(result);
+            Console.ReadKey();
+
+            #region python脚本示例
+            //import sys
+            //def add(a, b):
+            //    return a + b
+            #endregion
+
+            #endregion
+
+            #region 使用cmd 执行python脚本 可传参
+            string path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test2.py";
+            string para1 = "\"Form C#:\"";
+            string para2 = "\"Form C++++:\"";
+            string strcmd = string.Format("{0} {1} {2}", path, para1, para2);
+            string cmdresult = run_cmd("python.exe", strcmd);
+            Console.WriteLine(cmdresult);
+            Console.ReadKey();
+
+            #region python脚本示例
+            //import sys
+            //def add(a, b):
+            //    return a + b
+            //if __name__ == "__main__":
+            //    print(sys.path)
+            //    print(sys.argv[1])
+            //    print(sys.argv[2])
+            //    print(add(len(sys.argv[1]), len(sys.argv[2])))
+            //    print("hello python")
+            #endregion
+            
+            #endregion
+            
         }
 
         /// <summary>
@@ -48,7 +84,7 @@ namespace CSharpCallPython
         /// <param name="program"></param>
         /// <param name="cmd"></param>
         /// <returns></returns>
-        public string run_cmd(string program, string cmd)
+        public static string run_cmd(string program, string cmd)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = program;
@@ -69,50 +105,6 @@ namespace CSharpCallPython
                     return result;
                 }
             }
-        }
-
-        /// <summary>
-        /// 执行现有的python脚本文件,可传参
-        /// </summary>
-        /// <param name="filename">执行的文件名</param>
-        /// <param name="cmd">参数</param>
-        /// <returns></returns>
-        public string runPython(string filename, string cmd)
-        {
-            string cmd1 = string.Format("{0} {1}", filename, cmd);
-            return run_cmd("python.exe", cmd1);
-        }
-
-        /// <summary>
-        /// 动态生成python脚本语句
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="filename"></param>
-        /// <param name="functionname"></param>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
-        public string runPyFunc(string path, string filename, string functionname, string parameter)
-        {
-            string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2}({3}))\"", path, filename, functionname, parameter);
-            cmd = string.Format("-c \"import sys;print(sys.path);\"");
-            return run_cmd("python.exe", cmd);
-        }
-
-
-
-        /// <summary>
-        /// 动态生成python脚本语句
-        /// </summary>
-        /// <param name="path"></param>
-        /// <param name="filename"></param>
-        /// <param name="functionname"></param>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
-        public string runPyFunc1(string path, string filename, string functionname, string parameter)
-        {
-            string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2}({3}))\"", path, filename, functionname, parameter);
-            cmd = string.Format("-c \"import sys;print(sys.path);\"");
-            return run_cmd("python.exe", cmd);
         }
     }
 }
