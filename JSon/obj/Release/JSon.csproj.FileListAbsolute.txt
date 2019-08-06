@@ -3,8 +3,6 @@ E:\MyGit\TEST\JSon\bin\Release\JSon.exe
 E:\MyGit\TEST\JSon\bin\Release\JSon.pdb
 E:\MyGit\TEST\JSon\bin\Release\Newtonsoft.Json.dll
 E:\MyGit\TEST\JSon\bin\Release\Newtonsoft.Json.xml
-E:\MyGit\TEST\JSon\obj\Release\JSon.csprojAssemblyReference.cache
-E:\MyGit\TEST\JSon\obj\Release\JSon.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\JSon\obj\Release\JSon.csproj.CopyComplete
 E:\MyGit\TEST\JSon\obj\Release\JSon.exe
 E:\MyGit\TEST\JSon\obj\Release\JSon.pdb
+E:\MyGit\TEST\JSon\obj\Release\JSon.csprojResolveAssemblyReference.cache

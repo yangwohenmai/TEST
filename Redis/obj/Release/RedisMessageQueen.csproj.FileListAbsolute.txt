@@ -1,0 +1,2 @@
+E:\MyGit\TEST\Redis\obj\Release\RedisMessageQueen.csprojResolveAssemblyReference.cache
+E:\MyGit\TEST\Redis\obj\Release\RedisMessageQueen.csproj.Redis.exe.config

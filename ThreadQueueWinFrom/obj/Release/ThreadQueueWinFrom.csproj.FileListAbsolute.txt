@@ -1,10 +1,9 @@
 E:\MyGit\TEST\ThreadQueueWinFrom\bin\Release\ThreadQueueWinFrom.exe.config
 E:\MyGit\TEST\ThreadQueueWinFrom\bin\Release\ThreadQueueWinFrom.exe
 E:\MyGit\TEST\ThreadQueueWinFrom\bin\Release\ThreadQueueWinFrom.pdb
-E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.csprojAssemblyReference.cache
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.Form1.resources
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.Properties.Resources.resources
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.csproj.GenerateResource.cache
-E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.exe
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.pdb
+E:\MyGit\TEST\ThreadQueueWinFrom\obj\Release\ThreadQueueWinFrom.csprojResolveAssemblyReference.cache

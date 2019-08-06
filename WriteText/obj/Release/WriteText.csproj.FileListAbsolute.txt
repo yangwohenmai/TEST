@@ -1,0 +1,5 @@
+E:\MyGit\TEST\WriteText\bin\Release\WriteText.exe.config
+E:\MyGit\TEST\WriteText\bin\Release\WriteText.exe
+E:\MyGit\TEST\WriteText\bin\Release\WriteText.pdb
+E:\MyGit\TEST\WriteText\obj\Release\WriteText.exe
+E:\MyGit\TEST\WriteText\obj\Release\WriteText.pdb

@@ -7,4 +7,3 @@ E:\MyGit\TEST\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csproj.GenerateRes
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.exe
 E:\MyGit\TEST\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.pdb
-E:\MyGit\TEST\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csprojAssemblyReference.cache

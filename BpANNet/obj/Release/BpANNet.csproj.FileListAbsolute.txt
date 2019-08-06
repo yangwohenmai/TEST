@@ -1,6 +1,5 @@
 E:\MyGit\TEST\BpANNet\bin\Release\BpANNet.exe.config
 E:\MyGit\TEST\BpANNet\bin\Release\BpANNet.exe
 E:\MyGit\TEST\BpANNet\bin\Release\BpANNet.pdb
-E:\MyGit\TEST\BpANNet\obj\Release\BpANNet.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\BpANNet\obj\Release\BpANNet.exe
 E:\MyGit\TEST\BpANNet\obj\Release\BpANNet.pdb

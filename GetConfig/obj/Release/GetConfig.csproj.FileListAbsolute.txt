@@ -1,7 +1,6 @@
 E:\MyGit\TEST\GetConfig\bin\Release\GetConfig.exe.config
 E:\MyGit\TEST\GetConfig\bin\Release\GetConfig.exe
 E:\MyGit\TEST\GetConfig\bin\Release\GetConfig.pdb
-E:\MyGit\TEST\GetConfig\obj\Release\GetConfig.csprojAssemblyReference.cache
-E:\MyGit\TEST\GetConfig\obj\Release\GetConfig.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\GetConfig\obj\Release\GetConfig.exe
 E:\MyGit\TEST\GetConfig\obj\Release\GetConfig.pdb
+E:\MyGit\TEST\GetConfig\obj\Release\GetConfig.csprojResolveAssemblyReference.cache

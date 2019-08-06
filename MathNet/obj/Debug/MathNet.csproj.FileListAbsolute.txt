@@ -17,4 +17,3 @@ E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csproj.CopyComplete
 E:\MyGit\TEST\MathNet\obj\Debug\MathNet.exe
 E:\MyGit\TEST\MathNet\obj\Debug\MathNet.pdb
-E:\MyGit\TEST\MathNet\obj\Debug\MathNet.csprojAssemblyReference.cache

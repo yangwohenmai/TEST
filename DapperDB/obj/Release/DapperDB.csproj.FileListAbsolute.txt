@@ -13,9 +13,6 @@ E:\MyGit\TEST\DapperDB\bin\Release\dapper-net.pdb
 E:\MyGit\TEST\DapperDB\bin\Release\EntityFramework.xml
 E:\MyGit\TEST\DapperDB\bin\Release\EntityFramework.SqlServer.xml
 E:\MyGit\TEST\DapperDB\bin\Release\System.Data.SQLite.xml
-E:\MyGit\TEST\DapperDB\bin\Release\System.Data.SQLite.dll.config
-E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.csprojAssemblyReference.cache
-E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.csproj.CopyComplete
 E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.exe
 E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.pdb
+E:\MyGit\TEST\DapperDB\obj\Release\DapperDB.csprojResolveAssemblyReference.cache

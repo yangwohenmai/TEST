@@ -15,7 +15,6 @@ E:\MyGit\TEST\CSharpCallPython\bin\Debug\IronPython.Wpf.xml
 E:\MyGit\TEST\CSharpCallPython\bin\Debug\Microsoft.Dynamic.xml
 E:\MyGit\TEST\CSharpCallPython\bin\Debug\Microsoft.Scripting.xml
 E:\MyGit\TEST\CSharpCallPython\bin\Debug\Microsoft.Scripting.Metadata.xml
-E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csprojAssemblyReference.cache
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csproj.CopyComplete
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.exe

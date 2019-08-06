@@ -1,7 +1,5 @@
 E:\MyGit\TEST\async_await\bin\Release\async_await.exe.config
 E:\MyGit\TEST\async_await\bin\Release\async_await.exe
 E:\MyGit\TEST\async_await\bin\Release\async_await.pdb
-E:\MyGit\TEST\async_await\obj\Release\Async_await.csprojAssemblyReference.cache
-E:\MyGit\TEST\async_await\obj\Release\Async_await.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\async_await\obj\Release\async_await.exe
 E:\MyGit\TEST\async_await\obj\Release\async_await.pdb

@@ -8,4 +8,3 @@ E:\MyGit\TEST\TestDll\bin\Debug\TestDll.pdb
 E:\MyGit\TEST\TestDll\obj\Debug\TestDll.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\TestDll\obj\Debug\TestDll.dll
 E:\MyGit\TEST\TestDll\obj\Debug\TestDll.pdb
-E:\MyGit\TEST\TestDll\obj\Debug\TestDll.csprojAssemblyReference.cache

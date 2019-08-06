@@ -1,6 +1,6 @@
 E:\MyGit\TEST\SocketServer\bin\Release\SocketServer.exe.config
 E:\MyGit\TEST\SocketServer\bin\Release\SocketServer.exe
 E:\MyGit\TEST\SocketServer\bin\Release\SocketServer.pdb
-E:\MyGit\TEST\SocketServer\obj\Release\SocketServer.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\SocketServer\obj\Release\SocketServer.exe
 E:\MyGit\TEST\SocketServer\obj\Release\SocketServer.pdb
+E:\MyGit\TEST\SocketServer\obj\Release\SocketServer.csprojResolveAssemblyReference.cache

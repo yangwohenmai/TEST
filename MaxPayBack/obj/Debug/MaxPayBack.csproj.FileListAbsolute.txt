@@ -1,6 +1,0 @@
-E:\MyGit\TEST\MaxPayBack\bin\Debug\MaxPayBack.exe.config
-E:\MyGit\TEST\MaxPayBack\bin\Debug\MaxPayBack.exe
-E:\MyGit\TEST\MaxPayBack\bin\Debug\MaxPayBack.pdb
-E:\MyGit\TEST\MaxPayBack\obj\Debug\MaxPayBack.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\MaxPayBack\obj\Debug\MaxPayBack.exe
-E:\MyGit\TEST\MaxPayBack\obj\Debug\MaxPayBack.pdb

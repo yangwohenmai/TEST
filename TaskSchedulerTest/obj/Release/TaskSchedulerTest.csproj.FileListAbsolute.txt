@@ -1,6 +1,5 @@
 E:\MyGit\TEST\TaskSchedulerTest\bin\Release\TaskSchedulerTest.exe.config
 E:\MyGit\TEST\TaskSchedulerTest\bin\Release\TaskSchedulerTest.exe
 E:\MyGit\TEST\TaskSchedulerTest\bin\Release\TaskSchedulerTest.pdb
-E:\MyGit\TEST\TaskSchedulerTest\obj\Release\TaskSchedulerTest.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\TaskSchedulerTest\obj\Release\TaskSchedulerTest.exe
 E:\MyGit\TEST\TaskSchedulerTest\obj\Release\TaskSchedulerTest.pdb

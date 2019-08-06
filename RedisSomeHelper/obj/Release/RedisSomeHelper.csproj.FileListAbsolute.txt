@@ -1,0 +1,1 @@
+E:\MyGit\TEST\RedisSomeHelper\obj\Release\RedisSomeHelper.csprojResolveAssemblyReference.cache

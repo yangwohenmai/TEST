@@ -1,6 +1,5 @@
 E:\MyGit\TEST\ReadText\bin\Release\ReadText.exe.config
 E:\MyGit\TEST\ReadText\bin\Release\ReadText.exe
 E:\MyGit\TEST\ReadText\bin\Release\ReadText.pdb
-E:\MyGit\TEST\ReadText\obj\Release\ReadText.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\ReadText\obj\Release\ReadText.exe
 E:\MyGit\TEST\ReadText\obj\Release\ReadText.pdb
