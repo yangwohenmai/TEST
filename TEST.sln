@@ -81,6 +81,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpWebRequestAbort", "Http
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCallPython", "CSharpCallPython\CSharpCallPython.csproj", "{4C047A36-47A2-4E36-A268-8DF4BA852CE1}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pytest", "pytest\pytest.pyproj", "{00E9C881-6804-40D7-BA8C-949FF50440DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -513,6 +515,12 @@ Global
 		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|x64.ActiveCfg = Release|Any CPU
 		{4C047A36-47A2-4E36-A268-8DF4BA852CE1}.Release|x64.Build.0 = Release|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{00E9C881-6804-40D7-BA8C-949FF50440DE}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

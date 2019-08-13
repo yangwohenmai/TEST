@@ -14,6 +14,7 @@ namespace CSharpCallPython
     {
         static void Main(string[] args)
         {
+            #region python2 
             #region 调用python脚本、传参
             ScriptEngine pyEngine = Python.CreateEngine();//创建Python解释器对象
             dynamic py = pyEngine.ExecuteFile(@"test1.py");//读取脚本文件
@@ -31,7 +32,9 @@ namespace CSharpCallPython
             da.Execute();//执行脚本;winForm程序中执行结果会在输出中显示;控制台程序中执行结果会显示在控制台中
             string a = Console.ReadLine();
             #endregion
+            #endregion
 
+            #region python3
             #region 执行拼接的python脚本
             string Path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug";//脚本文件路径
             string Filename = "test2";//执行脚本文件名称
@@ -73,9 +76,9 @@ namespace CSharpCallPython
             //    print(add(len(sys.argv[1]), len(sys.argv[2])))
             //    print("hello python")
             #endregion
-            
+
             #endregion
-            
+            #endregion
         }
 
         /// <summary>

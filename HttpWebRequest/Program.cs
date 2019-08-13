@@ -46,7 +46,7 @@ namespace HttpWebRequestTest
         //处理安全连接问题
         private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
-            return true;// Always accept
+            return true; //Always accept
         }
 
         /// <summary>
