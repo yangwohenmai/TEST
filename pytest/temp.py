@@ -1,4 +1,4 @@
-import tensorflow as tf 
+ï»¿import tensorflow as tf 
 from tensorflow import keras
 from keras.datasets import imdb
 import numpy as np
@@ -8,52 +8,52 @@ from keras.layers import Embedding
 from keras.layers import GlobalAveragePooling1D
 #from plot import plot
 """
-½«ÎÄ±¾ĞÎÊ½µÄÓ°ÆÀ·ÖÎª¡°ÕıÃæ¡±»ò¡°¸ºÃæ¡±Ó°ÆÀ¡£ÕâÊÇÒ»¸ö¶şÔª·ÖÀà£¨ÓÖ³ÆÎªÁ½Àà·ÖÀà£©µÄÊ¾Àı£¬Ò²ÊÇÒ»ÖÖÖØÒªÇÒ¹ã·ºÊÊÓÃµÄ»úÆ÷Ñ§Ï°ÎÊÌâ¡£
+å°†æ–‡æœ¬å½¢å¼çš„å½±è¯„åˆ†ä¸ºâ€œæ­£é¢â€æˆ–â€œè´Ÿé¢â€å½±è¯„ã€‚è¿™æ˜¯ä¸€ä¸ªäºŒå…ƒåˆ†ç±»ï¼ˆåˆç§°ä¸ºä¸¤ç±»åˆ†ç±»ï¼‰çš„ç¤ºä¾‹ï¼Œä¹Ÿæ˜¯ä¸€ç§é‡è¦ä¸”å¹¿æ³›é€‚ç”¨çš„æœºå™¨å­¦ä¹ é—®é¢˜ã€‚
 
-TensorFlow ÖĞ°üº¬ IMDB Êı¾İ¼¯¡£ÎÒÃÇÒÑ¶Ô¸ÃÊı¾İ¼¯½øĞĞÁËÔ¤´¦Àí£¬
-½«Ó°ÆÀ£¨×Ö´ÊĞòÁĞ£©×ª»»ÎªÕûÊıĞòÁĞ£¬ÆäÖĞÃ¿¸öÕûÊı±íÊ¾×ÖµäÖĞµÄÒ»¸öÌØ¶¨×Ö´Ê¡£
+TensorFlow ä¸­åŒ…å« IMDB æ•°æ®é›†ã€‚æˆ‘ä»¬å·²å¯¹è¯¥æ•°æ®é›†è¿›è¡Œäº†é¢„å¤„ç†ï¼Œ
+å°†å½±è¯„ï¼ˆå­—è¯åºåˆ—ï¼‰è½¬æ¢ä¸ºæ•´æ•°åºåˆ—ï¼Œå…¶ä¸­æ¯ä¸ªæ•´æ•°è¡¨ç¤ºå­—å…¸ä¸­çš„ä¸€ä¸ªç‰¹å®šå­—è¯ã€‚
 
 https://blog.csdn.net/Feynman1999/article/details/84292840
 
 """
 
-# ²ÎÊı num_words=10000 »á±£ÁôÑµÁ·Êı¾İÖĞ³öÏÖÆµ´ÎÔÚÇ° 10000 Î»µÄ×Ö´Ê¡£ÎªÈ·±£Êı¾İ¹æÄ£´¦ÓÚ¿É¹ÜÀíµÄË®Æ½£¬º±¼û×Ö´Ê½«±»ÉáÆú¡£
+# å‚æ•° num_words=10000 ä¼šä¿ç•™è®­ç»ƒæ•°æ®ä¸­å‡ºç°é¢‘æ¬¡åœ¨å‰ 10000 ä½çš„å­—è¯ã€‚ä¸ºç¡®ä¿æ•°æ®è§„æ¨¡å¤„äºå¯ç®¡ç†çš„æ°´å¹³ï¼Œç½•è§å­—è¯å°†è¢«èˆå¼ƒã€‚
 # imdb = keras.datasets.imdb
 (train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000)
 
-# ¿´Ò»ÏÂÑµÁ·¼¯µÄ´óĞ¡
+# çœ‹ä¸€ä¸‹è®­ç»ƒé›†çš„å¤§å°
 print("Training entries: {}, labels: {}".format(len(train_data), len(train_labels)))
 
-# ¿´Ò»ÏÂÑµÁ·¼¯É¶Ñù ÕâÀïÊÇÓ°ÆÀ Ò»¸öÊı×Ö¶ÔÓ¦×ÖµäÖĞµÄÒ»¸öµ¥´Ê
+# çœ‹ä¸€ä¸‹è®­ç»ƒé›†å•¥æ · è¿™é‡Œæ˜¯å½±è¯„ ä¸€ä¸ªæ•°å­—å¯¹åº”å­—å…¸ä¸­çš„ä¸€ä¸ªå•è¯
 print(train_data[0],'\n',len(train_data[0]))
 print(train_data[1],'\n',len(train_data[1]))
 print(type(train_data))
-# ¿ÉÒÔ¿´µ½ÎÄ±¾µÄ³¤¶È²¢²»ÏàÍ¬ µ«Éñ¾­ÍøÂçÒ»°ãĞèÒªÏàÍ¬Î¬ÊıµÄÏòÁ¿½øĞĞÊäÈë ÏÂÃæ¿ÉÒÔ¿´µ½½â¾ö°ì·¨
+# å¯ä»¥çœ‹åˆ°æ–‡æœ¬çš„é•¿åº¦å¹¶ä¸ç›¸åŒ ä½†ç¥ç»ç½‘ç»œä¸€èˆ¬éœ€è¦ç›¸åŒç»´æ•°çš„å‘é‡è¿›è¡Œè¾“å…¥ ä¸‹é¢å¯ä»¥çœ‹åˆ°è§£å†³åŠæ³•
 
 
 
-# ½«ÕûÊı×ª»»»Ø×Ö´Ê
+# å°†æ•´æ•°è½¬æ¢å›å­—è¯
 word_index = imdb.get_word_index()
 word_index = {k:(v+3) for k,v in word_index.items()}
-word_index["<PAD>"] = 0  # Ã»ÓĞ³öÏÖµ«×ÖµäÀïÓĞµÄ´Ê
-word_index["<START>"] = 1# ÆğÊ¼·ûºÅ
+word_index["<PAD>"] = 0  # æ²¡æœ‰å‡ºç°ä½†å­—å…¸é‡Œæœ‰çš„è¯
+word_index["<START>"] = 1# èµ·å§‹ç¬¦å·
 word_index["<UNK>"] = 2  # unknown
 word_index["<UNUSED>"] = 3
-# »ñÈ¡¡°Êı×Ö-µ¥´Ê¡±¶ÔÓ¦×Öµä
+# è·å–â€œæ•°å­—-å•è¯â€å¯¹åº”å­—å…¸
 reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 
-# »ñÈ¡¡°µ¥´Ê-Êı×Ö¡±¶ÔÓ¦×Öµä
+# è·å–â€œå•è¯-æ•°å­—â€å¯¹åº”å­—å…¸
 change_word_index = dict([(key, value) for (key, value) in word_index.items()])
 
-# ½«Êı×Ö×ª»¯ÎªÎÄ±¾
+# å°†æ•°å­—è½¬åŒ–ä¸ºæ–‡æœ¬
 def decode_review(text):
-    return ' '.join([reverse_word_index.get(i,'?') for i in text]) # ´Ó×ÖµäÖĞÈ¡³ö¶ÔÓ¦µÄµ¥´Ê  Ã»ÓĞ¾ÍÈ¡'?'
+    return ' '.join([reverse_word_index.get(i,'?') for i in text]) # ä»å­—å…¸ä¸­å–å‡ºå¯¹åº”çš„å•è¯  æ²¡æœ‰å°±å–'?'
 
-# ½«ÎÄ±¾×ª»¯ÎªÊı×Ö
+# å°†æ–‡æœ¬è½¬åŒ–ä¸ºæ•°å­—
 def text_to_index(text, word_index):
     return ' '.join([word_index.get(word,'?') for word in text])
 
-# ½«IMDB±£´æµ½´Ê»ãÎÄ¼ş
+# å°†IMDBä¿å­˜åˆ°è¯æ±‡æ–‡ä»¶
 def save_list(lines, filename):
 	# convert lines to a single blob of text
 	data = '\n'.join(lines)
@@ -67,22 +67,22 @@ def save_list(lines, filename):
 #tokens = [str(key)+"|"+str(value) for (key, value) in word_index.items()]
 tokens = [str(key) for (key, value) in word_index.items()]
 print(len(tokens))
-#save_list(tokens, r'E:\ÁÙÊ±²âÊÔ³ÌĞò\pytest\vocab2.txt')
+#save_list(tokens, r'E:\ä¸´æ—¶æµ‹è¯•ç¨‹åº\pytest\vocab2.txt')
 
 
 
 
 
-# ´Ê»ã±í²âÊÔ
+# è¯æ±‡è¡¨æµ‹è¯•
 def decode_review1(text):
     for i in text:
         a = reverse_word_index.get(i,'?')
         print(a)
-    return ' '.join([reverse_word_index.get(i,'?') for i in text]) # ´Ó×ÖµäÖĞÈ¡³ö¶ÔÓ¦µÄµ¥´Ê  Ã»ÓĞ¾ÍÈ¡'?'
+    return ' '.join([reverse_word_index.get(i,'?') for i in text]) # ä»å­—å…¸ä¸­å–å‡ºå¯¹åº”çš„å•è¯  æ²¡æœ‰å°±å–'?'
 
 #print(decode_review1(train_data[0]))
 
-# test ½«ÕûÊı×ª»»»Ø×Ö´Ê
+# test å°†æ•´æ•°è½¬æ¢å›å­—è¯
 print(decode_review(train_data[0]))
 
 
@@ -92,8 +92,8 @@ print(decode_review(train_data[0]))
 
 
 
-# ÎªÁËÊ¹ÊäÈëµÄÕÅÁ¿Î¬ÊıÏàÍ¬ ÎÒÃÇÈ¡max_length×÷ÎªÎ¬Êı
-# ÎÒÃÇ½«Ê¹ÓÃ pad_sequences º¯Êı½«³¤¶È±ê×¼»¯
+# ä¸ºäº†ä½¿è¾“å…¥çš„å¼ é‡ç»´æ•°ç›¸åŒ æˆ‘ä»¬å–max_lengthä½œä¸ºç»´æ•°
+# æˆ‘ä»¬å°†ä½¿ç”¨ pad_sequences å‡½æ•°å°†é•¿åº¦æ ‡å‡†åŒ–
 train_data = keras.preprocessing.sequence.pad_sequences(train_data, 
                                                         value = word_index["<PAD>"],
                                                         padding='post',
@@ -104,7 +104,7 @@ test_data = keras.preprocessing.sequence.pad_sequences(test_data,
                                                        padding='post',
                                                        maxlen=256)                            
 
-#  ²é¿´´¦ÀíÖ®ºóµÄÊı¾İ
+#  æŸ¥çœ‹å¤„ç†ä¹‹åçš„æ•°æ®
 print(train_data[0],'\n',len(train_data[0]))
 
 
@@ -112,47 +112,47 @@ print(train_data[0],'\n',len(train_data[0]))
 vocab_size = 10000
 
 model = keras.Sequential()
-# ¸Ã²ã»áÔÚÕûÊı±àÂëµÄ´Ê»ã±íÖĞ²éÕÒÃ¿¸ö×Ö´Ê-Ë÷ÒıµÄÇ¶ÈëÏòÁ¿¡£
-# Ä£ĞÍÔÚ½ÓÊÜÑµÁ·Ê±»áÑ§Ï°ÕâĞ©ÏòÁ¿¡£ÕâĞ©ÏòÁ¿»áÏòÊä³öÊı×éÌí¼ÓÒ»¸öÎ¬¶È¡£
+# è¯¥å±‚ä¼šåœ¨æ•´æ•°ç¼–ç çš„è¯æ±‡è¡¨ä¸­æŸ¥æ‰¾æ¯ä¸ªå­—è¯-ç´¢å¼•çš„åµŒå…¥å‘é‡ã€‚
+# æ¨¡å‹åœ¨æ¥å—è®­ç»ƒæ—¶ä¼šå­¦ä¹ è¿™äº›å‘é‡ã€‚è¿™äº›å‘é‡ä¼šå‘è¾“å‡ºæ•°ç»„æ·»åŠ ä¸€ä¸ªç»´åº¦ã€‚
 model.add(Embedding(vocab_size,16)) # batch * sequence * 16
-# Í¨¹ı¶ÔĞòÁĞÎ¬¶ÈÇóÆ½¾ùÖµ£¬Õë¶ÔÃ¿¸öÑù±¾·µ»ØÒ»¸ö³¤¶È¹Ì¶¨µÄÊä³öÏòÁ¿¡£
-# ÕâÑù£¬Ä£ĞÍ±ãÄÜ¹»ÒÔ¾¡¿ÉÄÜ¼òµ¥µÄ·½Ê½´¦Àí¸÷ÖÖ³¤¶ÈµÄÊäÈë¡£
+# é€šè¿‡å¯¹åºåˆ—ç»´åº¦æ±‚å¹³å‡å€¼ï¼Œé’ˆå¯¹æ¯ä¸ªæ ·æœ¬è¿”å›ä¸€ä¸ªé•¿åº¦å›ºå®šçš„è¾“å‡ºå‘é‡ã€‚
+# è¿™æ ·ï¼Œæ¨¡å‹ä¾¿èƒ½å¤Ÿä»¥å°½å¯èƒ½ç®€å•çš„æ–¹å¼å¤„ç†å„ç§é•¿åº¦çš„è¾“å…¥ã€‚
 model.add(GlobalAveragePooling1D())
 model.add(Dense(16, activation=tf.nn.relu))
 model.add(Dense(1,activation=tf.nn.sigmoid))
-model.summary() # ¿´Ò»ÏÂÄ£ĞÍµÄ¿ò¼Ü
+model.summary() # çœ‹ä¸€ä¸‹æ¨¡å‹çš„æ¡†æ¶
 
 
-# Ä£ĞÍÔÚÑµÁ·Ê±ĞèÒªÒ»¸öËğÊ§º¯ÊıºÍÒ»¸öÓÅ»¯Æ÷¡£ÓÉÓÚÕâÊÇÒ»¸ö¶şÔª·ÖÀàÎÊÌâ
-# ÇÒÄ£ĞÍ»áÊä³öÒ»¸ö¸ÅÂÊ£¨Ó¦ÓÃ S ĞÍ¼¤»îº¯ÊıµÄµ¥¸öµ¥Ôª²ã£©£¬
-# Òò´ËÎÒÃÇ½«Ê¹ÓÃ binary_crossentropy ËğÊ§º¯Êı¡£
+# æ¨¡å‹åœ¨è®­ç»ƒæ—¶éœ€è¦ä¸€ä¸ªæŸå¤±å‡½æ•°å’Œä¸€ä¸ªä¼˜åŒ–å™¨ã€‚ç”±äºè¿™æ˜¯ä¸€ä¸ªäºŒå…ƒåˆ†ç±»é—®é¢˜
+# ä¸”æ¨¡å‹ä¼šè¾“å‡ºä¸€ä¸ªæ¦‚ç‡ï¼ˆåº”ç”¨ S å‹æ¿€æ´»å‡½æ•°çš„å•ä¸ªå•å…ƒå±‚ï¼‰ï¼Œ
+# å› æ­¤æˆ‘ä»¬å°†ä½¿ç”¨ binary_crossentropy æŸå¤±å‡½æ•°ã€‚
 model.compile(optimizer=tf.train.AdamOptimizer(),
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
-# ´ÓÔ­Ê¼ÑµÁ·Êı¾İÖĞ·ÖÀë³ö 10000 ¸öÑù±¾£¬´´½¨Ò»¸öÑéÖ¤¼¯(validation)¡£
+# ä»åŸå§‹è®­ç»ƒæ•°æ®ä¸­åˆ†ç¦»å‡º 10000 ä¸ªæ ·æœ¬ï¼Œåˆ›å»ºä¸€ä¸ªéªŒè¯é›†(validation)ã€‚
 x_val = train_data[:10000]
 partial_x_train = train_data[10000:]
 
 y_val = train_labels[:10000]
 partial_y_train = train_labels[10000:]
 
-# ÓÃÓĞ 512 ¸öÑù±¾µÄĞ¡Åú´ÎÑµÁ·Ä£ĞÍ 40 ¸öÖÜÆÚ¡£Õâ½«¶Ô x_train ºÍ y_train ÕÅÁ¿ÖĞµÄËùÓĞÑù±¾½øĞĞ
-#  40 ´Îµü´ú¡£ÔÚÑµÁ·ÆÚ¼ä£¬¼à¿ØÄ£ĞÍÔÚÑéÖ¤¼¯µÄ 10000 ¸öÑù±¾ÉÏµÄËğÊ§ºÍ×¼È·ÂÊ£º
+# ç”¨æœ‰ 512 ä¸ªæ ·æœ¬çš„å°æ‰¹æ¬¡è®­ç»ƒæ¨¡å‹ 40 ä¸ªå‘¨æœŸã€‚è¿™å°†å¯¹ x_train å’Œ y_train å¼ é‡ä¸­çš„æ‰€æœ‰æ ·æœ¬è¿›è¡Œ
+#  40 æ¬¡è¿­ä»£ã€‚åœ¨è®­ç»ƒæœŸé—´ï¼Œç›‘æ§æ¨¡å‹åœ¨éªŒè¯é›†çš„ 10000 ä¸ªæ ·æœ¬ä¸Šçš„æŸå¤±å’Œå‡†ç¡®ç‡ï¼š
 history = model.fit(partial_x_train,
                     partial_y_train,
                     epochs=22,
                     batch_size=512,
-                    validation_data=(x_val, y_val), # ÊµÊ±ÑéÖ¤
+                    validation_data=(x_val, y_val), # å®æ—¶éªŒè¯
                     verbose=1)
 
-# ÆÀ¹ÀÄ£ĞÍ
+# è¯„ä¼°æ¨¡å‹
 results = model.evaluate(test_data, test_labels)
 print(results)
 
-# model.fit() ·µ»ØÒ»¸ö History ¶ÔÏó£¬¸Ã¶ÔÏó°üº¬Ò»¸ö×Öµä£¬ÆäÖĞ°üÀ¨ÑµÁ·ÆÚ¼ä·¢ÉúµÄËùÓĞÇé¿ö£º
+# model.fit() è¿”å›ä¸€ä¸ª History å¯¹è±¡ï¼Œè¯¥å¯¹è±¡åŒ…å«ä¸€ä¸ªå­—å…¸ï¼Œå…¶ä¸­åŒ…æ‹¬è®­ç»ƒæœŸé—´å‘ç”Ÿçš„æ‰€æœ‰æƒ…å†µï¼š
 history_dict = history.history
 print(history_dict.keys())
 
-# µ÷ÓÃÁíÒ»¸öÎÄ¼şÀïµÄº¯Êı ½øĞĞ×÷Í¼
+# è°ƒç”¨å¦ä¸€ä¸ªæ–‡ä»¶é‡Œçš„å‡½æ•° è¿›è¡Œä½œå›¾
 # plot(history_dict)
