@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>bffd350c-a0ca-4f09-a6fb-73f9717b433d</ProjectGuid>
+    <ProjectGuid>003b06c4-63b6-4728-b667-9434dc138b10</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Panda.py</StartupFile>
+    <StartupFile>Pandas数据切片.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Panda</Name>
-    <RootNamespace>Panda</RootNamespace>
+    <Name>Pandas</Name>
+    <RootNamespace>Pandas</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Panda.py" />
+    <Compile Include="Pandas.py" />
+    <Compile Include="Pandas数据切片.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
