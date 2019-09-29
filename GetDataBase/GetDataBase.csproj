@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CHDQUOTE.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="EQ_DReturn.cs" />
     <Compile Include="HKHDQUOTE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

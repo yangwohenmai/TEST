@@ -10,18 +10,30 @@ namespace GetDataBase
     {
         static void Main(string[] args)
         {
-            string title = "TDate,Exchange,Symbol,Sname,LClose,TOpen,TClose,High,Low,VaTurnover,VoTurnover,Chg,PChg,PRange";
+
             Console.WriteLine("BEGIN");
-            Dictionary<string, SortedList<string, List<string>>> listnew = CHDQUOTE.GetCHDQUOTE();
+            #region 股票数据
+            //Dictionary<string, SortedList<string, List<string>>> listchdquote = CHDQUOTE.GetCHDQUOTE();
+            #endregion
+
+            #region 股票分红数据
+            //List<List<string>> listnew = EQ_Dispara.GetEQ_Dispara();
+            #endregion
+
+            #region 股票日回报系数
+            EQ_DReturn.GetEQ_DReturn();
+            #endregion
+
+
             //Dictionary<string, SortedList<string, string>> listnew = HKHDQUOTE.GetHKHDQUOTE();
 
-            Console.WriteLine("GET");
+            Console.WriteLine("finish");
             //insert(listnew);
-            newinsert(listnew);
+            //CHDQUOTE.insert(listchdquote);
 
             Console.ReadLine();
 
-
+            //string title = "TDate,Exchange,Symbol,Sname,LClose,TOpen,TClose,High,Low,VaTurnover,VoTurnover,Chg,PChg,PRange";
             //foreach (var sort in listnew)
             //{
             //    //添加抬头
@@ -94,7 +106,10 @@ namespace GetDataBase
 
 
 
-
+        /// <summary>
+        /// 拼接成字符串插入
+        /// </summary>
+        /// <param name="listnew"></param>
         static void insert(Dictionary<string, SortedList<string, List<string>>> listnew)
         {
             SqliteAccess sqlite = new SqliteAccess("E:\\临时测试程序\\GetDBData\\DataBase3.db3");
@@ -157,73 +172,6 @@ namespace GetDataBase
             if (stblist.Length != 0)
             {
                 sqlite.ExecuteTran(stblist.ToString(), out str);
-            }
-        }
-
-
-        static void newinsert(Dictionary<string, SortedList<string, List<string>>> listnew)
-        {
-            SqliteAccess sqlite = new SqliteAccess("E:\\临时测试程序\\GetDBData\\DataBase3.db3");
-            //SqliteAccess sqlite = new SqliteAccess("C:\\Users\\ysjsfw\\Desktop\\DataBase3.db3");
-            //string DBLINK = @"Data Source=E:\\临时测试程序\\GetDBData\\DataBase3.db3;Pooling=true;FailIfMissing=false";
-            string DBLINK = @"Data Source=C:\\Users\\ysjsfw\\Desktop\\DataBase.db3;Pooling=true;FailIfMissing=false";
-            StringBuilder stblist = new StringBuilder();
-            int count = 0;
-            int countall = 0;
-            List<string> list = new List<string>();
-            string strinsert = @"INSERT INTO CHDQUOTE
-                            (TDATE,
-                              EXCHANGE,
-                              SYMBOL,
-                              SNAME,
-                              LCLOSE,
-                              TOPEN,
-                              TCLOSE,
-                              HIGH,
-                              LOW,
-                              VOTURNOVER,
-                              VATURNOVER,
-                              NDEALS,
-                              AVGPRICE,
-                              AVGVOLPD,
-                              AVGVAPD,
-                              CHG,
-                              PCHG,
-                              PRANGE,
-                              MCAP,
-                              TCAP,
-                              TURNOVER
-                            )
-                            VALUES({0})";
-            string temp = "";
-            foreach (var sort in listnew)
-            {
-                foreach (var item in sort.Value)
-                {
-                    foreach (var i in item.Value)
-                    {
-                        temp += "'" + Convert.ToString(i) + "',";
-                    }
-                    temp = temp.Substring(0, temp.Length - 1);
-                    list.Add(string.Format(strinsert, temp));
-                    temp = "";
-                    count++;
-
-                    if (count == 5000)
-                    {
-                        sqlite.insertQuick(DBLINK, list);
-                        list = new List<string>();
-                        count = 0;
-                        countall += 5000;
-                        Console.WriteLine(countall.ToString());
-                    }
-                }
-            }
-            Console.WriteLine("countall:" + countall.ToString());
-            Console.WriteLine("count:" + count.ToString());
-            if (list.Count > 0)
-            {
-                sqlite.insertQuick(DBLINK, list);
             }
         }
     }
