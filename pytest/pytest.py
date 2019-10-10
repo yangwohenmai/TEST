@@ -1,40 +1,29 @@
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from matplotlib import pyplot
-from numpy import array
+from pandas import read_csv
+from pandas import datetime
+from pandas import Series
+from sklearn.preprocessing import MinMaxScaler
+# 数据格式处理
+def parser(x):
+	return datetime.strptime('190'+x, '%Y-%m')
 
-# return training data
-def get_train():
-	seq = [[0.0, 0.1], [0.1, 0.2], [0.2, 0.3], [0.3, 0.4], [0.4, 0.5]]
-	seq = array(seq)
-	X, y = seq[:, 0], seq[:, 1]
-	X = X.reshape((5, 1, 1))
-	return X, y
+series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
+print(series)
 
-# return validation data
-def get_val():
-	seq = [[0.5, 0.6], [0.6, 0.7], [0.7, 0.8], [0.8, 0.9], [0.9, 1.0]]
-	seq = array(seq)
-	X, y = seq[:, 0], seq[:, 1]
-	X = X.reshape((len(X), 1, 1))
-	return X, y
+# transform scale
+X = series.values
+X = X.reshape(len(X), 1)
+# feature_range定义数据缩放范围
+scaler = MinMaxScaler(feature_range=(0, 1))
+# 对数据进行适配，找到最大最小值等特征，便于后续转换
+scaler = scaler.fit(X)
+# 开始转换数据,输出一个二维数组
+scaled_X = scaler.transform(X)
+print(scaled_X)
+# 将二维数组转换成序列
+scaled_series = Series(scaled_X[:, 0])
+print(scaled_series)
 
-# define model
-model = Sequential()
-model.add(LSTM(10, input_shape=(1,1)))
-model.add(Dense(1, activation='linear'))
-# compile model
-model.compile(loss='mse', optimizer='adam')
-# fit model
-X,y = get_train()
-valX, valY = get_val()
-history = model.fit(X, y, epochs=1200, validation_split=0.33, shuffle=False)
-# plot train and validation loss
-pyplot.plot(history.history['loss'][500:])
-pyplot.plot(history.history['val_loss'][500:])
-pyplot.title('model train vs validation loss')
-pyplot.ylabel('loss')
-pyplot.xlabel('epoch')
-pyplot.legend(['train', 'validation'], loc='upper right')
-pyplot.show()
+# 将缩放后的数据反向转换成原值
+inverted_X = scaler.inverse_transform(scaled_X)
+inverted_series = Series(inverted_X[:, 0])
+print(inverted_series)
