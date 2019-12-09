@@ -12,6 +12,7 @@ namespace WriteText
     {
         static void Main(string[] args)
         {
+            Write_txt("444");
             AddLog("test");
         }
 
@@ -66,5 +67,17 @@ namespace WriteText
             strmWriter.Flush();
             strmWriter.Close();
         }
+
+        public static void Write_txt(string log)
+        {
+            string logFileName = Path.Combine("c:\\", DateTime.Now.ToString("yyyyMMdd") + ".log");
+
+            File.AppendAllText(logFileName, DateTime.Now.ToString() + " ");
+            File.AppendAllText(logFileName, log);
+            File.AppendAllText(logFileName, Convert.ToChar(13).ToString());
+            File.AppendAllText(logFileName, Convert.ToChar(10).ToString());
+
+        }
+
     }
 }

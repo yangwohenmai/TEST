@@ -1,119 +1,86 @@
-from math import sqrt
-from numpy import concatenate
-from matplotlib import pyplot
+# LSTM for international airline passengers problem with regression framing
+import numpy
+import matplotlib.pyplot as plt
 from pandas import read_csv
-from pandas import DataFrame
-from pandas import concat
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import mean_squared_error
+import math
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
-import pandas as pd
-
-pd.set_option('display.max_columns',1000)
-pd.set_option('display.width', 1000)
-pd.set_option('display.max_colwidth',1000)
-
- 
-# convert series to supervised learning
-def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
-    n_vars = 1 if type(data) is list else data.shape[1]
-    df = DataFrame(data)
-    print(df)
-    cols, names = list(), list()
-    # input sequence (t-n, ... t-1)
-    for i in range(n_in, 0, -1):
-        cols.append(df.shift(i))
-        print(cols)
-        names += [('var%d(t-%d)' % (j+1, i)) for j in range(n_vars)]
-    # forecast sequence (t, t+1, ... t+n)
-    for i in range(0, n_out):
-        cols.append(df.shift(-i))
-        print(cols)
-        if i == 0:
-        	names += [('var%d(t)' % (j+1)) for j in range(n_vars)]
-        else:
-        	names += [('var%d(t+%d)' % (j+1, i)) for j in range(n_vars)]
-    # put it all together
-    print(cols)
-    agg = concat(cols, axis=1)
-    print(agg)
-    agg.columns = names
-    print(agg)
-    # drop rows with NaN values
-    if dropnan:
-    	agg.dropna(inplace=True)
-    return agg
-
-# load dataset
-dataset = read_csv('pollution.csv', header=0, index_col=0)
-values = dataset.values
-print(values)
-# 对第四列“风向”进行数字编码转换
-encoder = LabelEncoder()
-values[:,4] = encoder.fit_transform(values[:,4])
-print(values[:,4])
-# 数据转换为浮点型
-values = values.astype('float32')
-# 将所有数据缩放到（0，1）之间
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+"""
+用一个步长预测一个，监督学习数据类型1->1
+X		    Y
+112		118
+118		132
+132		129
+129		121
+121		135
+"""
+# 将数据截取成1->1的监督学习格式
+def create_dataset(dataset, look_back=1):
+	dataX, dataY = [], []
+	for i in range(len(dataset)-look_back-1):
+		a = dataset[i:(i+look_back), 0]
+		dataX.append(a)
+		dataY.append(dataset[i + look_back, 0])
+	return numpy.array(dataX), numpy.array(dataY)
+# 定义随机种子，以便重现结果
+numpy.random.seed(7)
+# 加载数据
+dataframe = read_csv('airline-passengers.csv', usecols=[1], engine='python')
+dataset = dataframe.values
+dataset = dataset.astype('float32')
+# 缩放数据
 scaler = MinMaxScaler(feature_range=(0, 1))
-scaled = scaler.fit_transform(values)
-# 将数据格式化成监督学习型数据
-reframed = series_to_supervised(scaled, 1, 1)
-print(reframed)
-# 删掉那些我们不想预测的列
-reframed.drop(reframed.columns[[9,10,11,12,13,14,15]], axis=1, inplace=True)
-print(reframed.head())
- 
-# split into train and test sets
-values = reframed.values
-print(values)
-# 取出一年的数据作为训练数据，剩下的做测试数据
-n_train_hours = 365 * 24
-train = values[:n_train_hours, :]
-test = values[n_train_hours:, :]
-# 将数据分割成输入和输出，最后一列数据作为输出数据
-train_X, train_y = train[:, :-1], train[:, -1]
-test_X, test_y = test[:, :-1], test[:, -1]
-# 将输入数据转换成3D张量 [samples, timesteps, features]
-train_X = train_X.reshape((train_X.shape[0], 1, train_X.shape[1]))
-test_X = test_X.reshape((test_X.shape[0], 1, test_X.shape[1]))
-print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
- 
-# 设计网络结构
+dataset = scaler.fit_transform(dataset)
+# 分割2/3数据作为测试
+train_size = int(len(dataset) * 0.67)
+test_size = len(dataset) - train_size
+train, test = dataset[0:train_size,:], dataset[train_size:len(dataset),:]
+# 预测数据步长为1,一个预测一个，1->1
+look_back = 1
+trainX, trainY = create_dataset(train, look_back)
+testX, testY = create_dataset(test, look_back)
+# 重构输入数据格式 [samples, time steps, features] = [93,1,1]
+trainX = numpy.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
+testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
+# 构建 LSTM 网络
 model = Sequential()
-model.add(LSTM(50, input_shape=(train_X.shape[1], train_X.shape[2])))
+model.add(LSTM(4, input_shape=(1, look_back)))
 model.add(Dense(1))
-model.compile(loss='mae', optimizer='adam')
-# 拟合网络
-history = model.fit(train_X, train_y, epochs=50, batch_size=72, validation_data=(test_X, test_y), verbose=2, shuffle=False)
-# 图像展示训练损失
-#pyplot.plot(history.history['loss'], label='train')
-#pyplot.plot(history.history['val_loss'], label='test')
-#pyplot.legend()
-#pyplot.show()
- 
-# 使用拟合后的网络进行预测
-yhat = model.predict(test_X)
-print(yhat[0:30,:])
-print(test_X[0:30,:])
-# xx = test_X[0:35000,:].reshape((17500,2 ,8))
-# print(xx)
-# 将3D转换为2D
-test_X = test_X.reshape((test_X.shape[0], test_X.shape[2]))
-# invert scaling for forecast
-inv_yhat = concatenate((yhat, test_X[:, 1:]), axis=1)
-print(inv_yhat)
-# 对预测数据逆缩放
-inv_yhat = scaler.inverse_transform(inv_yhat)
-inv_yhat = inv_yhat[:,0]
-# invert scaling for actual
-test_y = test_y.reshape((len(test_y), 1))
-inv_y = concatenate((test_y, test_X[:, 1:]), axis=1)
-inv_y = scaler.inverse_transform(inv_y)
-inv_y = inv_y[:,0]
-# 计算RMSE值
-rmse = sqrt(mean_squared_error(inv_y, inv_yhat))
-print('Test RMSE: %.3f' % rmse)
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(trainX, trainY, epochs=100, batch_size=1, verbose=2)
+# 对训练数据的Y进行预测
+trainPredict = model.predict(trainX)
+# 对测试数据的Y进行预测
+testPredict = model.predict(testX)
+# 对数据进行逆缩放
+trainPredict = scaler.inverse_transform(trainPredict)
+trainY = scaler.inverse_transform([trainY])
+testPredict = scaler.inverse_transform(testPredict)
+testY = scaler.inverse_transform([testY])
+# 计算RMSE误差
+trainScore = math.sqrt(mean_squared_error(trainY[0], trainPredict[:,0]))
+print('Train Score: %.2f RMSE' % (trainScore))
+testScore = math.sqrt(mean_squared_error(testY[0], testPredict[:,0]))
+print('Test Score: %.2f RMSE' % (testScore))
+
+# 构造一个和dataset格式相同的数组，共145行，dataset为总数据集，把预测的93行训练数据存进去
+trainPredictPlot = numpy.empty_like(dataset)
+# 用nan填充数组
+trainPredictPlot[:, :] = numpy.nan
+# 将训练集预测的Y添加进数组，从第3位到第93+3位，共93行
+trainPredictPlot[look_back:len(trainPredict)+look_back, :] = trainPredict
+
+# 构造一个和dataset格式相同的数组，共145行，把预测的后44行测试数据数据放进去
+testPredictPlot = numpy.empty_like(dataset)
+testPredictPlot[:, :] = numpy.nan
+# 将测试集预测的Y添加进数组，从第94+4位到最后，共44行
+testPredictPlot[len(trainPredict)+(look_back*2)+1:len(dataset)-1, :] = testPredict
+
+# 画图
+plt.plot(scaler.inverse_transform(dataset))
+plt.plot(trainPredictPlot)
+plt.plot(testPredictPlot)
+plt.show()

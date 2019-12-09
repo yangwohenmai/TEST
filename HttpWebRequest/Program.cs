@@ -16,7 +16,8 @@ namespace HttpWebRequestTest
     {
         static void Main(string[] args)
         {
-            getUrlResponse("https://222.73.12.20/tableInfo/EI_TableInfo?ver=1000");
+            string reslut1 = getUrlResponse("https://222.73.12.20/tableInfo/EI_TableInfo?ver=1000").ToString();
+            string reslut2 = getUrlResponse("https://www.hkex.com.hk/?sc_lang=EN").ToString();
             var hp = new HttpRequestClient();
             //访问网站
             string reslut = hp.httpGet("https://www.hkex.com.hk/?sc_lang=EN", HttpRequestClient.defaultHeaders);
@@ -40,6 +41,12 @@ namespace HttpWebRequestTest
             Console.WriteLine("db_updatetime:" + JsonData["data"]["quote"]["db_updatetime"]);
             Console.WriteLine("ric:" + JsonData["data"]["quote"]["ric"]);
             Console.WriteLine("eps:" + JsonData["data"]["quote"]["eps"]);
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("ls:" + JsonData["data"]["quote"]["ls"]);
+            Console.WriteLine("bd:" + JsonData["data"]["quote"]["bd"]);
+            Console.WriteLine("as:" + JsonData["data"]["quote"]["as"]);
+            Console.WriteLine("vo:" + JsonData["data"]["quote"]["vo"]);
+            Console.WriteLine("am:" + JsonData["data"]["quote"]["am"]);
             Console.ReadLine();
         }
 
