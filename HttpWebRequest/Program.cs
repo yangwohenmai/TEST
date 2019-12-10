@@ -17,12 +17,17 @@ namespace HttpWebRequestTest
         static void Main(string[] args)
         {
             string reslut1 = getUrlResponse("https://222.73.12.20/tableInfo/EI_TableInfo?ver=1000").ToString();
-            string reslut2 = getUrlResponse("https://www.hkex.com.hk/?sc_lang=EN").ToString();
+            //string reslut2 = getUrlResponse("https://www.hkex.com.hk/?sc_lang=EN").ToString();
             var hp = new HttpRequestClient();
             //访问网站
             string reslut = hp.httpGet("https://www.hkex.com.hk/?sc_lang=EN", HttpRequestClient.defaultHeaders);
             //定位token字符串头
             int index_head = reslut.IndexOf("evLtsLs");
+            if (index_head == -1)
+            {
+                Console.WriteLine(reslut);
+                Console.ReadLine();
+            }
             string InitToken = reslut.Substring(index_head, 100);
             //定位token字符串尾
             int index_last = InitToken.IndexOf('"');
@@ -41,7 +46,7 @@ namespace HttpWebRequestTest
             Console.WriteLine("db_updatetime:" + JsonData["data"]["quote"]["db_updatetime"]);
             Console.WriteLine("ric:" + JsonData["data"]["quote"]["ric"]);
             Console.WriteLine("eps:" + JsonData["data"]["quote"]["eps"]);
-            Console.WriteLine("--------------------------------");
+            Console.WriteLine("-------------------------------------------------------------");
             Console.WriteLine("ls:" + JsonData["data"]["quote"]["ls"]);
             Console.WriteLine("bd:" + JsonData["data"]["quote"]["bd"]);
             Console.WriteLine("as:" + JsonData["data"]["quote"]["as"]);

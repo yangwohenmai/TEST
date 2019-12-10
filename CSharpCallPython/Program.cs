@@ -19,8 +19,8 @@ namespace CSharpCallPython
             ScriptEngine pyEngine = Python.CreateEngine();//创建Python解释器对象
             dynamic py = pyEngine.ExecuteFile(@"test1.py");//读取脚本文件
             int[] array = new int[4] { 1, 2, 3, 4 };
-            string dd = py.main(array);
-            dd = py.mainF("12345");//调用脚本文件中对应的函数名称
+            string dd = py.mainF(array);
+            //dd = py.mainF("12345");//调用脚本文件中对应的函数名称
             Console.WriteLine(dd);
             Console.ReadLine();
             #endregion
@@ -43,7 +43,9 @@ namespace CSharpCallPython
             string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2})\"", Path, Filename, functionname);
             //2.直接动态传入要执行的sql脚本
             cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));\"");
-
+            Console.WriteLine("请输入");
+            string input = Console.ReadLine();
+            cmd = string.Format("-c \""+input+"\"");
             string result = run_cmd("python.exe", cmd);
             Console.WriteLine(result);
             Console.ReadKey();
