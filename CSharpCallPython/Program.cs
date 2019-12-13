@@ -42,10 +42,12 @@ namespace CSharpCallPython
             //1.调用现有的python脚本
             string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2})\"", Path, Filename, functionname);
             //2.直接动态传入要执行的sql脚本
-            cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));\"");
-            Console.WriteLine("请输入");
-            string input = Console.ReadLine();
-            cmd = string.Format("-c \""+input+"\"");
+            cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));def add(a,b):;    return a+b;add(1,2)\"");
+            #region 支持手动输入
+            //Console.WriteLine("请输入");
+            //string input = Console.ReadLine();
+            //cmd = string.Format("-c \""+input+"\"");
+            #endregion
             string result = run_cmd("python.exe", cmd);
             Console.WriteLine(result);
             Console.ReadKey();

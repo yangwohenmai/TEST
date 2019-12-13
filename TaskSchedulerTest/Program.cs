@@ -10,8 +10,11 @@ namespace TaskSchedulerTest
         static object b1 = new object();
         static void Main(string[] args)
         {
+            //效果更好
+            TaskTest2();
+
             //线程调度测试
-            TaskTest1();
+            //TaskTest1();
 
             //线程调度器
             //TaskScheduler();
@@ -91,9 +94,44 @@ namespace TaskSchedulerTest
 
                 }, i);
             }
-
             Console.ReadLine();
         }
+
+        /// <summary>
+        /// 多线程测试2
+        /// 效果更好的测试
+        /// </summary>
+        public static void TaskTest2()
+        {
+
+            //限制同时只有5个并发线程
+            TaskFactory fac = new TaskFactory(new LimitedConcurrencyLevelTaskScheduler(10));
+
+            //TaskFactory fac = new TaskFactory();
+            //总共创建1000个线程，所有线程进入线程池等待
+            for (int i = 0; i < 1000; i++)
+            {
+                //向线程池中添加一个线程
+                fac.StartNew(s =>
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine("启动线程：" + s);
+                    //b++;
+                    //每个线程存活20秒，当前线程结束后，线程池会从新分配5个线程
+                    Thread.Sleep(10000);
+                    Console.WriteLine("Current Index {0}, ThreadId {1}", s, Thread.CurrentThread.ManagedThreadId);
+                    Console.WriteLine("结束线程：" + s);
+
+                }, i);
+            }
+            Console.ReadLine();
+
+
+            
+        }
+
+
+
 
         //private static void Write_txt(string log)
         //{
