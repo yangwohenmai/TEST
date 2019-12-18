@@ -4,4 +4,3 @@ E:\MyGit\TEST\WriteText\bin\Debug\WriteText.pdb
 E:\MyGit\TEST\WriteText\obj\Debug\WriteText.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\WriteText\obj\Debug\WriteText.exe
 E:\MyGit\TEST\WriteText\obj\Debug\WriteText.pdb
-E:\MyGit\TEST\WriteText\obj\Debug\WriteText.csprojAssemblyReference.cache

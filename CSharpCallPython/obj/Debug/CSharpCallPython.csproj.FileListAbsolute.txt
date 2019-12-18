@@ -19,4 +19,3 @@ E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csproj.CoreCompileInpu
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csproj.CopyComplete
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.exe
 E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.pdb
-E:\MyGit\TEST\CSharpCallPython\obj\Debug\CSharpCallPython.csprojAssemblyReference.cache

@@ -5,4 +5,3 @@ E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CoreCompileInputs
 E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CopyComplete
 E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.exe
 E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.pdb
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csprojAssemblyReference.cache

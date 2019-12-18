@@ -7,11 +7,11 @@ namespace TaskSchedulerTest
 {
     class Program
     {
-        static object b1 = new object();
         static void Main(string[] args)
         {
+            TaskTest3();
             //效果更好
-            TaskTest2();
+            //TaskTest2();
 
             //线程调度测试
             //TaskTest1();
@@ -130,26 +130,68 @@ namespace TaskSchedulerTest
             
         }
 
+        public static void TaskTest3()
+        {
+            //var hp = new HttpWebRequestTest.HttpRequestClient();
+            //string reslut = hp.httpGet("https://www.hkex.com.hk/?sc_lang=EN", HttpWebRequestTest.HttpRequestClient.defaultHeaders);
+            ////定位token字符串头
+            //int index_head = reslut.IndexOf("evLtsLs");
+            //if (index_head == -1)
+            //{
+            //    //LogUtil.Error("Common", "MainFrom", "DoWork", "获取token失败");
+            //    Console.WriteLine("获取token失败");
+            //    //进入失败队列
+
+            //}
+            //string InitToken = reslut.Substring(index_head, 100);
+            ////定位token字符串尾
+            //int index_last = InitToken.IndexOf('"');
+            ////截取token
+            //string Token = reslut.Substring(index_head, index_last);
+            //string list = @"00001,00002,00003,00004,00005,00006,00007,00008,00009,00010,00011,00012,00014,00015,00016,00017,00018,00019,00020,00021,00022,00023,00024,00025,00026,00027,00028,00029,00030,00031,00032,00033,00034,00035,00036,00037,00038,00039,00040,00041,00042,00043,00045,00046,00047,00048,00050,00051,00052,00053,00055,00056,00057,00058,00059,00060,00061,00062,00063,00064,00065,00066,00067,00068,00069,00070,00071,00072,00073,00075,00076,00077,00078,00079,00080,00081,00082,00083,00084,00085,00086,00087,00088,00089,00090,00091,00092,00093,00094,00095,00096,00097,00098,00099,00100,00101,00102,00103,00104,00105,00106,00107,00108,00109,00110,00111,00112,00113,00114,00115,00116,00117,00118,00119,00120,00122,00123,00124,00125,00126,00127,00128,00129,00130,00131,00132,00133,00135,00136,00137,00138,00139,00141,00142,00143,00144,00145,00146,00147,00148,00149,00150,00151,00152,00153,00154,00155,00156,00157,00158,00159,00160,00161,00162,00163,00164,00165,00166,00167,00168,00169,00171,00172,00173,00174,00175,00176,00177,00178,00179,00180,00181,00182,00183,00184,00185,00186,00187,00188,00189,00190,00191,00193,00194,00195,00196,00197,00198,00199,00200,00201,00202,00204,00205,00206,00207,00208,00209,00210,00211,00212,00213,00214,00215,00216,00217,00218,00219,00220,00221,00222,00223,00224,00225,00226,00227,00228,00229,00230,00231,00232,00233,00234,00235,00236,00237,00238";
+
+            //string[] strlist = list.Split(',');
+            //TaskFactory fac = new TaskFactory(new LimitedConcurrencyLevelTaskScheduler(20));
+            //Task[] tasks = new Task[strlist.Length];
+            //for (int i = 0; i < strlist.Length; i++)
+            //{
+            //    tasks[i] = fac.StartNew(s =>
+            //    {
+            //        //Console.WriteLine(strlist[i] + "开始执行");
+            //        string link = string.Format("https://www1.hkex.com.hk/hkexwidget/data/getequityquote?sym={0}&token={1}&lang=eng&qid=NULL&callback=0",
+            //    Convert.ToInt32(strlist[i]), Token);
+            //        //从港交所接口获取数据
+            //        var hp1 = new HttpWebRequestTest.HttpRequestClient();
+            //        string data = hp1.httpGet(link, HttpWebRequestTest.HttpRequestClient.defaultHeaders);
+            //        Console.WriteLine(strlist[i] + "执行完成");
+            //    }, i);
+
+            //}
+
+
+        }
 
 
 
-        //private static void Write_txt(string log)
-        //{
-        //    lock (b1)
-        //    {
-        //        string path = "D:\\YSJS-BK-Finance\\logs1\\";//文件路径
-        //        string logFileName = Path.Combine(path, DateTime.Now.ToString("yyyyMMdd") + "PEQ4004BLError.log");//全部路径
-        //        if (!Directory.Exists(path))//若文件夹不存在则新建文件夹   
-        //            Directory.CreateDirectory(path); //新建文件夹   
-
-        //        File.AppendAllText(logFileName, DateTime.Now.ToString() + " ");
-        //        File.AppendAllText(logFileName, log);
-        //        File.AppendAllText(logFileName, Convert.ToChar(13).ToString());
-        //        File.AppendAllText(logFileName, Convert.ToChar(10).ToString());
-        //    }
 
 
-        //}
+            //private static void Write_txt(string log)
+            //{
+            //    lock (b1)
+            //    {
+            //        string path = "D:\\YSJS-BK-Finance\\logs1\\";//文件路径
+            //        string logFileName = Path.Combine(path, DateTime.Now.ToString("yyyyMMdd") + "PEQ4004BLError.log");//全部路径
+            //        if (!Directory.Exists(path))//若文件夹不存在则新建文件夹   
+            //            Directory.CreateDirectory(path); //新建文件夹   
 
-    }
+            //        File.AppendAllText(logFileName, DateTime.Now.ToString() + " ");
+            //        File.AppendAllText(logFileName, log);
+            //        File.AppendAllText(logFileName, Convert.ToChar(13).ToString());
+            //        File.AppendAllText(logFileName, Convert.ToChar(10).ToString());
+            //    }
+
+
+            //}
+
+        }
 }

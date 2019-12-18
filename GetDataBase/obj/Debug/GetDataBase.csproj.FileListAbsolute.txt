@@ -1,9 +1,8 @@
-E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\GetDataBase\bin\Debug\GetDataBase.exe.config
 E:\MyGit\TEST\GetDataBase\bin\Debug\GetDataBase.exe
 E:\MyGit\TEST\GetDataBase\bin\Debug\GetDataBase.pdb
 E:\MyGit\TEST\GetDataBase\bin\Debug\System.Data.SQLite.dll
+E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.csproj.CoreCompileInputs.cache
 E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.csproj.CopyComplete
 E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.exe
 E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.pdb
-E:\MyGit\TEST\GetDataBase\obj\Debug\GetDataBase.csprojAssemblyReference.cache
