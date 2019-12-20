@@ -46,7 +46,7 @@ namespace HttpWebRequestTest
             Console.WriteLine("db_updatetime:" + JsonData["data"]["quote"]["db_updatetime"]);
             Console.WriteLine("ric:" + JsonData["data"]["quote"]["ric"]);
             Console.WriteLine("eps:" + JsonData["data"]["quote"]["eps"]);
-            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine("-------------------------------------------------------------------");
             Console.WriteLine("ls:" + JsonData["data"]["quote"]["ls"]);
             Console.WriteLine("bd:" + JsonData["data"]["quote"]["bd"]);
             Console.WriteLine("as:" + JsonData["data"]["quote"]["as"]);
