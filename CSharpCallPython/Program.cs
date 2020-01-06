@@ -14,7 +14,7 @@ namespace CSharpCallPython
     {
         static void Main(string[] args)
         {
-            #region python2 
+            #region python2 部分
             #region 调用python脚本、传参
             ScriptEngine pyEngine = Python.CreateEngine();//创建Python解释器对象
             dynamic py = pyEngine.ExecuteFile(@"test1.py");//读取脚本文件
@@ -34,7 +34,8 @@ namespace CSharpCallPython
             #endregion
             #endregion
 
-            #region python3
+            #region python3 部分
+
             #region 执行拼接的python脚本
             string Path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug";//脚本文件路径
             string Filename = "test2";//执行脚本文件名称
@@ -42,17 +43,17 @@ namespace CSharpCallPython
             //1.调用现有的python脚本
             string cmd = string.Format("-c \"import sys;sys.path.append('{0}');import {1};print({1}.{2})\"", Path, Filename, functionname);
             //2.直接动态传入要执行的sql脚本
-            cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));def add(a,b):;    return a+b;add(1,2)\"");
-            #region 支持手动输入
+            cmd = string.Format("-c \"import sys;print(sys.path);a=2;b=3;c=a+b;print('result='+str(c));\"");
+            
             //Console.WriteLine("请输入");
             //string input = Console.ReadLine();
             //cmd = string.Format("-c \""+input+"\"");
-            #endregion
+
             string result = run_cmd("python.exe", cmd);
             Console.WriteLine(result);
             Console.ReadKey();
 
-            #region python脚本示例
+            #region 上述python脚本内容
             //import sys
             //def add(a, b):
             //    return a + b
@@ -61,7 +62,7 @@ namespace CSharpCallPython
             #endregion
 
             #region 使用cmd 执行python脚本 可传参
-            string path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test2.py";
+            string path = "E:\\MyGit\\TEST\\CSharpCallPython\\bin\\Debug\\test3.py";
             string para1 = "\"Form C#:\"";
             string para2 = "\"Form C++++:\"";
             string strcmd = string.Format("{0} {1} {2}", path, para1, para2);
@@ -69,7 +70,7 @@ namespace CSharpCallPython
             Console.WriteLine(cmdresult);
             Console.ReadKey();
 
-            #region python脚本示例
+            #region 上述python脚本内容
             //import sys
             //def add(a, b):
             //    return a + b
@@ -82,6 +83,7 @@ namespace CSharpCallPython
             #endregion
 
             #endregion
+
             #endregion
         }
 
@@ -113,5 +115,8 @@ namespace CSharpCallPython
                 }
             }
         }
+
+        
+
     }
 }

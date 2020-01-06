@@ -28,8 +28,8 @@
         //get请求下参数加在url后，ashx?methodName = GetAllComment&str1=str1&str2=str2，open方法也可以在在这里传参
         xmlHttp.open("post", "/xmlHttpTest.ashx?methodName=GetAllComment1", true);
 
-        //post请求下需要配置请求头信息,必须配置，不配置的话后端接受不到参数，智能接受到url中带的参数
-        //（PS：测试发现，在ashx事件响应模式中接受不到，但是asp.net是可以接收到的）
+        //post请求下需要配置请求头信息,必须配置，不配置的话后端接受不到参数，只能接受到url中带的参数
+        //（PS：测试发现，在ashx事件响应模式中接收不到，但是asp.net是可以接收到的）
         xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         //第四步，发送请求,post请求下，要传递的参数放这里,get方法不用传参数

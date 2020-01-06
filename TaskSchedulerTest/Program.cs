@@ -192,8 +192,7 @@ namespace TaskSchedulerTest
             Console.ReadLine();
         }
 
-
-
+        
 
         //private static void Write_txt(string log)
         //{

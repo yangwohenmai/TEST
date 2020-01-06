@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+/// <summary>
+/// 汇总了各种Task的启动方法
+/// </summary>
 namespace TaskStart
 {
     class Program

@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetConfig", "GetConfig\GetC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoXML", "DoXML\DoXML.csproj", "{1078AA67-2223-4D00-9B48-1803FE1A6FFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebText", "WebText\WebText.csproj", "{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest", "WebText\WebTest.csproj", "{2FAB12AA-AF5F-4B7B-9221-848207AD98F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetConfiguration", "SetConfiguration\SetConfiguration.csproj", "{1EDA615B-00F4-4485-A7C3-27273A443F90}"
 EndProject
