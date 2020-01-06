@@ -4,9 +4,3 @@ C:\Users\admin\Desktop\TEST\GetData\bin\Debug\GetData.pdb
 C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.exe
 C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.pdb
 C:\Users\admin\Desktop\TEST\GetData\obj\Debug\GetData.csprojResolveAssemblyReference.cache
-E:\MyGit\TEST\GetData\bin\Debug\GetData.exe.config
-E:\MyGit\TEST\GetData\bin\Debug\GetData.exe
-E:\MyGit\TEST\GetData\bin\Debug\GetData.pdb
-E:\MyGit\TEST\GetData\obj\Debug\GetData.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\GetData\obj\Debug\GetData.exe
-E:\MyGit\TEST\GetData\obj\Debug\GetData.pdb

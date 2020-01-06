@@ -1,6 +1,0 @@
-E:\MyGit\TEST\SocketServer\bin\Debug\SocketServer.exe.config
-E:\MyGit\TEST\SocketServer\bin\Debug\SocketServer.exe
-E:\MyGit\TEST\SocketServer\bin\Debug\SocketServer.pdb
-E:\MyGit\TEST\SocketServer\obj\Debug\SocketServer.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\SocketServer\obj\Debug\SocketServer.exe
-E:\MyGit\TEST\SocketServer\obj\Debug\SocketServer.pdb
