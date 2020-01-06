@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
-using System.Net.Cache;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SetMaxThreads
 {
@@ -15,7 +10,6 @@ namespace SetMaxThreads
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine(System.IO.Directory.GetCurrentDirectory().ToString());
             // List<Action> actions = new List<Action>();
             // actions.Add(() => { Console.WriteLine("A-1"); });
             // actions.Add(() => { Console.WriteLine("A-2"); });

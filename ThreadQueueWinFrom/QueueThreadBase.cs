@@ -5,15 +5,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-//namespace ThreadQueueWinFrom
-//{
-//    class QueueThreadBase
-//    {
-//    }
-//}
-
-
-
 namespace ThreadQueueWinFrom
 {
 
