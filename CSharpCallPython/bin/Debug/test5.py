@@ -1,5 +1,6 @@
 import math
 import sys
+import time
 
 def Quadratic_Equations(stra,strb,strc):
     a=float(stra)

@@ -14,9 +14,7 @@ namespace CSharpCallPython
     {
         static void Main(string[] args)
         {
-            //CallCmd.RunPythonScript("",new List<string>());
-            CallCmd.run_cmd1();
-
+            CallCmd.RunPythonScript("",new List<string>());
 
             #region python2 部分
             #region 调用python脚本、传参
@@ -38,17 +36,18 @@ namespace CSharpCallPython
             #endregion
             #endregion
 
-            
+
+            #region Python3部分
 
             Python3_With_Para();
-
             Python3_Without_Para();
-
+            
+            #endregion
 
         }
 
         /// <summary>
-        /// 执行拼接的python脚本
+        /// 执行拼接的python3脚本
         /// </summary>
         public static void Python3_With_Para()
         {
@@ -77,7 +76,7 @@ namespace CSharpCallPython
         }
 
         /// <summary>
-        /// 使用cmd 执行python脚本 可传参
+        /// 使用cmd 执行python3脚本 可传参
         /// </summary>
         public static void Python3_Without_Para()
         {
