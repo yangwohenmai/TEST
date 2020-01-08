@@ -87,7 +87,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDataBase", "GetDataBase\
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Pandas", "Pandas\Pandas.pyproj", "{003B06C4-63B6-4728-B667-9434DC138B10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolTest", "ThreadPool\ThreadPoolTest.csproj", "{A44EDB79-744B-4390-BA8B-1FEB665589EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolTest", "ThreadPool\ThreadPoolTest.csproj", "{A44EDB79-744B-4390-BA8B-1FEB665589EB}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GetAPIData", "GetAPIData\GetAPIData.pyproj", "{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -557,6 +559,12 @@ Global
 		{A44EDB79-744B-4390-BA8B-1FEB665589EB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A44EDB79-744B-4390-BA8B-1FEB665589EB}.Release|x64.ActiveCfg = Release|Any CPU
 		{A44EDB79-744B-4390-BA8B-1FEB665589EB}.Release|x64.Build.0 = Release|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{38DA37FF-A9CC-441D-AE09-3E6FD0E83D3E}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
