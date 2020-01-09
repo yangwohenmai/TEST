@@ -17,6 +17,7 @@ namespace GetData
         static void Main(string[] args)
         {
             Console.WriteLine("BEGIN");
+            JQData.get();
             //aa();
             Dictionary<string, SortedList<string, string>> listnew = CHDQUOTE.GetCHDQUOTE();
             #region 读取股票数据
