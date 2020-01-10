@@ -31,14 +31,24 @@ namespace GetData
                 string token1 = result.Content.ReadAsStringAsync().Result;
                 string body = new JavaScriptSerializer().Serialize(new
                 {
-                    method= "get_price",
-                    token= token1,
-                    code= "600000.XSHG",
-                    count= 5000,
-                    unit= "1d",
-                    //end_date= "2018-07-21",
-                    fq_ref_date= "2018-07-21"
-                });
+                    method = "get_price_period",
+                    token = token1,
+                    code = "600538.XSHG",
+                    unit = "1d",
+                    date= "2018-12-04",    
+                    end_date= "2020-12-04",
+                    fq_ref_date = "2018-07-21"
+                }
+                //{
+                //    method= "get_price",
+                //    token= token1,
+                //    code= "600000.XSHG",
+                //    count= 10,
+                //    unit= "1d",
+                //    //end_date= "2018-07-21",
+                //    fq_ref_date= "2018-07-21"
+                //}
+                );
                 var bodyContent = new StringContent(body, Encoding.UTF8, "application/json");
                 //POST请求并等待结果
                 result = client.PostAsync(url, bodyContent).Result;
