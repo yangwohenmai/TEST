@@ -7,7 +7,7 @@ namespace TEST
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             string b = "Begin";
 
@@ -156,6 +156,9 @@ namespace TEST
 
 
         }
+
+
+
 
         public static void ex()
         {

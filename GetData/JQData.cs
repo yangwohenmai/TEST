@@ -21,8 +21,8 @@ namespace GetData
                 string json = new JavaScriptSerializer().Serialize(new
                 {
                     method = "get_token",
-                    mob = "13052089963", //mob是申请JQData时所填写的手机号
-                    pwd = "yangyanan" //Password为聚宽官网登录密码，新申请用户默认为手机号后6位
+                    mob = "13052089963",
+                    pwd = "yangyanan"
                 });
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 //POST请求并等待结果
@@ -33,11 +33,11 @@ namespace GetData
                 {
                     method = "get_price_period",
                     token = token1,
-                    code = "600538.XSHG",
+                    code = "300083.XSHG",
                     unit = "1d",
-                    date= "2018-12-04",    
-                    end_date= "2020-12-04",
-                    fq_ref_date = "2018-07-21"
+                    date= "2019-11-10",    
+                    end_date= "2020-01-06",
+                    fq_ref_date = "2020-01-10"
                 }
                 //{
                 //    method= "get_price",
@@ -56,8 +56,41 @@ namespace GetData
                 //502050.XSHG,上证50B,SZ50B,2015-04-27,2200-01-01,fjb,502048.XSHG
                 securityInfo = result.Content.ReadAsStringAsync().Result;
             }
+            var s = securityInfo.Split('\n');
+            SortedList<string, stock> stocklist = new SortedList<string, stock>();
+
+            foreach (var item in s)
+            {
+                var i = item.Split(',');
+                if (i[0].ToString() != "date")
+                {
+                    stock stock = new stock();
+                    Console.WriteLine(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"));
+                    stock.open = Convert.ToDecimal(i[1]);
+                    stock.close = Convert.ToDecimal(i[2]);
+                    stock.hight = Convert.ToDecimal(i[3]);
+                    stock.low = Convert.ToDecimal(i[4]);
+                    stocklist.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),stock);
+                }
+                
+            }
+            var r1 = (2 * stocklist.Last().Value.close + stocklist.Last().Value.hight + stocklist.Last().Value.low) / 3;
+
+            //VAR1:=(2*CLOSE+HIGH+LOW)/3;
+            //VAR2:= EMA(EMA(EMA(VAR1, 3), 3), 3);
+            //J: (VAR2 - REF(VAR2, 1)) / REF(VAR2, 1) * 100
+            //D: MA(J, 2);
+            //K: MA(J, 1);
+
             Console.WriteLine(securityInfo);
             Console.ReadLine();
         }
+    }
+    public struct stock
+    {
+        public decimal open;
+        public decimal close;
+        public decimal hight;
+        public decimal low;
     }
 }
