@@ -33,10 +33,10 @@ namespace GetData
                 {
                     method = "get_price_period",
                     token = token1,
-                    code = "300083.XSHG",
+                    code = "600519.XSHG",
                     unit = "1d",
-                    date= "2019-11-10",    
-                    end_date= "2020-01-06",
+                    date= "2016-06-01",    
+                    end_date= "2020-01-13",
                     fq_ref_date = "2020-01-10"
                 }
                 //{
@@ -58,7 +58,7 @@ namespace GetData
             }
             var s = securityInfo.Split('\n');
             SortedList<string, stock> stocklist = new SortedList<string, stock>();
-
+            SortedList<string, decimal> stocklist_r = new SortedList<string, decimal>();
             foreach (var item in s)
             {
                 var i = item.Split(',');
@@ -70,9 +70,15 @@ namespace GetData
                     stock.close = Convert.ToDecimal(i[2]);
                     stock.hight = Convert.ToDecimal(i[3]);
                     stock.low = Convert.ToDecimal(i[4]);
+                    stocklist_r.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),(2 * stock.close + stock.hight + stock.low) / 3);
                     stocklist.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),stock);
                 }
-                
+                //stocklist_r.Add(i[0]),)
+            }
+            string a = string.Empty;
+            foreach (var item in stocklist_r)
+            {
+                a += item.Value.ToString() + ",";
             }
             var r1 = (2 * stocklist.Last().Value.close + stocklist.Last().Value.hight + stocklist.Last().Value.low) / 3;
 
@@ -92,5 +98,6 @@ namespace GetData
         public decimal close;
         public decimal hight;
         public decimal low;
+        public decimal ema;
     }
 }
