@@ -58,7 +58,6 @@ namespace GetData
             }
             var s = securityInfo.Split('\n');
             SortedList<string, stock> stocklist = new SortedList<string, stock>();
-            SortedList<string, decimal> stocklist_r = new SortedList<string, decimal>();
             foreach (var item in s)
             {
                 var i = item.Split(',');
@@ -70,17 +69,9 @@ namespace GetData
                     stock.close = Convert.ToDecimal(i[2]);
                     stock.hight = Convert.ToDecimal(i[3]);
                     stock.low = Convert.ToDecimal(i[4]);
-                    stocklist_r.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),(2 * stock.close + stock.hight + stock.low) / 3);
                     stocklist.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),stock);
                 }
-                //stocklist_r.Add(i[0]),)
             }
-            string a = string.Empty;
-            foreach (var item in stocklist_r)
-            {
-                a += item.Value.ToString() + ",";
-            }
-            var r1 = (2 * stocklist.Last().Value.close + stocklist.Last().Value.hight + stocklist.Last().Value.low) / 3;
 
             //VAR1:=(2*CLOSE+HIGH+LOW)/3;
             //VAR2:= EMA(EMA(EMA(VAR1, 3), 3), 3);
