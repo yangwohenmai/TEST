@@ -1,7 +1,0 @@
-E:\MyGit\TEST\Calculate\bin\Debug\Calculate.exe.config
-E:\MyGit\TEST\Calculate\bin\Debug\Calculate.exe
-E:\MyGit\TEST\Calculate\bin\Debug\Calculate.pdb
-E:\MyGit\TEST\Calculate\obj\Debug\Calculate.csprojAssemblyReference.cache
-E:\MyGit\TEST\Calculate\obj\Debug\Calculate.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\Calculate\obj\Debug\Calculate.exe
-E:\MyGit\TEST\Calculate\obj\Debug\Calculate.pdb

@@ -60,7 +60,7 @@ namespace Calculate
                     stock stock = new stock();
                     stock.open = Convert.ToDecimal(i[1]);
                     stock.close = Convert.ToDecimal(i[2]);
-                    stock.hight = Convert.ToDecimal(i[3]);
+                    stock.high = Convert.ToDecimal(i[3]);
                     stock.low = Convert.ToDecimal(i[4]);
                     stocklist.Add(Convert.ToDateTime(i[0]).ToString("yyyyMMdd"),stock);
                 }
@@ -74,7 +74,7 @@ namespace Calculate
     {
         public decimal open;
         public decimal close;
-        public decimal hight;
+        public decimal high;
         public decimal low;
     }
 }

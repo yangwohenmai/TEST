@@ -40,7 +40,7 @@ namespace Calculate
             //(2*CLOSE+HIGH+LOW)/3
             foreach (var item in stocklist)
             {
-                testValues.Add((2 * item.Value.close + item.Value.hight + item.Value.low) / 3);
+                testValues.Add((2 * item.Value.close + item.Value.high + item.Value.low) / 3);
             }
             //J: (VAR2 - REF(VAR2, 1)) / REF(VAR2, 1) * 100
             List<decimal> pre_ema_list = Function.EMA(Function.EMA(Function.EMA(testValues, 3), 3), 3);
@@ -93,7 +93,7 @@ namespace Calculate
             //(2*CLOSE+HIGH+LOW)/3
             foreach (var item in stocklist)
             {
-                Values.Add((3 * item.Value.close + item.Value.hight + item.Value.low + item.Value.open) / 6);
+                Values.Add((3 * item.Value.close + item.Value.high + item.Value.low + item.Value.open) / 6);
             }
             //(20 * Function.REF(Values, 0) + 19 * Function.REF(Values, 1) + 18 * Function.REF(Values, 2) + 17 * Function.REF(Values, 3) +
             //    16 * Function.REF(Values, 4) + 15 * Function.REF(Values, 5) + 14 * Function.REF(Values, 6) + 13 * Function.REF(Values, 7) +
