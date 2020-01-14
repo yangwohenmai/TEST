@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>JQStockData.py</StartupFile>
+    <StartupFile>GetHouseData.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GetHouseData.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="JQStockData.py">
       <SubType>Code</SubType>
     </Compile>

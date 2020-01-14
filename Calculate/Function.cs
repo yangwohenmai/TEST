@@ -36,7 +36,7 @@ namespace Calculate
         }
 
         /// <summary>
-        /// REF取前N天数据
+        /// 取前N个周期数据
         /// </summary>
         /// <param name="input"></param>
         /// <param name="period"></param>
@@ -47,7 +47,7 @@ namespace Calculate
         }
 
         /// <summary>
-        /// 
+        /// 求最近N周期均值
         /// </summary>
         /// <param name="input"></param>
         /// <param name="period"></param>
