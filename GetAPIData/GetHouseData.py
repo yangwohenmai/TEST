@@ -71,7 +71,7 @@ def main():
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
             house = 'https://sh.lianjia.com/ershoufang/chuansha/'
-            house = 'https://sh.lianjia.com/ershoufang/jinshan/'
+            house = 'https://sh.lianjia.com/ershoufang/zhoupu/'
         else:
             house = 'https://sh.lianjia.com/ershoufang/chuansha/pg'+str(i)
         res = requests.get(house, headers=headers)
