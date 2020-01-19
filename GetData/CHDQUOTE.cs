@@ -18,7 +18,8 @@ namespace GetData
         {
             #region 读取股票数据
             Dictionary<string, SortedList<string, string>> list = new Dictionary<string, SortedList<string, string>>();
-            Dictionary<string, SortedList<string, string>> listnew = getdatago(list, "select * from chdquote with(nolock) where tdate >=20130101 ", "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
+            Dictionary<string, SortedList<string, string>> listnew = getdatago(list, "select * from chdquote with(nolock) where tdate >=20130101 ",
+                "data source=192.168.100.123;initial catalog =FCDB;user id=ysnew;password=ysnew;connect timeout=120;pooling=true;max pool size=512;min pool size=1");
             #endregion
             return listnew;
         }

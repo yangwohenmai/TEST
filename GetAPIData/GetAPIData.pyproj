@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>GetHouseData.py</StartupFile>
+    <StartupFile>sina_mian.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="JQStockData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sina_mian.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sina_option.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sina_stockholm.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
