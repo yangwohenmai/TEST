@@ -21,7 +21,7 @@ if not os.path.exists(birth_weight_file):
     print(np.array(birth_data).shape)
     # (189, 9)
     # 此为list数据形式不是numpy数组不能使用np,shape函数,但是我们可以使用np.array函数将list对象转化为numpy数组后使用shape属性进行查看。
-    with open(birth_weight_file, "w", newline='') as f:
+    with open(birth_weight_file, "w",encoding='utf-8', newline='') as f:
     # with open(birth_weight_file, "w") as f:
         writer = csv.writer(f)
         writer.writerows([birth_header])

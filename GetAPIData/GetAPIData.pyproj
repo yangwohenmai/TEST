@@ -30,9 +30,6 @@
     <Compile Include="sina_mian.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="sina_option.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="sina_stockholm.py">
       <SubType>Code</SubType>
     </Compile>

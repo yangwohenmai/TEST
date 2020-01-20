@@ -1,5 +1,4 @@
 #coding:utf-8
-#爬虫参数配置
 import argparse 
 import datetime
 from sina_stockholm import Stockholm
@@ -13,7 +12,7 @@ def get_date_str(offset):
     return date_str
  
  
- 
+ #爬虫参数配置
 _default = dict(
     reload_data = 'Y',                      # --reload {Y,N}              是否重新抓取股票数据，默认值：Y
     gen_portfolio = 'Y',                    # --portfolio {Y,N}           是否生成选股测试结果，默认值：N
