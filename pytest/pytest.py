@@ -1,86 +1,129 @@
-# LSTM for international airline passengers problem with regression framing
-import numpy
+#coding=utf-8
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
-from pandas import read_csv
-import math
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error
-"""
-用一个步长预测一个，监督学习数据类型1->1
-X		    Y
-112		118
-118		132
-132		129
-129		121
-121		135
-"""
-# 将数据截取成1->1的监督学习格式
-def create_dataset(dataset, look_back=1):
-	dataX, dataY = [], []
-	for i in range(len(dataset)-look_back-1):
-		a = dataset[i:(i+look_back), 0]
-		dataX.append(a)
-		dataY.append(dataset[i + look_back, 0])
-	return numpy.array(dataX), numpy.array(dataY)
-# 定义随机种子，以便重现结果
-numpy.random.seed(7)
-# 加载数据
-dataframe = read_csv('airline-passengers.csv', usecols=[1], engine='python')
-dataset = dataframe.values
-dataset = dataset.astype('float32')
-# 缩放数据
-scaler = MinMaxScaler(feature_range=(0, 1))
-dataset = scaler.fit_transform(dataset)
-# 分割2/3数据作为测试
-train_size = int(len(dataset) * 0.67)
-test_size = len(dataset) - train_size
-train, test = dataset[0:train_size,:], dataset[train_size:len(dataset),:]
-# 预测数据步长为1,一个预测一个，1->1
-look_back = 1
-trainX, trainY = create_dataset(train, look_back)
-testX, testY = create_dataset(test, look_back)
-# 重构输入数据格式 [samples, time steps, features] = [93,1,1]
-trainX = numpy.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
-testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
-# 构建 LSTM 网络
-model = Sequential()
-model.add(LSTM(4, input_shape=(1, look_back)))
-model.add(Dense(1))
-model.compile(loss='mean_squared_error', optimizer='adam')
-model.fit(trainX, trainY, epochs=100, batch_size=1, verbose=2)
-# 对训练数据的Y进行预测
-trainPredict = model.predict(trainX)
-# 对测试数据的Y进行预测
-testPredict = model.predict(testX)
-# 对数据进行逆缩放
-trainPredict = scaler.inverse_transform(trainPredict)
-trainY = scaler.inverse_transform([trainY])
-testPredict = scaler.inverse_transform(testPredict)
-testY = scaler.inverse_transform([testY])
-# 计算RMSE误差
-trainScore = math.sqrt(mean_squared_error(trainY[0], trainPredict[:,0]))
-print('Train Score: %.2f RMSE' % (trainScore))
-testScore = math.sqrt(mean_squared_error(testY[0], testPredict[:,0]))
-print('Test Score: %.2f RMSE' % (testScore))
+import tensorflow as tf
 
-# 构造一个和dataset格式相同的数组，共145行，dataset为总数据集，把预测的93行训练数据存进去
-trainPredictPlot = numpy.empty_like(dataset)
-# 用nan填充数组
-trainPredictPlot[:, :] = numpy.nan
-# 将训练集预测的Y添加进数组，从第3位到第93+3位，共93行
-trainPredictPlot[look_back:len(trainPredict)+look_back, :] = trainPredict
+#——————————————————导入数据——————————————————————
+f=open('dataset\dataset_1.csv')  
+df=pd.read_csv(f)     #读入股票数据
+data=np.array(df['max'])   #获取最高价序列
+data=data[::-1]      #反转，使数据按照日期先后顺序排列
+#以折线图展示data
+#plt.figure()
+#plt.plot(data)
+#plt.show()
+normalize_data=(data-np.mean(data))/np.std(data)  #标准化
+normalize_data=normalize_data[:,np.newaxis]       #增加维度
 
-# 构造一个和dataset格式相同的数组，共145行，把预测的后44行测试数据数据放进去
-testPredictPlot = numpy.empty_like(dataset)
-testPredictPlot[:, :] = numpy.nan
-# 将测试集预测的Y添加进数组，从第94+4位到最后，共44行
-testPredictPlot[len(trainPredict)+(look_back*2)+1:len(dataset)-1, :] = testPredict
 
-# 画图
-plt.plot(scaler.inverse_transform(dataset))
-plt.plot(trainPredictPlot)
-plt.plot(testPredictPlot)
-plt.show()
+#生成训练集
+#设置常量
+time_step=20      #时间步长
+rnn_unit=10       #隐藏层节点
+batch_size=60     #每一批次训练多少个样例
+input_size=1      #输入层维度
+output_size=1     #输出层维度
+lr=0.0006         #学习率
+train_x,train_y=[],[]
+#构造训练集，步长20，监督学习型数据
+for i in range(len(normalize_data)-time_step-1):
+    x=normalize_data[i:i+time_step]
+    y=normalize_data[i+1:i+time_step+1]
+    train_x.append(x.tolist())
+    train_y.append(y.tolist())
+
+
+
+#——————————————————定义神经网络变量——————————————————
+X=tf.placeholder(tf.float32, [None,time_step,input_size])    #每批次输入网络的tensor(?,20,1)
+Y=tf.placeholder(tf.float32, [None,time_step,output_size])   #每批次tensor对应的标签(?,20,1)
+#输入层、输出层权重、偏置
+weights={
+         'in':tf.Variable(tf.random_normal([input_size,rnn_unit])),#定义输入形状(1,10)
+         'out':tf.Variable(tf.random_normal([rnn_unit,1]))#定义输出形状(10,1)
+         }
+biases={
+        'in':tf.Variable(tf.constant(0.1,shape=[rnn_unit,])),#(10,)
+        'out':tf.Variable(tf.constant(0.1,shape=[1,]))#(1,)
+        }
+
+
+
+#——————————————————定义神经网络变量——————————————————
+#参数：输入网络批次数目
+def lstm(batch):      
+    
+    w_in=weights['in']#输入层(1,10)
+    b_in=biases['in']#偏置项(10,)
+    #需要将tensor转成2维进行计算，计算后的结果作为隐藏层的输入
+    input=tf.reshape(X,[-1,input_size]) #(?,1) 
+    input_rnn=tf.matmul(input,w_in)+b_in#输入层表达式(?,10)
+    input_rnn=tf.reshape(input_rnn,[-1,time_step,rnn_unit])#将tensor转成3维，作为lstm cell的输入(?,20,10)
+    cell=tf.nn.rnn_cell.BasicLSTMCell(rnn_unit)#神经元
+    init_state=cell.zero_state(batch,dtype=tf.float32)#(60,10)
+    #output_rnn是记录lstm每个输出节点的结果，final_states是最后一个cell的结果(60,20,10),(60,10)
+    output_rnn,final_states=tf.nn.dynamic_rnn(cell, input_rnn,initial_state=init_state, dtype=tf.float32)
+    output=tf.reshape(output_rnn,[-1,rnn_unit])#作为输出层的输入(1200,10)
+    w_out=weights['out']#输出层权重(10,1)
+    b_out=biases['out']#偏置(1,)
+    pred=tf.matmul(output,w_out)+b_out#输出层表达式(1200,10)
+    return pred,final_states
+
+
+
+#——————————————————训练模型——————————————————
+def train_lstm():
+    global batch_size
+    pred,_=lstm(batch_size)
+    #损失函数,均方差
+    loss=tf.reduce_mean(tf.square(tf.reshape(pred,[-1])-tf.reshape(Y, [-1])))
+    train_op=tf.train.AdamOptimizer(lr).minimize(loss)#优化函数Adam
+    saver=tf.train.Saver(tf.global_variables())
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        #重复训练10000次
+        for i in range(10000):
+            step=0
+            start=0
+            #每次取60条数据训练，直到取完所有train_x
+            end=start+batch_size
+            while(end<len(train_x)):
+                _,loss_=sess.run([train_op,loss],feed_dict={X:train_x[start:end],Y:train_y[start:end]})
+                start+=batch_size
+                end=start+batch_size
+                #每训练10组数据，保存一次模型参数
+                if step%10==0:
+                    print(i,step,loss_)
+                    print("保存模型：",saver.save(sess,'stock.model'))
+                step+=1
+
+
+train_lstm()
+
+
+#————————————————预测模型————————————————————
+def prediction():
+    pred,_=lstm(1)      #预测时只输入[1,time_step,input_size]的测试数据
+    saver=tf.train.Saver(tf.global_variables())
+    with tf.Session() as sess:
+        #参数恢复
+        module_file = tf.train.latest_checkpoint(base_path+'module2/')
+        saver.restore(sess, module_file) 
+
+        #取训练集最后一行为测试样本。shape=[1,time_step,input_size]
+        prev_seq=train_x[-1]
+        predict=[]
+        #得到之后100个预测结果
+        for i in range(100):
+            next_seq=sess.run(pred,feed_dict={X:[prev_seq]})
+            predict.append(next_seq[-1])
+            #每次得到最后一个时间步的预测结果，与之前的数据加在一起，形成新的测试样本
+            prev_seq=np.vstack((prev_seq[1:],next_seq[-1]))
+        #以折线图表示结果
+        plt.figure()
+        plt.plot(list(range(len(normalize_data))), normalize_data, color='b')
+        plt.plot(list(range(len(normalize_data), len(normalize_data) + len(predict))), predict, color='r')
+        plt.show()
+
+prediction() 
