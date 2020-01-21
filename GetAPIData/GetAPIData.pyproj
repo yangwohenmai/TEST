@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>sina_mian.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,18 +22,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BaiduIndex\config.py" />
+    <Compile Include="BaiduIndex\get_index.py" />
+    <Compile Include="BaiduIndex\main.py" />
     <Compile Include="GetHouseData.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="JQStockData.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="sina_mian.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="sina_stockholm.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="SinaFinance\sina_mian.py" />
+    <Compile Include="SinaFinance\sina_stockholm.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaiduIndex\" />
+    <Folder Include="SinaFinance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

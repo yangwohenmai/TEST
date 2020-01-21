@@ -1,129 +1,182 @@
-#coding=utf-8
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-
-#——————————————————导入数据——————————————————————
-f=open('dataset\dataset_1.csv')  
-df=pd.read_csv(f)     #读入股票数据
-data=np.array(df['max'])   #获取最高价序列
-data=data[::-1]      #反转，使数据按照日期先后顺序排列
-#以折线图展示data
-#plt.figure()
-#plt.plot(data)
-#plt.show()
-normalize_data=(data-np.mean(data))/np.std(data)  #标准化
-normalize_data=normalize_data[:,np.newaxis]       #增加维度
-
-
-#生成训练集
-#设置常量
-time_step=20      #时间步长
-rnn_unit=10       #隐藏层节点
-batch_size=60     #每一批次训练多少个样例
-input_size=1      #输入层维度
-output_size=1     #输出层维度
-lr=0.0006         #学习率
-train_x,train_y=[],[]
-#构造训练集，步长20，监督学习型数据
-for i in range(len(normalize_data)-time_step-1):
-    x=normalize_data[i:i+time_step]
-    y=normalize_data[i+1:i+time_step+1]
-    train_x.append(x.tolist())
-    train_y.append(y.tolist())
-
-
-
-#——————————————————定义神经网络变量——————————————————
-X=tf.placeholder(tf.float32, [None,time_step,input_size])    #每批次输入网络的tensor(?,20,1)
-Y=tf.placeholder(tf.float32, [None,time_step,output_size])   #每批次tensor对应的标签(?,20,1)
-#输入层、输出层权重、偏置
-weights={
-         'in':tf.Variable(tf.random_normal([input_size,rnn_unit])),#定义输入形状(1,10)
-         'out':tf.Variable(tf.random_normal([rnn_unit,1]))#定义输出形状(10,1)
-         }
-biases={
-        'in':tf.Variable(tf.constant(0.1,shape=[rnn_unit,])),#(10,)
-        'out':tf.Variable(tf.constant(0.1,shape=[1,]))#(1,)
-        }
-
-
-
-#——————————————————定义神经网络变量——————————————————
-#参数：输入网络批次数目
-def lstm(batch):      
-    
-    w_in=weights['in']#输入层(1,10)
-    b_in=biases['in']#偏置项(10,)
-    #需要将tensor转成2维进行计算，计算后的结果作为隐藏层的输入
-    input=tf.reshape(X,[-1,input_size]) #(?,1) 
-    input_rnn=tf.matmul(input,w_in)+b_in#输入层表达式(?,10)
-    input_rnn=tf.reshape(input_rnn,[-1,time_step,rnn_unit])#将tensor转成3维，作为lstm cell的输入(?,20,10)
-    cell=tf.nn.rnn_cell.BasicLSTMCell(rnn_unit)#神经元
-    init_state=cell.zero_state(batch,dtype=tf.float32)#(60,10)
-    #output_rnn是记录lstm每个输出节点的结果，final_states是最后一个cell的结果(60,20,10),(60,10)
-    output_rnn,final_states=tf.nn.dynamic_rnn(cell, input_rnn,initial_state=init_state, dtype=tf.float32)
-    output=tf.reshape(output_rnn,[-1,rnn_unit])#作为输出层的输入(1200,10)
-    w_out=weights['out']#输出层权重(10,1)
-    b_out=biases['out']#偏置(1,)
-    pred=tf.matmul(output,w_out)+b_out#输出层表达式(1200,10)
-    return pred,final_states
-
-
-
-#——————————————————训练模型——————————————————
-def train_lstm():
-    global batch_size
-    pred,_=lstm(batch_size)
-    #损失函数,均方差
-    loss=tf.reduce_mean(tf.square(tf.reshape(pred,[-1])-tf.reshape(Y, [-1])))
-    train_op=tf.train.AdamOptimizer(lr).minimize(loss)#优化函数Adam
-    saver=tf.train.Saver(tf.global_variables())
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        #重复训练10000次
-        for i in range(10000):
-            step=0
-            start=0
-            #每次取60条数据训练，直到取完所有train_x
-            end=start+batch_size
-            while(end<len(train_x)):
-                _,loss_=sess.run([train_op,loss],feed_dict={X:train_x[start:end],Y:train_y[start:end]})
-                start+=batch_size
-                end=start+batch_size
-                #每训练10组数据，保存一次模型参数
-                if step%10==0:
-                    print(i,step,loss_)
-                    print("保存模型：",saver.save(sess,'stock.model'))
-                step+=1
-
-
-train_lstm()
-
-
-#————————————————预测模型————————————————————
-def prediction():
-    pred,_=lstm(1)      #预测时只输入[1,time_step,input_size]的测试数据
-    saver=tf.train.Saver(tf.global_variables())
-    with tf.Session() as sess:
-        #参数恢复
-        module_file = tf.train.latest_checkpoint(base_path+'module2/')
-        saver.restore(sess, module_file) 
-
-        #取训练集最后一行为测试样本。shape=[1,time_step,input_size]
-        prev_seq=train_x[-1]
-        predict=[]
-        #得到之后100个预测结果
-        for i in range(100):
-            next_seq=sess.run(pred,feed_dict={X:[prev_seq]})
-            predict.append(next_seq[-1])
-            #每次得到最后一个时间步的预测结果，与之前的数据加在一起，形成新的测试样本
-            prev_seq=np.vstack((prev_seq[1:],next_seq[-1]))
-        #以折线图表示结果
-        plt.figure()
-        plt.plot(list(range(len(normalize_data))), normalize_data, color='b')
-        plt.plot(list(range(len(normalize_data), len(normalize_data) + len(predict))), predict, color='r')
-        plt.show()
-
-prediction() 
+#coding:utf-8
+import requests
+import datetime
+from baidu_id import province,city
+ 
+def getIndex(word="我和我的祖国"):
+    """
+        搜索指数
+        :param word:
+        :return:
+        """
+    url = f"http://index.baidu.com/api/SearchApi/index?word={word}&area=0&days=30"
+    rep_json = get_rep_json(url)
+    generalRatio = rep_json['data']['generalRatio']
+    uniqid = rep_json['data']['uniqid']
+    all_index_e = rep_json['data']['userIndexes'][0]['all']['data']
+    pc_index_e = rep_json['data']['userIndexes'][0]['pc']['data']
+    wise_index_e = rep_json['data']['userIndexes'][0]['wise']['data']
+    t = getPtbk(uniqid)
+    startDate = rep_json['data']['userIndexes'][0]['wise']['startDate']
+    all_news = getTopNews(decrypt_py(t, all_index_e), startDate, word)
+    pc_news = getTopNews(decrypt_py(t, pc_index_e), startDate, word)
+    wise_news = getTopNews(decrypt_py(t, wise_index_e), startDate, word)
+    for each in (all_news, pc_news, wise_news):
+        print(each)
+    return None
+ 
+ 
+def getFeedIndex(word="我和我的祖国"):
+    """
+    :param word: 关键词
+    :return: 资讯指数
+    """
+    url="http://index.baidu.com/api/FeedSearchApi/getFeedIndex?word=%s&area=0&days=30"%word
+    feed_index_data=get_rep_json(url)
+    uniqid=feed_index_data['data']['uniqid']
+    data=feed_index_data["data"]['index'][0]
+    generalRatio=data['generalRatio']#资讯指数概览
+    e=data['data']
+    t=getPtbk(uniqid)
+ 
+    return decrypt_py(t,e)
+ 
+ 
+def getNewsDate(word):
+    """
+    :param word:
+    :return: 媒体指数的峰顶新闻
+    """
+    url = f"http://index.baidu.com/api/NewsApi/getNewsIndex?area=0&word={word}&days=30"
+    res_json = get_rep_json(url)['data']
+ 
+    generalRatio = res_json["index"][0]['generalRatio']
+    e = res_json['index'][0]['data']
+    start_date = res_json['index'][0]['startDate']
+    t = getPtbk(res_json['uniqid'])
+ 
+    news=getTopNews(decrypt_py(t, e),start_date,word)
+ 
+    return news
+ 
+ 
+def getTopNews(numList:list,start_date,word):
+    """
+    找到当前指数列表中的峰值
+    转换成日期字符串
+    将合成的日期字符串带入到请求数据接口中
+    返回新闻数据
+    :param numList: 指数列表
+    :param start_date: 起始日期
+    :param word:
+    :return: 峰值新闻
+    """
+    start_date = string_toDatetime(start_date)
+    hill_tops = getHilltop(numList)
+    hill_tops_date = [datetime_toString(start_date + datetime.timedelta(days=index)) for index in hill_tops]
+    news = getNews(",".join(hill_tops_date), word)["data"][word]
+ 
+    return news
+ 
+ 
+def getNews(dts,word):
+    """
+    获取媒体指数接口数据
+    :param dts:用,连接的时间字符串，例：dts=2019-10-06,2019-10-10,2019-10-12,2019-10-16,2019-10-21,2019-10-24
+    :param word:
+    :return:接口传回的数据
+    """
+    url=f"http://index.baidu.com/api/NewsApi/checkNewsIndex?dates[]={dts}&type=day&words={word}"
+    return get_rep_json(url)
+ 
+ 
+def getHilltop(numList: list):
+    """
+    :param numList:一组数值数组
+    :return:峰值的序号列表
+    """
+    numList = list(map(lambda x: float(x) if x else 0, numList))
+    hillTops = [index for index, each in enumerate(numList) if
+                index and index < len(numList) - 1 and each > numList[index - 1] and each > numList[index + 1]]
+ 
+    return hillTops
+ 
+ 
+def getMulti(word="我和我的祖国"):
+    """需求图谱
+    pv搜索热度；ratio搜索变化率；sim相关性
+    """
+    url=f"http://index.baidu.com/api/WordGraph/multi?wordlist%5B%5D={word}"
+    word_data=get_rep_json(url)['data']['wordlist'][0]
+    if word_data['keyword']:
+        print(word_data['wordGraph'])
+ 
+ 
+def getRegion(word="我和我的祖国",startDate='2019-09-17',endDate='2019-10-17'):
+    """地域分布"""
+    url=f"http://index.baidu.com/api/SearchApi/region?region=0&word={word}&startDate={startDate}&endDate={endDate}"
+    region=get_rep_json(url)['data']['region'][0]
+    region_city=[{'city':city[int(city_n)],'number':region['city'][city_n]}for city_n in region['city']]
+    region_prov=[{'prov':province[int(prov_n)],'number':region['prov'][prov_n]}for prov_n in region['prov']]
+    print(region_city,region_prov)
+ 
+def getBaseAttributes(word="我和我的祖国"):
+    """人群属性"""
+    url=f"http://index.baidu.com/api/SocialApi/baseAttributes?wordlist[]={word}"
+    rep_data=get_rep_json(url)['data']['result']
+    return rep_data
+ 
+def getInterest(word="我和我的祖国"):
+    """兴趣分布"""
+    url=f"http://index.baidu.com/api/SocialApi/interest?wordlist[]={word}"
+    rep_data = rep_data=get_rep_json(url)['data']['result']
+    return rep_data
+ 
+def string_toDatetime(string):
+    # 把字符串转成datetime
+    return datetime.datetime.strptime(string, "%Y-%m-%d")
+def datetime_toString(dt):
+    # 把datetime转成字符串
+    return dt.strftime("%Y-%m-%d")
+def getPtbk(uniqid):
+    url=f"http://index.baidu.com/Interface/ptbk?uniqid={uniqid}"
+    return get_rep_json(url)['data']
+def decrypt_py(t,e):
+    """
+    :param t:
+    :param e:
+    :return: 解析出来的数据
+    """
+    a=dict()
+    length=int(len(t)/2)
+    for o in range(length):
+        a[t[o]] = t[length + o]
+    r="".join([a[each]for each in e ]).split(",")
+ 
+    return r
+def get_rep_json(url):
+    """
+    获取json
+    :param url: 请求接口
+    :return:
+    """
+    hearder = {
+        "Cookie": "",#请填写游览器中的cookie
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+    }
+    response = requests.get(url, headers=hearder)
+    response_data = response.json()
+    print(response_data)
+    return response_data
+ 
+ 
+def main():
+    getFeedIndex()
+    getNewsDate()
+    getIndex()
+    getRegion()
+    getBaseAttributes()
+    getInterest()
+ 
+if __name__=="__main__":
+    main()
