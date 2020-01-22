@@ -88,16 +88,17 @@ class TrendsSpider:
         # self.proxies=
         results = requests.get(url=self.data_url, headers=self.data_headers, verify=False,
                                allow_redirects=False)
-        time.sleep(5)
+        time.sleep(1)
         page = results.content.decode("utf-8")
         jsonData = page[5:]
         data = json.loads(jsonData)
         items = data['default']['timelineData']
         sava_data = str([item["value"][0] for item in items])
         self.sava_data = sava_data
+        return sava_data
  
     def get_key_work(self):
-        self.keywork = "China"
+        self.keywork = "Shanghai"
         redata = self.get_google_trend()
         print(redata)
 

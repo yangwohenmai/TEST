@@ -1,6 +1,7 @@
+# googles走势图：
 import requests
 import json
-import urllib.request
+import urllib.request  # 入坑
 import pandas as pd
 import time
  
@@ -96,11 +97,55 @@ class TrendsSpider:
         sava_data = str([item["value"][0] for item in items])
         self.sava_data = sava_data
  
+    def save_data(self):
+        '''pandas保存数据到csv中'''
+        # 数据
+        self.temp_data = pd.Series([self.keywork, self.sava_data])
+        key_work = pd.read_csv("./trend.csv", names=['K', 'W'], sep=" ", header=None, encoding='utf-8')
+        # 先创建文件，在判断写入
+        if len(key_work.values):
+            list_temp = []
+            for work in key_work["K"]:
+                list_temp.append(work)
+            time.sleep(2)
+            if self.temp_data[0] in list_temp:
+                print(self.temp_data[0], "相同key不要！！")
+                return
+            else:
+                dataframe = pd.DataFrame([self.temp_data])
+                # 去重
+                dataframe = dataframe.drop_duplicates()
+                # 追加csv
+                dataframe.to_csv("./trend.csv", mode="a", sep=" ", header=None, index=None)
+                print("第二次保存写入成功")
+                return
+        else:
+            dataframe = pd.DataFrame([self.temp_data])
+            # 去重
+            dataframe = dataframe.drop_duplicates()
+            # 写入csv
+            dataframe.to_csv("./trend.csv", header=None, sep=" ", index=None)
+            print("第一次保存")
+ 
     def get_key_work(self):
-        self.keywork = "China"
-        redata = self.get_google_trend()
-        print(redata)
-
+        self.keywork = "猪肉价格"
+        self.get_google_trend()
+        '''从pandas获取关键字数据并去重'''
+        key_work = pd.read_csv("./titles.txt", header=None, names=['KW'], sep=" ", encoding='utf-8')
+        key_work = key_work.drop_duplicates()  # 对数据去重
+        # 对字段去重
+        key_work_data = pd.read_csv("./trend.csv", names=['K', 'W'], sep=" ", header=None, encoding='utf-8')
+        list_temp = []
+        for work in key_work_data["K"]:
+            list_temp.append(work)
+        for values in key_work.KW:
+            if values not in list_temp:
+                self.keywork = values
+                print("当前字段为：", self.keywork)
+                self.keywork = "猪肉价格"
+                self.get_google_trend()
+                time.sleep(1)
+                self.save_data()
  
 if __name__ == '__main__':
     ts = TrendsSpider()

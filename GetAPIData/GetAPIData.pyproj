@@ -24,7 +24,15 @@
     <Compile Include="BaiduIndex\1\config.py" />
     <Compile Include="BaiduIndex\1\get_index.py" />
     <Compile Include="BaiduIndex\1\main.py" />
+    <Compile Include="BaiduIndex\2\baidu_id.py" />
+    <Compile Include="BaiduIndex\2\main.py" />
     <Compile Include="GetHouseData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GoogleTrends\1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GoogleTrends\2.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="JQStockData.py">
@@ -37,6 +45,7 @@
     <Folder Include="BaiduIndex\" />
     <Folder Include="BaiduIndex\1\" />
     <Folder Include="BaiduIndex\2\" />
+    <Folder Include="GoogleTrends\" />
     <Folder Include="SinaFinance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
