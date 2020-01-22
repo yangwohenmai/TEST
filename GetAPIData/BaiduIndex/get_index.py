@@ -5,7 +5,6 @@ import datetime
 import random
 import time
 import json
-
 import requests
 
 from config import COOKIES, PROVINCE_CODE, CITY_CODE
@@ -31,6 +30,7 @@ class BaiduIndex:
     province_code = PROVINCE_CODE
     city_code = CITY_CODE
     _all_kind = ['all', 'pc', 'wise']
+    _all_kind = ['all']
     _params_queue = queue.Queue()
 
     def __init__(self, keywords: list, start_date: str, end_date: str, area=0):

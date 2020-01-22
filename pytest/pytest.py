@@ -1,4 +1,4 @@
-#coding:utf-8
+
 import requests
 import datetime
 from baidu_id import province,city
@@ -161,8 +161,12 @@ def get_rep_json(url):
     :return:
     """
     hearder = {
-        "Cookie": "",#请填写游览器中的cookie
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+        'passport_headers':{
+        'Host': 'passport.baidu.com',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'Refer': 'https://www.baidu.com/?tn=62095104_7_oem_dg'
+
+    }
     }
     response = requests.get(url, headers=hearder)
     response_data = response.json()
