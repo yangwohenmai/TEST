@@ -1,14 +1,14 @@
-import requests
+﻿import requests
 import datetime
 import json
 from baidu_id import province,city
  
 def getIndex(word="我和我的祖国"):
     """
-        搜索指数
-        :param word:
-        :return:
-        """
+    搜索指数
+    :param word:
+    :return:
+    """
     url = f"http://index.baidu.com/api/SearchApi/index?word={word}&area=0&days=30"
     rep_json = get_rep_json(url)
     generalRatio = rep_json['data']['generalRatio']
@@ -39,8 +39,8 @@ def getFeedIndex(word="我和我的祖国"):
     e=data['data']
     t=getPtbk(uniqid)
     return decrypt_py(t,e)
- 
- 
+
+
 def getNewsDate(word="我和我的祖国"):
     """
     :param word:
@@ -48,15 +48,14 @@ def getNewsDate(word="我和我的祖国"):
     """
     url = f"http://index.baidu.com/api/NewsApi/getNewsIndex?area=0&word={word}&days=30"
     res_json = get_rep_json(url)['data']
- 
     generalRatio = res_json["index"][0]['generalRatio']
     e = res_json['index'][0]['data']
     start_date = res_json['index'][0]['startDate']
     t = getPtbk(res_json['uniqid'])
     news=getTopNews(decrypt_py(t, e),start_date,word)
     return news
- 
- 
+
+
 def getTopNews(numList:list,start_date,word):
     """
     找到当前指数列表中的峰值
@@ -73,8 +72,8 @@ def getTopNews(numList:list,start_date,word):
     hill_tops_date = [datetime_toString(start_date + datetime.timedelta(days=index)) for index in hill_tops]
     news = getNews(",".join(hill_tops_date), word)["data"][word]
     return news
- 
- 
+
+
 def getNews(dts,word="我和我的祖国"):
     """
     获取媒体指数接口数据
@@ -84,8 +83,8 @@ def getNews(dts,word="我和我的祖国"):
     """
     url=f"http://index.baidu.com/api/NewsApi/checkNewsIndex?dates[]={dts}&type=day&words={word}"
     return get_rep_json(url)
- 
- 
+
+
 def getHilltop(numList: list):
     """
     :param numList:一组数值数组
@@ -94,10 +93,9 @@ def getHilltop(numList: list):
     numList = list(map(lambda x: float(x) if x else 0, numList))
     hillTops = [index for index, each in enumerate(numList) if
                 index and index < len(numList) - 1 and each > numList[index - 1] and each > numList[index + 1]]
- 
     return hillTops
- 
- 
+
+
 def getMulti(word="我和我的祖国"):
     """需求图谱
     pv搜索热度；ratio搜索变化率；sim相关性
@@ -106,8 +104,8 @@ def getMulti(word="我和我的祖国"):
     word_data=get_rep_json(url)['data']['wordlist'][0]
     if word_data['keyword']:
         print(word_data['wordGraph'])
- 
- 
+
+
 def getRegion(word="我和我的祖国",startDate='2019-09-17',endDate='2019-10-17'):
     """地域分布"""
     url=f"http://index.baidu.com/api/SearchApi/region?region=0&word={word}&startDate={startDate}&endDate={endDate}"
@@ -115,19 +113,19 @@ def getRegion(word="我和我的祖国",startDate='2019-09-17',endDate='2019-10-
     region_city=[{'city':city[int(city_n)],'number':region['city'][city_n]}for city_n in region['city']]
     region_prov=[{'prov':province[int(prov_n)],'number':region['prov'][prov_n]}for prov_n in region['prov']]
     print(region_city,region_prov)
- 
+
 def getBaseAttributes(word="我和我的祖国"):
     """人群属性"""
     url=f"http://index.baidu.com/api/SocialApi/baseAttributes?wordlist[]={word}"
     rep_data=get_rep_json(url)['data']['result']
     return rep_data
- 
+
 def getInterest(word="我和我的祖国"):
     """兴趣分布"""
     url=f"http://index.baidu.com/api/SocialApi/interest?wordlist[]={word}"
     rep_data = rep_data=get_rep_json(url)['data']['result']
     return rep_data
- 
+
 def string_toDatetime(string):
     # 把字符串转成datetime
     return datetime.datetime.strptime(string, "%Y-%m-%d")
@@ -161,8 +159,8 @@ def get_rep_json(url):
     datas = json.loads(response.text)
     print(datas)
     return datas
- 
- 
+
+
 def main():
     getFeedIndex()
     getNewsDate()
@@ -170,6 +168,6 @@ def main():
     getRegion()
     getBaseAttributes()
     getInterest()
- 
+
 if __name__=="__main__":
     main()

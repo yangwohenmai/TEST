@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>BaiduIndex\main.py</StartupFile>
+    <StartupFile>BaiduIndex\1\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,9 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BaiduIndex\config.py" />
-    <Compile Include="BaiduIndex\get_index.py" />
-    <Compile Include="BaiduIndex\main.py" />
+    <Compile Include="BaiduIndex\1\config.py" />
+    <Compile Include="BaiduIndex\1\get_index.py" />
+    <Compile Include="BaiduIndex\1\main.py" />
     <Compile Include="GetHouseData.py">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaiduIndex\" />
+    <Folder Include="BaiduIndex\1\" />
+    <Folder Include="BaiduIndex\2\" />
     <Folder Include="SinaFinance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
