@@ -20,6 +20,7 @@ namespace SocketClient
             //SocketUserClient
             SocketUserClient client = new SocketUserClient("127.0.0.1", 5002);
             string responseMsg = client.SentMsgToServer("我是客户端请求123");
+            Console.ReadLine();
         }
 
 

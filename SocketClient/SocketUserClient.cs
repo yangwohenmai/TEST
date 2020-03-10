@@ -69,7 +69,6 @@ namespace SocketClient
 
                     response = Encoding.UTF8.GetString(readBuffer, 4, needRecvLength);
                     Console.WriteLine("收到服务端回复："+ response);
-                    Console.ReadLine();
                 }
 
                 return response;

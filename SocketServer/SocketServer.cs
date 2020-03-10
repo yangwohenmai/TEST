@@ -68,8 +68,7 @@ namespace SocketServer
                     do
                     {
                         // 已经接受的长度
-                        int hasRecv = socketClient.Receive(readBuffer, headLength + needRecvLength - notRecvLength,
-                                                           notRecvLength, SocketFlags.None);
+                        int hasRecv = socketClient.Receive(readBuffer, headLength + needRecvLength - notRecvLength, notRecvLength, SocketFlags.None);
                         notRecvLength -= hasRecv;
 
                     } while (notRecvLength != 0);
@@ -97,8 +96,7 @@ namespace SocketServer
 
                     do
                     {
-                        int nSend = socketClient.Send(sendByte, sendByte.Length - needSendLength, needSendLength,
-                                                      SocketFlags.None);
+                        int nSend = socketClient.Send(sendByte, sendByte.Length - needSendLength, needSendLength, SocketFlags.None);
                         needSendLength -= nSend;
 
                     } while (needSendLength != 0);
