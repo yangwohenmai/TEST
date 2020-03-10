@@ -15,7 +15,11 @@ namespace SocketClient
             //短连接
             //shotlink("");
             //长连接
-            longlink();
+            //longlink();
+
+            //SocketUserClient
+            SocketUserClient client = new SocketUserClient("127.0.0.1", 5002);
+            string responseMsg = client.SentMsgToServer("我是客户端请求123");
         }
 
 

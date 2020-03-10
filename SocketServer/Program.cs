@@ -16,7 +16,11 @@ namespace SocketServer
 
         static void Main(string[] args)
         {
-            SocketServie();
+            //SocketServie();
+            
+            //衍生2.0socket交互方法
+            SocketServer ss = new SocketServer();
+            ss.StartBackGroundListener();
         }
 
 

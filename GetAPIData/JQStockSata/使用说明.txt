@@ -1,8 +1,0 @@
-0windows用户请先更改文档中涉及到文件路径所使用的斜杠！！！！！
-1在jqconfig.cfg中填上自己的聚宽帐号跟密码
-2选择自己要下载的交易所代码复制进stockdb文件夹中的jqlist.cfg中（一个代码一行）
-3运行代码，按中文提示操作，文件及文件夹为自动创建
-
-jqlist.cfg中已填入深交所全部代码
-jqcodelistszcz为深交所代码
-jqcodelistszzs为上交所全部代码

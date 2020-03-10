@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>BaiduIndex\1\main.py</StartupFile>
+    <StartupFile>JQStockData\JQStockData.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,7 +26,7 @@
     <Compile Include="BaiduIndex\1\main.py" />
     <Compile Include="BaiduIndex\2\baidu_id.py" />
     <Compile Include="BaiduIndex\2\main.py" />
-    <Compile Include="GetHouseData.py">
+    <Compile Include="GetHouseData\GetHouseData.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GoogleTrends\1.py">
@@ -35,9 +35,7 @@
     <Compile Include="GoogleTrends\2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="JQStockData.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="JQStockData\JQStockData.py" />
     <Compile Include="SinaFinance\sina_mian.py" />
     <Compile Include="SinaFinance\sina_stockholm.py" />
   </ItemGroup>
@@ -46,6 +44,8 @@
     <Folder Include="BaiduIndex\1\" />
     <Folder Include="BaiduIndex\2\" />
     <Folder Include="GoogleTrends\" />
+    <Folder Include="GetHouseData\" />
+    <Folder Include="JQStockData\" />
     <Folder Include="SinaFinance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
