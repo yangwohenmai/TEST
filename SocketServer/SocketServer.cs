@@ -12,18 +12,19 @@ namespace SocketServer
         protected TcpListener listener;
 
 
-        public void StartBackGroundListener()
+        public void StartBackGroundListener(string ipaddress, int port)
         {
-            IPAddress ip = IPAddress.Parse("127.0.0.1");
-            listener = new TcpListener(ip, 5002);
+            IPAddress ip = IPAddress.Parse(ipaddress);
+            listener = new TcpListener(ip, port);
             listener.Start();
+            Console.WriteLine("服务端开始监听消息");
             while (true)
             {
                 try
                 {
                     // A blocking operation was interrupted by a call to WSACancelBlockingCall
                     Socket client = listener.AcceptSocket();
-                    Console.WriteLine("服务端开始监听消息");
+                    
                     ThreadPool.QueueUserWorkItem(HandleClientComm, client);
                 }
                 catch (SocketException)
@@ -127,8 +128,7 @@ namespace SocketServer
                     ex = ex.InnerException;
                 }
 
-                string mailBody = string.Format("用户输入：{0}{1}{0}错误信息：{0}{2}{0}堆栈信息：{0}{3}{0}"
-                                            , "\r\n", request, ex.Message, ex.StackTrace);
+                string mailBody = string.Format("用户输入：{0}{1}{0}错误信息：{0}{2}{0}堆栈信息：{0}{3}{0}", "\r\n", request, ex.Message, ex.StackTrace);
 
 
             }
