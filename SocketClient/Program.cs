@@ -17,7 +17,7 @@ namespace SocketClient
             //长连接
             //longlink();
 
-            //SocketUserClient
+            //衍生2.0 Socket交互方法
             SocketUserClient client = new SocketUserClient("127.0.0.1", 5002);
             string responseMsg = client.SentMsgToServer("我是客户端请求123");
             Console.ReadLine();
