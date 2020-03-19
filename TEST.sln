@@ -93,6 +93,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GetAPIData", "GetAPIData\Ge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculate", "Calculate\Calculate.csproj", "{50E77978-EC31-4468-9862-72BAC6C32158}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -579,6 +581,18 @@ Global
 		{50E77978-EC31-4468-9862-72BAC6C32158}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{50E77978-EC31-4468-9862-72BAC6C32158}.Release|x64.ActiveCfg = Release|Any CPU
 		{50E77978-EC31-4468-9862-72BAC6C32158}.Release|x64.Build.0 = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C942419-08A8-4BBB-BC32-4C641B4FDDA1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

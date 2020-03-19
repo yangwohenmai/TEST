@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>JQStockData\JQStockData.py</StartupFile>
+    <StartupFile>BaiduIndex\2\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
