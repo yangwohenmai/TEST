@@ -1,7 +1,0 @@
-E:\MyGit\TEST\ThreadStart\bin\Debug\ThreadStart.exe.config
-E:\MyGit\TEST\ThreadStart\bin\Debug\ThreadStart.exe
-E:\MyGit\TEST\ThreadStart\bin\Debug\ThreadStart.pdb
-E:\MyGit\TEST\ThreadStart\obj\Debug\ThreadStart.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\ThreadStart\obj\Debug\ThreadStart.exe
-E:\MyGit\TEST\ThreadStart\obj\Debug\ThreadStart.pdb
-E:\MyGit\TEST\ThreadStart\obj\Debug\ThreadStart.csprojAssemblyReference.cache
