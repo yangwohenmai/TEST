@@ -63,7 +63,7 @@ namespace Graph
         }
         
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             #region 定义有向图的边
             //定义一个有向图，图中节点从第一个字段指向第二个字段（A->B）
