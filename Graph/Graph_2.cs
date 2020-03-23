@@ -9,12 +9,9 @@ namespace GetDataTCR
 {
     class Graph_2
     {
-        //public static int[] run = new int[9];
         //创建一个GraphLink类型的数组，存放每个节点的“点边关系”数据结构
-        public static GraphLink[] head = new GraphLink[200000000];
+        public static GraphLink[] head = new GraphLink[150000000];
         public static Dictionary<int, GraphLink> aidHead = new Dictionary<int, GraphLink>();
-        public const int MaxSize = 10;
-        //public static Dictionary<int, int> dicrun = new Dictionary<int, int>();
         //记录图中包含的所有节点，保证每个节点只被遍历一次
         public static Dictionary<string, string> dicAllPoint = new Dictionary<string, string>();
 
@@ -89,22 +86,20 @@ namespace GetDataTCR
         
 
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
-            //Tuple<SortedDictionary<string, List<string>>, Dictionary<string, string>, Dictionary<string, string>> tp = ReadText.readTextAll2();
-            //SortedDictionary<string, List<string>> listFather = tp.Item1;
             Dictionary<string, string> dicFather = new Dictionary<string, string>();
             SortedDictionary<string, List<string>> listFather = new SortedDictionary<string, List<string>>();
-            //dicFather = tp.Item3;
-            //dicAllPoint = tp.Item2;
             Console.WriteLine("1:" + dicFather.Count);
             //Console.ReadLine();
 
             #region 测试数据
+            //头结点列表
             SortedDictionary<string, List<string>> tempdic = new SortedDictionary<string, List<string>>();
+            //子节点列表
             List<string> templist = new List<string>();
 
-            #region 无向全连通图
+            #region 无向全连通图，每两个相邻节点都互相指向，Key->value表示K指向V
             //templist.Add("22");
             //templist.Add("33");
             //tempdic.Add("11", templist);
@@ -147,20 +142,22 @@ namespace GetDataTCR
             #region 定义有向图，Key->value表示 当前节点 可到达的 相邻节点
             templist.Add("22");
             tempdic.Add("11", templist);
-            templist = new List<string>();
 
+            templist = new List<string>();
             templist.Add("11");
             templist.Add("77");
             templist.Add("66");
             tempdic.Add("33", templist);
-            templist = new List<string>();
 
+            templist = new List<string>();
             templist.Add("22");
             templist.Add("44");
             tempdic.Add("55", templist);
+
             templist = new List<string>();
             templist.Add("88");
             tempdic.Add("66", templist);
+
             templist = new List<string>();
 
             templist.Add("55");
@@ -169,7 +166,7 @@ namespace GetDataTCR
             listFather = tempdic;
             #endregion
 
-            #region 记录图中所有节点，避免重复访问
+            #region 记录图中所有节点，节点被访问过后值变更0->1,避免重复访问
             Dictionary<string, string> templl = new Dictionary<string, string>();
             templl.Add("11", "0");
             templl.Add("22", "0");
@@ -181,7 +178,6 @@ namespace GetDataTCR
             templl.Add("88", "0");
             dicAllPoint.Clear();
             dicAllPoint = templl;
-            //dicrunfast = templl;
             #endregion
             #endregion
 
@@ -189,7 +185,6 @@ namespace GetDataTCR
             List<string> sonNodeList;
             foreach (var item in listFather)
             {
-                //dicrun.Add(int.Parse(item.Key), 0);
                 head[int.Parse(item.Key)] = new GraphLink();
                 Console.Write("顶点" + item.Key.ToString() + "=>");
                 sonNodeList = listFather[item.Key];
@@ -202,111 +197,7 @@ namespace GetDataTCR
                 head[int.Parse(item.Key)].Print();
 
             }
-
-
-
-            //foreach (var item in ll)
-            //{
-            //    dicrun.Add(int.Parse(item.Key), 0);
-            //    head[int.Parse(item.Key)] = new GraphLink();
-            //    Console.Write("顶点" + item.Key.ToString() + "=>");
-            //    for (int q = 0; q < dataArray.GetLength(0); q++)
-            //    {
-            //        if (dataArray[q, 0] == null)
-            //            break;
-            //        if (item.Key == dataArray[q,0])
-            //        {
-            //            //获取该节点的相邻节点
-            //            sonNode = int.Parse(dataArray[q, 1]);
-            //            //将相邻节点存入该节点的子节点集合
-            //            head[int.Parse(item.Key)].Insert(sonNode);
-            //        }
-            //    }
-            //    nbPoint++;
-            //    if (nbPoint % 100 == 0)
-            //    {
-            //        Console.WriteLine(nbPoint);
-            //    }
-            //    head[int.Parse(item.Key)].Print();
-            //}
-
-
-
-            //foreach (var item in ll)
-            //{
-            //    dicrun.Add(int.Parse(item.Key), 0);
-            //    head[int.Parse(item.Key)] = new GraphLink();
-            //    Console.Write("顶点" + item.Key.ToString() + "=>");
-            //    for (int q = 0; q < dt.Rows.Count; q++)
-            //    {
-            //        if (item.Key == dt.Rows[q][0].ToString())
-            //        {
-            //            //获取该节点的相邻节点
-            //            sonNode = int.Parse(dt.Rows[q][1].ToString());
-            //            //将相邻节点存入该节点的子节点集合
-            //            head[int.Parse(item.Key)].Insert(sonNode);
-            //        }
-            //    }
-            //    head[int.Parse(item.Key)].Print();
-            //}
-
-
-
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("A");
-            //dt.Columns.Add("B");
-            //dt.Rows.Add("11", "22");
-            //dt.Rows.Add("22", "11");
-            //dt.Rows.Add("11", "33");
-            //dt.Rows.Add("33", "11");
-            //dt.Rows.Add("22", "44");
-            //dt.Rows.Add("44", "22");
-            //dt.Rows.Add("22", "55");
-            //dt.Rows.Add("55", "22");
-            //dt.Rows.Add("33", "66");
-            //dt.Rows.Add("66", "33");
-            //dt.Rows.Add("33", "77");
-            //dt.Rows.Add("77", "33");
-            //dt.Rows.Add("44", "55");
-            //dt.Rows.Add("55", "44");
-            //dt.Rows.Add("66", "77");
-            //dt.Rows.Add("77", "66");
-            //dt.Rows.Add("55", "88");
-            //dt.Rows.Add("88", "55");
-            //dt.Rows.Add("66", "88");
-            //dt.Rows.Add("88", "66");
-            //List<int> ll = new List<int>();
-            //ll.Add(11);
-            //ll.Add(22);
-            //ll.Add(33);
-            //ll.Add(44);
-            //ll.Add(55);
-            //ll.Add(66);
-            //ll.Add(77);
-            //ll.Add(88);
-
-            //int nbPoint;
-            //int sonNode;
-            //int[,] point_line = new int[20000000, 2];
-            //for (int p = 0; p < ll.Count; p++)
-            //{
-            //    dicrun.Add(ll[p], 0);
-            //    head[int.Parse(ll[p].ToString())] = new GraphLink();
-            //    Console.Write("顶点" + ll[p].ToString() + "=>");
-            //    for (int q = 0; q < dt.Rows.Count; q++)
-            //    {
-            //        if (ll[p].ToString() == dt.Rows[q][0].ToString())
-            //        {
-            //            //获取该节点的相邻节点
-            //            sonNode = int.Parse(dt.Rows[q][1].ToString());
-            //            //将相邻节点存入该节点的子节点集合
-            //            head[int.Parse(ll[p].ToString())].Insert(sonNode);
-            //        }
-            //    }
-            //    head[int.Parse(ll[p].ToString())].Print();
-            //}
             
-
 
             Console.WriteLine("广度优先遍历:");
             int input = int.Parse(Console.ReadLine().ToString());
@@ -321,7 +212,7 @@ namespace GetDataTCR
                     dicAllPoint[item] = "0";
                 }
 
-                //run = new int[9];
+
                 string a = Console.ReadLine().ToString();
                 input = int.Parse(a);
                 BFS(input);
@@ -336,6 +227,7 @@ namespace GetDataTCR
 
     }
 
+    #region 构建 图的数据结构
     class Node
     {
         public int item;
@@ -400,4 +292,5 @@ namespace GetDataTCR
             Console.WriteLine();
         }
     }
+    #endregion
 }

@@ -12,9 +12,6 @@ namespace Graph
         public const int MaxSize = 10;
         public static Queue<int> queue = new Queue<int>();
         public static Dictionary<int, int> dicrun = new Dictionary<int, int>();
-        //public static Queue<int> layqueue = new Queue<int>();
-        //public static int laycount = 1;
-        //public static int pointcount = 0;
         public static void BFS(int current)
         {
             Node temp;
