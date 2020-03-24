@@ -6,6 +6,9 @@ namespace Graph
 {
     class Graph_3
     {
+        /// <summary>
+        /// 图的广度遍历
+        /// </summary>
         static void Main1(string[] args)
         {
             // 初始化图

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GetDataTCR
 {
+    /// <summary>
+    /// 图的广度遍历
+    /// </summary>
     class Graph_2
     {
         //创建一个GraphLink类型的数组，存放每个节点的“点边关系”数据结构

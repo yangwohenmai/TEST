@@ -4,13 +4,15 @@ using System.Text;
 
 namespace Graph
 {
-
+    /// <summary>
+    /// 图的 广度遍历 和 深度遍历
+    /// </summary>
     class Graph_4
     {
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             int e;
             int n;
@@ -18,18 +20,20 @@ namespace Graph
             GraphType t = (GraphType)(int.Parse(Console.ReadLine()));
             Console.Write("请输入图的顶点数 : ");
             e = int.Parse(Console.ReadLine());
-            Console.Write("请输入图的边数 : ");
+            Console.Write("请输入图的边数（如果选择无向图，两接点间的边只需输入一次） : ");
             n = int.Parse(Console.ReadLine());
             ALGraph G = new ALGraph(e, n, t);
             //构建一个有向图结构
             (new GraphOperation()).CreateALGraph(G);
             Console.Write("\n ");
+            //实现深度遍历
             (new GraphOperation()).DFSTraverse(G);
             Console.Write("\n ");
+            //实现广度遍历
             (new GraphOperation()).BFSTraverse(G);
             Console.Write("\n ");
+            //判断图的类型
             (new GraphOperation()).NonPreFirstTopSort(G);
-
             Console.ReadLine();
 
         }
