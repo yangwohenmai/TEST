@@ -9,7 +9,7 @@ namespace Graph
         /// <summary>
         /// 图的广度遍历
         /// </summary>
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             // 初始化图
             SimpleGraph example_graph = new SimpleGraph();
@@ -26,45 +26,45 @@ namespace Graph
             #endregion
 
             #region 有向图 Key->value表示 当前节点 可到达的 相邻节点
-            char[] A = { 'B' };
-            char[] B = {  };
-            char[] C = { 'A', 'F', 'G' };
-            char[] D = {  };
-            char[] E = { 'B', 'D' };
-            char[] F = { 'H' };
-            char[] G = {  };
-            char[] H = { 'E' };
+            List<string> A = new List<string>{ "B" };
+            List<string> B = new List<string>{ };
+            List<string> C = new List<string>{ "A", "F", "G" };
+            List<string> D = new List<string>{ };
+            List<string> E = new List<string>{ "B", "D" };
+            List<string> F = new List<string>{ "H" };
+            List<string> G = new List<string>{ };
+            List<string> H = new List<string>{ "E" };
             #endregion
 
-            example_graph.edges.Add('A', A);
-            example_graph.edges.Add('B', B);
-            example_graph.edges.Add('C', C);
-            example_graph.edges.Add('D', D);
-            example_graph.edges.Add('E', E);
-            example_graph.edges.Add('F', F);
-            example_graph.edges.Add('G', G);
-            example_graph.edges.Add('H', H);
+            example_graph.edges.Add("A", A);
+            example_graph.edges.Add("B", B);
+            example_graph.edges.Add("C", C);
+            example_graph.edges.Add("D", D);
+            example_graph.edges.Add("E", E);
+            example_graph.edges.Add("F", F);
+            example_graph.edges.Add("G", G);
+            example_graph.edges.Add("H", H);
 
 
-            char input = char.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
             breadthFirstSearch(example_graph, input);
             // 防止退出
             Console.ReadKey();
         }
 
-        private static void breadthFirstSearch(SimpleGraph graph, char start)
+        private static void breadthFirstSearch(SimpleGraph graph, string start)
         {
             // 初始化队列
-            Queue<char> queue = new Queue<char>();
+            Queue<string> queue = new Queue<string>();
             queue.Enqueue(start);
-            Dictionary<char, bool> visited = new Dictionary<char, bool>();
+            Dictionary<string, bool> visited = new Dictionary<string, bool>();
             visited[start] = true;
 
             while (queue.Count != 0)
             {
-                char current = (char)queue.Dequeue();
+                string current = queue.Dequeue();
                 Console.WriteLine("当前访问节点: " + current);
-                foreach (char next in graph.neighbors(current))
+                foreach (var next in graph.neighbors(current))
                 {
                     if (!visited.ContainsKey(next))
                     {
@@ -85,17 +85,17 @@ namespace Graph
         public SimpleGraph()
         {
             // 初始化边表
-            edges = new Dictionary<char, char[]>();
+            edges = new SortedDictionary<string, List<string>>();
         }
 
-        public Dictionary<char, char[]> edges;
+        public SortedDictionary<string, List<string>> edges;
 
         /// <summary>
         /// 记录 当前点 与 相邻节点 之间连接关系
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public char[] neighbors(char id)
+        public List<string> neighbors(string id)
         {
             return edges[id];
         }

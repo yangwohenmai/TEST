@@ -9,7 +9,7 @@ namespace Graph
     /// </summary>
     class Graph_5
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             #region 显示节点的结构
             //AdjacencyList<char> a = new AdjacencyList<char>();
