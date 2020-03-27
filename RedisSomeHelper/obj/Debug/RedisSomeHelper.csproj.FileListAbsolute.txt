@@ -1,8 +1,0 @@
-E:\MyGit\TEST\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe.config
-E:\MyGit\TEST\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe
-E:\MyGit\TEST\RedisSomeHelper\bin\Debug\RedisSomeHelper.pdb
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csprojAssemblyReference.cache
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CopyComplete
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.exe
-E:\MyGit\TEST\RedisSomeHelper\obj\Debug\RedisSomeHelper.pdb

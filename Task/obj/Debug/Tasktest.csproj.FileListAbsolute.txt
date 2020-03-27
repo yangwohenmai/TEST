@@ -3,9 +3,3 @@ C:\Users\admin\Desktop\TEST\Task\bin\Debug\Task.exe
 C:\Users\admin\Desktop\TEST\Task\bin\Debug\Task.pdb
 C:\Users\admin\Desktop\TEST\Task\obj\Debug\Task.exe
 C:\Users\admin\Desktop\TEST\Task\obj\Debug\Task.pdb
-E:\MyGit\TEST\Task\bin\Debug\Task.exe.config
-E:\MyGit\TEST\Task\bin\Debug\Task.exe
-E:\MyGit\TEST\Task\bin\Debug\Task.pdb
-E:\MyGit\TEST\Task\obj\Debug\Tasktest.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\Task\obj\Debug\Task.exe
-E:\MyGit\TEST\Task\obj\Debug\Task.pdb
