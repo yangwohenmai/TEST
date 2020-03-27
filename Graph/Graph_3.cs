@@ -15,25 +15,25 @@ namespace Graph
             SimpleGraph example_graph = new SimpleGraph();
 
             #region 全连接图
-            //char[] A = { 'B','C' };
-            //char[] B = { 'A', 'E', 'D' };
-            //char[] C = { 'A', 'F', 'G' };
-            //char[] D = { 'E', 'B' };
-            //char[] E = { 'B','H','D' };
-            //char[] F = { 'H', 'C', 'G' };
-            //char[] G = { 'F', 'C' };
-            //char[] H = { 'E', 'F' };
+            List<string> A = new List<string> { "B", "C" };
+            List<string> B = new List<string> { "A", "E", "D" };
+            List<string> C = new List<string> { "A", "F", "G" };
+            List<string> D = new List<string> { "E", "B" };
+            List<string> E = new List<string> { "B", "H", "D" };
+            List<string> F = new List<string> { "H", "C", "G" };
+            List<string> G = new List<string> { "F", "C" };
+            List<string> H = new List<string> { "E", "F" };
             #endregion
 
             #region 有向图 Key->value表示 当前节点 可到达的 相邻节点
-            List<string> A = new List<string>{ "B" };
-            List<string> B = new List<string>{ };
-            List<string> C = new List<string>{ "A", "F", "G" };
-            List<string> D = new List<string>{ };
-            List<string> E = new List<string>{ "B", "D" };
-            List<string> F = new List<string>{ "H" };
-            List<string> G = new List<string>{ };
-            List<string> H = new List<string>{ "E" };
+            //List<string> A = new List<string>{ "B" };
+            //List<string> B = new List<string>{ };
+            //List<string> C = new List<string>{ "A", "F", "G" };
+            //List<string> D = new List<string>{ };
+            //List<string> E = new List<string>{ "B", "D" };
+            //List<string> F = new List<string>{ "H" };
+            //List<string> G = new List<string>{ };
+            //List<string> H = new List<string>{ "E" };
             #endregion
 
             example_graph.edges.Add("A", A);
@@ -48,7 +48,6 @@ namespace Graph
 
             string input = Console.ReadLine();
             breadthFirstSearch(example_graph, input);
-            // 防止退出
             Console.ReadKey();
         }
 
@@ -57,6 +56,7 @@ namespace Graph
             // 初始化队列
             Queue<string> queue = new Queue<string>();
             queue.Enqueue(start);
+            // 记录访问过的节点
             Dictionary<string, bool> visited = new Dictionary<string, bool>();
             visited[start] = true;
 

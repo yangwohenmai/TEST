@@ -1,0 +1,10 @@
+E:\MyGit\TEST\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPoolTest.deps.json
+E:\MyGit\TEST\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPoolTest.runtimeconfig.json
+E:\MyGit\TEST\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPoolTest.runtimeconfig.dev.json
+E:\MyGit\TEST\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPoolTest.dll
+E:\MyGit\TEST\ThreadPool\bin\Debug\netcoreapp2.2\ThreadPoolTest.pdb
+E:\MyGit\TEST\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPoolTest.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPoolTest.AssemblyInfoInputs.cache
+E:\MyGit\TEST\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPoolTest.AssemblyInfo.cs
+E:\MyGit\TEST\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPoolTest.dll
+E:\MyGit\TEST\ThreadPool\obj\Debug\netcoreapp2.2\ThreadPoolTest.pdb
