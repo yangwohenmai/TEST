@@ -1,0 +1,7 @@
+E:\MyGit\TEST\SemaphoreSlim\bin\Debug\SemaphoreSlim.exe.config
+E:\MyGit\TEST\SemaphoreSlim\bin\Debug\SemaphoreSlim.exe
+E:\MyGit\TEST\SemaphoreSlim\bin\Debug\SemaphoreSlim.pdb
+E:\MyGit\TEST\SemaphoreSlim\obj\Debug\SemaphoreSlimTest.csprojAssemblyReference.cache
+E:\MyGit\TEST\SemaphoreSlim\obj\Debug\SemaphoreSlimTest.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\SemaphoreSlim\obj\Debug\SemaphoreSlim.exe
+E:\MyGit\TEST\SemaphoreSlim\obj\Debug\SemaphoreSlim.pdb

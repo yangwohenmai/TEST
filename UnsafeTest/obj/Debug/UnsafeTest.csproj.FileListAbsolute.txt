@@ -3,3 +3,9 @@ C:\Users\admin\Desktop\TEST\UnsafeTest\bin\Debug\UnsafeTest.exe
 C:\Users\admin\Desktop\TEST\UnsafeTest\bin\Debug\UnsafeTest.pdb
 C:\Users\admin\Desktop\TEST\UnsafeTest\obj\Debug\UnsafeTest.exe
 C:\Users\admin\Desktop\TEST\UnsafeTest\obj\Debug\UnsafeTest.pdb
+E:\MyGit\TEST\UnsafeTest\bin\Debug\UnsafeTest.exe.config
+E:\MyGit\TEST\UnsafeTest\bin\Debug\UnsafeTest.exe
+E:\MyGit\TEST\UnsafeTest\bin\Debug\UnsafeTest.pdb
+E:\MyGit\TEST\UnsafeTest\obj\Debug\UnsafeTest.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\UnsafeTest\obj\Debug\UnsafeTest.exe
+E:\MyGit\TEST\UnsafeTest\obj\Debug\UnsafeTest.pdb
