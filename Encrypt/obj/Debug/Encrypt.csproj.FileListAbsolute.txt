@@ -1,0 +1,6 @@
+E:\MyGit\TEST\Encrypt\bin\Debug\Encrypt.exe.config
+E:\MyGit\TEST\Encrypt\bin\Debug\Encrypt.exe
+E:\MyGit\TEST\Encrypt\bin\Debug\Encrypt.pdb
+E:\MyGit\TEST\Encrypt\obj\Debug\Encrypt.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\Encrypt\obj\Debug\Encrypt.exe
+E:\MyGit\TEST\Encrypt\obj\Debug\Encrypt.pdb
