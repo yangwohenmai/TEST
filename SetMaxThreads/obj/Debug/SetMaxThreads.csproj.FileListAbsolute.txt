@@ -1,6 +1,0 @@
-E:\MyGit\TEST\SetMaxThreads\bin\Debug\SetMaxThreads.exe.config
-E:\MyGit\TEST\SetMaxThreads\bin\Debug\SetMaxThreads.exe
-E:\MyGit\TEST\SetMaxThreads\bin\Debug\SetMaxThreads.pdb
-E:\MyGit\TEST\SetMaxThreads\obj\Debug\SetMaxThreads.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\SetMaxThreads\obj\Debug\SetMaxThreads.exe
-E:\MyGit\TEST\SetMaxThreads\obj\Debug\SetMaxThreads.pdb

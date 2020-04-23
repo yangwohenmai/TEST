@@ -3,10 +3,3 @@ C:\Users\admin\Desktop\TEST\Lambda\bin\Debug\Lambda.exe
 C:\Users\admin\Desktop\TEST\Lambda\bin\Debug\Lambda.pdb
 C:\Users\admin\Desktop\TEST\Lambda\obj\Debug\Lambda.exe
 C:\Users\admin\Desktop\TEST\Lambda\obj\Debug\Lambda.pdb
-E:\MyGit\TEST\Lambda\bin\Debug\Lambda.exe.config
-E:\MyGit\TEST\Lambda\bin\Debug\Lambda.exe
-E:\MyGit\TEST\Lambda\bin\Debug\Lambda.pdb
-E:\MyGit\TEST\Lambda\obj\Debug\Lambda.csprojAssemblyReference.cache
-E:\MyGit\TEST\Lambda\obj\Debug\Lambda.csproj.CoreCompileInputs.cache
-E:\MyGit\TEST\Lambda\obj\Debug\Lambda.exe
-E:\MyGit\TEST\Lambda\obj\Debug\Lambda.pdb
