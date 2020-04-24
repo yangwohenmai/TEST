@@ -17,9 +17,13 @@ namespace MongoDB
             IMongoCollection<BsonDocument> hk_test = Database.GetCollection<BsonDocument>("hk_test");
 
 
-
+            var projection = Builders<BsonDocument>.Projection.Include("ITCode2").Exclude("_id");
+            //var projection = Builders<BsonDocument>.Projection.Include("ID").Include("ITCode2").Include("TMSTAMP").Exclude("_id");
             var filter1 = Builders<BsonDocument>.Filter.Ne("ID", 11);
-            var result = Database.GetCollection<BsonDocument>("hk_test").Find(filter1).ToList();
+            var result = Database.GetCollection<BsonDocument>("hk_test").Find("{}").Project(projection).ToList().ToJson();
+            var Fin_List = BsonSerializer.Deserialize<List<teststru>>(result).AsQueryable().ToList();
+            var Fin_List1 = BsonSerializer.Deserialize<List<string>>(result).AsQueryable().Distinct().ToList();
+
             var rep = new ReplaceOneModel<BsonDocument>(filter1, new BsonDocument("ID", 14).Add("ITCode2", "ok").Add("TMSTAMP","OK"));
             rep.IsUpsert = true;
             InputDBList.Add(rep);
@@ -50,5 +54,12 @@ namespace MongoDB
 
 
 
+    }
+
+    public class teststru
+    {
+        public int ID;
+        public string ITCode2;
+        public string TMSTAMP;
     }
 }
