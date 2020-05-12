@@ -7,11 +7,24 @@ namespace TEST
 {
     class Program
     {
-        static void Main1(string[] args)
+        static void Main(string[] args)
         {
             string b = "Begin";
 
             Console.WriteLine(b);
+
+
+            Dictionary<string, Dictionary<string, string>> dictest = new Dictionary<string, Dictionary<string, string>>();
+            dictest["1"] = new Dictionary<string, string>();
+            dictest["1"]["3"] = "4";
+            dictest["1"]["3"] = "5";
+            dictest["1"]["5"] = "6";
+            dictest["1"]["6"] = "7";
+            dictest["1"].Remove("5");
+
+
+
+
 
             SortedList<int, string> list = new SortedList<int, string>();
             list.Add(4, "sdf");

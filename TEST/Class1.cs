@@ -9,7 +9,7 @@ namespace TEST
     public class TEST
     {
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             double[] arr;
             arr = new double[5] { 2077, 2077, 2078, 2083, 2082 };
