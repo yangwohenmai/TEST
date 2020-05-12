@@ -14,7 +14,9 @@ namespace MongoDB
         {
             Console.WriteLine("Hello World!");
             List<WriteModel<BsonDocument>> InputDBList = new List<WriteModel<BsonDocument>>();
-            IMongoCollection<BsonDocument> hk_test = Database.GetCollection<BsonDocument>("hk_test");
+            IMongoCollection<BsonDocument> hk_test = Database.GetCollection<BsonDocument>("test");
+
+            
 
 
             var projection = Builders<BsonDocument>.Projection.Include("ITCode2").Exclude("_id");
@@ -35,8 +37,8 @@ namespace MongoDB
 
             var filter = Builders<BsonDocument>.Filter.Eq("ID", 11);
             //var update = Builders<BsonDocument>.Update.Set("ITCode2", "OK2").Set("TMSTAMP", "OK2");
-            var update = Builders<BsonDocument>.Update.Set("ITCode2", "OK2");
-            Database.GetCollection<BsonDocument>("hk_test").UpdateMany("{}", update);
+            var update = Builders<BsonDocument>.Update.Set("ITCode2", new BsonDateTime(DateTime.Now));
+            Database.GetCollection<BsonDocument>("test").UpdateMany("{}", update);
             //Database.GetCollection<BsonDocument>("hk_test").UpdateMany(filter, update, new UpdateOptions { IsUpsert = true});
             //var updateOptions = new UpdateOptions { IsUpsert = true };
             //InputDBList.Add(new UpdateManyModel<BsonDocument>(filter, update));
