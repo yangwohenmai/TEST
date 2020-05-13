@@ -12,6 +12,7 @@ namespace MongoDB
         static IMongoDatabase Database = new MongoClient("mongodb://finchina:finchina@10.15.97.183:27017/DerivedData").GetDatabase("DerivedData");
         static void Main(string[] args)
         {
+            updata();
             Console.WriteLine("Hello World!");
             List<WriteModel<BsonDocument>> InputDBList = new List<WriteModel<BsonDocument>>();
             IMongoCollection<BsonDocument> hk_test = Database.GetCollection<BsonDocument>("test");
@@ -54,9 +55,22 @@ namespace MongoDB
             //var DataList = BsonSerializer.Deserialize<List<BsonDocument>>(result).AsQueryable().ToList();
         }
 
-
-
+        public static  void updata()
+        {
+            List<WriteModel<BsonDocument>> InputDBList = new List<WriteModel<BsonDocument>>();
+            IMongoDatabase Database = new MongoClient("mongodb://finchina:finchina@10.15.97.183:27017/DerivedData").GetDatabase("DerivedData");
+            IMongoCollection<BsonDocument> CompanyList_ITCode2_Input = Database.GetCollection<BsonDocument>("test");
+            var filter = Builders<BsonDocument>.Filter.Eq("ITCode2", "1");
+            var update = Builders<BsonDocument>.Update.Set("ENTRYDT", new BsonDateTime(DateTime.Now.AddHours(8)));
+            var upsert = new UpdateManyModel<BsonDocument>(filter, update);
+            upsert.IsUpsert = true;
+            InputDBList.Add(upsert);
+            CompanyList_ITCode2_Input.BulkWrite(InputDBList);
+        }
     }
+
+    
+
 
     public class teststru
     {
