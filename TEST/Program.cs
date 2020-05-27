@@ -11,7 +11,9 @@ namespace TEST
         {
             string b = "Begin";
             Console.WriteLine(b);
-
+            double test = 0.000000012345;
+            string tt1 = ((decimal)test).ToString();
+            string tt2 = Convert.ToString((decimal)test);
 
             Dictionary<string, Dictionary<string, string>> dictest = new Dictionary<string, Dictionary<string, string>>();
             dictest["1"] = new Dictionary<string, string>();
