@@ -15,11 +15,11 @@ namespace SocketClient
             //短连接
             //shotlink("");
             //长连接
-            //longlink();
+            longlink();
 
-            //衍生2.0 Socket交互方法
-            SocketUserClient client = new SocketUserClient("127.0.0.1", 5002);
-            string responseMsg = client.SentMsgToServer("我是客户端请求123");
+            //衍生2.0 Socket交互方法,只能调用衍生客户端方法
+            //SocketUserClient client = new SocketUserClient("127.0.0.1", 5002);
+            //string responseMsg = client.SentMsgToServer("我是客户端请求123");
             Console.ReadLine();
         }
 
@@ -73,7 +73,7 @@ namespace SocketClient
             Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                clientSocket.Connect(new IPEndPoint(ip, 2000)); //配置服务器IP与端口  
+                clientSocket.Connect(new IPEndPoint(ip, 5002)); //配置服务器IP与端口  
                 Console.WriteLine("连接服务器成功");
             }
             catch

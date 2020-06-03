@@ -17,8 +17,8 @@ namespace SocketServer
         static void Main(string[] args)
         {
             SocketServie();
-            
-            //衍生2.0 Socket交互方法
+
+            //衍生2.0 Socket交互方法,只能调用衍生客户端方法
             //SocketServer ss = new SocketServer();
             //ss.StartBackGroundListener("127.0.0.1",5002);
         }
@@ -28,7 +28,7 @@ namespace SocketServer
         {
             Console.WriteLine("服务端已启动");
             string host = "127.0.0.1";//IP地址
-            int port = 2000;//端口
+            int port = 5002;//端口
             socket.Bind(new IPEndPoint(IPAddress.Parse(host), port));
             socket.Listen(100);//设定最多100个排队连接请求   
             Thread myThread = new Thread(ListenClientConnect);//通过多线程监听客户端连接  
