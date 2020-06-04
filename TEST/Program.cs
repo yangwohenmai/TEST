@@ -11,9 +11,6 @@ namespace TEST
         {
             string b = "Begin";
             Console.WriteLine(b);
-            double test = 0.000000012345;
-            string tt1 = ((decimal)test).ToString();
-            string tt2 = Convert.ToString((decimal)test);
 
             Dictionary<string, Dictionary<string, string>> dictest = new Dictionary<string, Dictionary<string, string>>();
             dictest["1"] = new Dictionary<string, string>();
@@ -21,7 +18,13 @@ namespace TEST
             dictest["1"]["3"] = "5";
             dictest["1"]["5"] = "6";
             dictest["1"]["6"] = "7";
-            dictest["1"].Remove("5");
+            dictest["2"] = new Dictionary<string, string>();
+            dictest["2"]["1"] = "1";
+            dictest["2"]["2"] = "2";
+            dictest["2"]["3"] = "3";
+            dictest["2"]["4"] = "4";
+            dictest["2"]["5"] = "5";
+            dictest["2"].Remove(null);
 
 
 
