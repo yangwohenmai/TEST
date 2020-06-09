@@ -36,7 +36,7 @@ namespace SocketClient
             Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                clientSocket.Connect(new IPEndPoint(ip, 2000)); //配置服务器IP与端口  
+                clientSocket.Connect(new IPEndPoint(ip, 5002)); //配置服务器IP与端口  
                 Console.WriteLine("连接服务器成功");
             }
             catch

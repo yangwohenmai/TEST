@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace TEST
@@ -9,8 +10,45 @@ namespace TEST
     {
         static void Main(string[] args)
         {
-            string b = "Begin";
-            Console.WriteLine(b);
+            string Begin = "Begin";
+            Console.WriteLine(Begin);
+            #region 构造BulkCopy的DataTable
+            DataTable BulkCopyData = new DataTable();
+            DataRow BulkCopyRow = BulkCopyData.NewRow();
+            BulkCopyData.Columns.Add("ITCode2", typeof(string));
+            BulkCopyData.Columns.Add("SITCode2", typeof(string));
+            BulkCopyData.Columns.Add("NLevel", typeof(Int32));
+            BulkCopyData.Columns.Add("EntryDT", typeof(DateTime));
+            BulkCopyData.Columns.Add("Flag", typeof(Int32));
+            #endregion
+            #region 构造失败队列的DataTable
+            DataTable ErrorDt = new DataTable();
+            DataRow ErrorDtRow = ErrorDt.NewRow();
+            ErrorDt.Columns.Add("ITCode2", typeof(string));
+            ErrorDt.Columns.Add("SITCode2", typeof(string));
+            ErrorDt.Columns.Add("NLevel", typeof(Int32));
+            ErrorDt.Columns.Add("EntryDT", typeof(DateTime));
+            ErrorDt.Columns.Add("Flag", typeof(Int32));
+            #endregion
+
+            DataRow sqlRow = BulkCopyData.NewRow();
+            sqlRow["ITCode2"] = "1";
+            sqlRow["SITCode2"] = "1";
+            sqlRow["NLevel"] = 1;
+            sqlRow["EntryDT"] = DateTime.Now;
+            sqlRow["Flag"] = 1;
+            BulkCopyData.Rows.Add(sqlRow);
+
+            DataRow sqlRow1 = ErrorDt.NewRow();
+            sqlRow1["ITCode2"] = "2";
+            sqlRow1["SITCode2"] = "2";
+            sqlRow1["NLevel"] = 2;
+            sqlRow1["EntryDT"] = DateTime.Now;
+            sqlRow1["Flag"] = 2;
+            ErrorDt.Rows.Add(sqlRow1);
+
+            ErrorDt.Merge(BulkCopyData);
+
 
             Dictionary<string, Dictionary<string, string>> dictest = new Dictionary<string, Dictionary<string, string>>();
             dictest["1"] = new Dictionary<string, string>();
