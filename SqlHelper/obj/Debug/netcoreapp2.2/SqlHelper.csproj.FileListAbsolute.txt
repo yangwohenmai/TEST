@@ -1,0 +1,8 @@
+E:\MyGit\TEST\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.deps.json
+E:\MyGit\TEST\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.runtimeconfig.json
+E:\MyGit\TEST\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.runtimeconfig.dev.json
+E:\MyGit\TEST\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.dll
+E:\MyGit\TEST\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.AssemblyInfoInputs.cache
+E:\MyGit\TEST\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.AssemblyInfo.cs
+E:\MyGit\TEST\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.csprojAssemblyReference.cache
