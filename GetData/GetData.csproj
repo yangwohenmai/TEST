@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CHDQUOTE.cs" />
-    <Compile Include="HKHQUOTE.cs" />
     <Compile Include="JQData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
