@@ -148,7 +148,7 @@ namespace GetDataBase
             //记录日志
             if (!string.IsNullOrEmpty(errorMsg))
             {
-                Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
+                //Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
             }
 
             return dt;
@@ -194,7 +194,7 @@ namespace GetDataBase
             //记录日志
             if (!string.IsNullOrEmpty(errorMsg))
             {
-                Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
+                //Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
             }
 
             return dr;
@@ -244,7 +244,7 @@ namespace GetDataBase
             //记录日志
             if (!string.IsNullOrEmpty(errorMsg))
             {
-                Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
+                //Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
             }
 
             return obj;
@@ -296,7 +296,7 @@ namespace GetDataBase
             //记录日志
             if (!string.IsNullOrEmpty(errorMsg))
             {
-                Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
+                //Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
             }
 
             return intResult;
@@ -357,7 +357,7 @@ namespace GetDataBase
             //记录日志
             if (!string.IsNullOrEmpty(errorMsg))
             {
-                Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
+                //Log4NetUtil.Error(this, "SQL:" + sql + " ConnStr:" + connStr + "|*|" + errorMsg);
             }
 
             return intResult;

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using entDerived.Model.Comm;
 
 /******************************************************************
  * Author: miaoxin 
@@ -10,7 +9,7 @@ using entDerived.Model.Comm;
  * Content: SqlServer 数据源访问类
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// SqlServer 数据源访问类

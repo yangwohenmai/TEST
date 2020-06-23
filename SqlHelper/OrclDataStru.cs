@@ -1,5 +1,4 @@
-﻿using entDerived.Model.Mission;
-using Oracle.ManagedDataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
 using System.Collections;
 
 /******************************************************************
@@ -8,7 +7,7 @@ using System.Collections;
  * Content: Oracle参数数据结构
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// Oracle参数数据结构

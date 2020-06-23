@@ -4,12 +4,11 @@
  * Content: 数据库连接配置结构
  ******************************************************************/
 
-namespace entDerived.Model.Comm
-{
+namespace SqlHelper
     /// <summary>
     /// 数据库类型枚举
     /// </summary>
-    public enum EnumDbType
+public enum EnumDbType
     {
         SqlServer = 1, Oracle = 2, MySql = 3, DB2 = 4, SQLite = 5, Null = 100
     }

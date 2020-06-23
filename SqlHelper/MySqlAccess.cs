@@ -1,5 +1,4 @@
-﻿using entDerived.Model.Comm;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
@@ -9,7 +8,7 @@ using System.Data;
  * Content: MySqlServer 数据源访问类
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// MySqlServer 数据源访问类

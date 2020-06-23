@@ -1,5 +1,4 @@
-﻿using entDerived.Model.Mission;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
 /******************************************************************
@@ -8,7 +7,7 @@ using System.Collections.Generic;
  * Content: MySql参数数据结构
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// MySql参数数据结构

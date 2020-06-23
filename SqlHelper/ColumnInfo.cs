@@ -5,7 +5,7 @@
  * Content: 列配置结构
  ******************************************************************/
 
-namespace entDerived.Model.Mission
+namespace SqlHelper
 {
     /// <summary>
     /// 列配置结构

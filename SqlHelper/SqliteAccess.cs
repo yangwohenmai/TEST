@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Data;
-using entDerived.Model.Comm;
 
 /******************************************************************
  * Author: miaoxin 
@@ -9,7 +8,7 @@ using entDerived.Model.Comm;
  * Content: Sqlite访问类
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// Sqlite访问类

@@ -1,5 +1,4 @@
-﻿using entDerived.Model.Comm;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
@@ -13,7 +12,7 @@ using System.Data.SQLite;
  * Content: 通用数据库访问基类
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// 通用数据库访问基类

@@ -4,7 +4,6 @@ using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using entDerived.Model.Comm;
 
 /******************************************************************
  * Author: miaoxin 
@@ -12,7 +11,7 @@ using entDerived.Model.Comm;
  * Content: Oracle 数据源访问类
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// Oracle 数据源访问类

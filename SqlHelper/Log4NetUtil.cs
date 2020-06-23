@@ -12,7 +12,7 @@ using System.Linq;
  * 实例方法：Log4NetUtil.Error(this, "msg"); 静态方法：Log4NetUtil.Error(typeof(Program), "msg");
  ******************************************************************/
 
-namespace CommonLib.DbAccess
+namespace SqlHelper
 {
     /// <summary>
     /// Log4Net日志类
