@@ -1,0 +1,10 @@
+E:\MyGit\TEST\Log4NetDemo\bin\Debug\netcoreapp2.2\config\log4net.config
+E:\MyGit\TEST\Log4NetDemo\bin\Debug\netcoreapp2.2\Log4NetDemo.deps.json
+E:\MyGit\TEST\Log4NetDemo\bin\Debug\netcoreapp2.2\Log4NetDemo.dll
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.AssemblyInfoInputs.cache
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.AssemblyInfo.cs
+E:\MyGit\TEST\Log4NetDemo\bin\Debug\netcoreapp2.2\Log4NetDemo.pdb
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.csprojAssemblyReference.cache
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.dll
+E:\MyGit\TEST\Log4NetDemo\obj\Debug\netcoreapp2.2\Log4NetDemo.pdb

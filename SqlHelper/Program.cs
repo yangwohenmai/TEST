@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 
 namespace SqlHelper
 {
@@ -7,6 +9,7 @@ namespace SqlHelper
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
         }
     }
 }

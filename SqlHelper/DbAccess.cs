@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Log4NetDemo;
+using MySql.Data.MySqlClient;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
@@ -7,8 +8,8 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 
 /******************************************************************
- * Author: miaoxin 
- * Date: 2017-12-26 
+ * Author: 
+ * Date: 
  * Content: 通用数据库访问基类
  ******************************************************************/
 

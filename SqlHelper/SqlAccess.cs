@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Log4NetDemo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 /******************************************************************
- * Author: miaoxin 
+ * Author:  
  * Date: 2018-10-31 
  * Content: SqlServer 数据源访问类
  ******************************************************************/

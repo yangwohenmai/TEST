@@ -1,9 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Log4NetDemo;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
 /******************************************************************
- * Author: miaoxin 
+ * Author:  
  * Date: 2019-01-18 
  * Content: MySqlServer 数据源访问类
  ******************************************************************/

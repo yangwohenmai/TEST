@@ -1990,6 +1990,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Log4NetDemo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "log4net": "2.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Log4NetDemo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Log4NetDemo.dll": {}
+        }
       }
     }
   },
@@ -6872,16 +6885,21 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Log4NetDemo/1.0.0": {
+      "type": "project",
+      "path": "../Log4NetDemo/Log4NetDemo.csproj",
+      "msbuildProject": "../Log4NetDemo/Log4NetDemo.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Log4NetDemo >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "MySql.Data >= 8.0.20",
       "Oracle.ManagedDataAccess.Core >= 2.19.70",
       "System.Data.SQLite >= 1.0.113.1",
-      "System.Data.SqlClient >= 4.8.1",
-      "log4net >= 2.0.8"
+      "System.Data.SqlClient >= 4.8.1"
     ]
   },
   "packageFolders": {
@@ -6913,7 +6931,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\MyGit\\TEST\\Log4NetDemo\\Log4NetDemo.csproj": {
+              "projectPath": "E:\\MyGit\\TEST\\Log4NetDemo\\Log4NetDemo.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -6946,10 +6968,6 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.1, )"
-          },
-          "log4net": {
-            "target": "Package",
-            "version": "[2.0.8, )"
           }
         },
         "imports": [

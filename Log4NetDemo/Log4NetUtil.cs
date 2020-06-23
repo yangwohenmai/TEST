@@ -4,15 +4,18 @@ using System;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 /******************************************************************
- * Author: miaoxin 
+ * Author: 
  * Date: 2018-10-23
  * Content: Log4Net日志类 
  * 实例方法：Log4NetUtil.Error(this, "msg"); 静态方法：Log4NetUtil.Error(typeof(Program), "msg");
+ * 调用方法：Log4NetDemo.Log4NetUtil.InitLogSetting(AppBasePath);
+             Log4NetDemo.Log4NetUtil.Info(typeof(Program), "1");
  ******************************************************************/
 
-namespace SqlHelper
+namespace Log4NetDemo
 {
     /// <summary>
     /// Log4Net日志类
@@ -30,9 +33,11 @@ namespace SqlHelper
         /// <param name="AppBasePath">应用根路径(绝对路径)</param>
         public static void InitLogSetting(string AppBasePath)
         {
+            //默认路径为程序运行路径
             if (string.IsNullOrEmpty(AppBasePath))
             {
-                throw new ArgumentException("Log4NetUtil.InitLogSetting->AppBasePath is Empty");
+                AppBasePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                //throw new ArgumentException("Log4NetUtil.InitLogSetting->AppBasePath is Empty");
             }
             string strConfPath = Path.Combine(AppBasePath, "config", "log4net.config");
             if (!File.Exists(strConfPath))

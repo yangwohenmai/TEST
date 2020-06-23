@@ -4,9 +4,10 @@ using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Log4NetDemo;
 
 /******************************************************************
- * Author: miaoxin 
+ * Author:  
  * Date: 2017-12-26 
  * Content: Oracle 数据源访问类
  ******************************************************************/

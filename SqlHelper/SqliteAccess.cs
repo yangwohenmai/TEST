@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data.SQLite;
 using System.Data;
+using Log4NetDemo;
 
 /******************************************************************
- * Author: miaoxin 
+ * Author:  
  * Date: 2018-10-31
  * Content: Sqlite访问类
  ******************************************************************/
