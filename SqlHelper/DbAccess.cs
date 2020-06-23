@@ -1,5 +1,4 @@
-﻿using CommonLib.Util;
-using entDerived.Model.Comm;
+﻿using entDerived.Model.Comm;
 using MySql.Data.MySqlClient;
 using Oracle.ManagedDataAccess.Client;
 using System;
