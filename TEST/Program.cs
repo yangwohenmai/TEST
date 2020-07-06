@@ -13,43 +13,8 @@ namespace TEST
             string Begin = "Begin";
             Console.WriteLine(Begin);
 
-
-            Dictionary<string, Dictionary<string, string>> dictest = new Dictionary<string, Dictionary<string, string>>();
-            dictest["1"] = new Dictionary<string, string>();
-            dictest["1"]["3"] = "4";
-            dictest["1"]["3"] = "5";
-            dictest["1"]["5"] = "6";
-            dictest["1"]["6"] = "7";
-            dictest["2"] = new Dictionary<string, string>();
-            dictest["2"]["1"] = "1";
-            dictest["2"]["2"] = "2";
-            dictest["2"]["3"] = "3";
-            dictest["2"]["4"] = "4";
-            dictest["2"]["5"] = "5";
-            dictest["2"].Remove(null);
-
-
-
-
-
-            SortedList<int, string> list = new SortedList<int, string>();
-            list.Add(4, "sdf");
-            list.Add(2, "sfd");
-            list.Add(6, "sdfa");
-            list.Add(3, "sfaf");
-            int a11 = list.Keys.Min();
-            string a12 = list[3];
-
-
-
-            try
-            {
-                ex();
-            }
-            catch (Exception ex)
-            {
-                string c = ex.Message;
-            }
+            
+            
 
 
             #region 时间
@@ -169,26 +134,8 @@ namespace TEST
 
             Console.ReadLine();
 
-            
-
-
 
 
         }
-
-
-
-
-        public static void ex()
-        {
-            int a = 0;
-            int b = 10 / a;
-        }
-
-
-
     }
-
-   
-
 }
