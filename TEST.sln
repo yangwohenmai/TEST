@@ -97,9 +97,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph", "Graph\Graph.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB", "MongoDB\MongoDB.csproj", "{28C5E163-37C2-4DFF-96DF-14D2D2F8AC51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlHelper", "SqlHelper\SqlHelper.csproj", "{CF4FCBE9-4AAD-4195-813D-A213634DEB43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlHelper", "SqlHelper\SqlHelper.csproj", "{CF4FCBE9-4AAD-4195-813D-A213634DEB43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetDemo", "Log4NetDemo\Log4NetDemo.csproj", "{9C496BE2-0177-44A5-A5A0-D95D376FAE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log4NetDemo", "Log4NetDemo\Log4NetDemo.csproj", "{9C496BE2-0177-44A5-A5A0-D95D376FAE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSystemInfo", "GetSystemInfo\GetSystemInfo.csproj", "{5070AC44-4B67-44D2-A0BF-9AC10672159D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -635,6 +637,18 @@ Global
 		{9C496BE2-0177-44A5-A5A0-D95D376FAE87}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9C496BE2-0177-44A5-A5A0-D95D376FAE87}.Release|x64.ActiveCfg = Release|Any CPU
 		{9C496BE2-0177-44A5-A5A0-D95D376FAE87}.Release|x64.Build.0 = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Debug|x64.Build.0 = Debug|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|x64.ActiveCfg = Release|Any CPU
+		{5070AC44-4B67-44D2-A0BF-9AC10672159D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

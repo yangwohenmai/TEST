@@ -1,0 +1,10 @@
+E:\MyGit\TEST\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.deps.json
+E:\MyGit\TEST\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.runtimeconfig.json
+E:\MyGit\TEST\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.runtimeconfig.dev.json
+E:\MyGit\TEST\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.dll
+E:\MyGit\TEST\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.pdb
+E:\MyGit\TEST\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.csproj.CoreCompileInputs.cache
+E:\MyGit\TEST\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.AssemblyInfoInputs.cache
+E:\MyGit\TEST\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.AssemblyInfo.cs
+E:\MyGit\TEST\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.dll
+E:\MyGit\TEST\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.pdb
