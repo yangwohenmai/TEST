@@ -13,7 +13,8 @@ namespace JSon
     {
         static void Main(string[] args)
         {
-            
+            //将复杂的Json转换成对象
+            JsonToObject.JsonToObjectFun();
 
             string unicodeString = "Type:鍥藉�";
             UTF8Encoding utf8 = new UTF8Encoding();

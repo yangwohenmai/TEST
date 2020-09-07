@@ -17,8 +17,9 @@ namespace GetSystemInfo
 
         public static void DisbleQuickEditMode()
         {
-            IntPtr hStdin = (IntPtr)8;
-            uint mode = (uint)487;
+            IntPtr hStdin = GetStdHandle(STD_INPUT_HANDLE);
+            uint mode;
+            GetConsoleMode(hStdin, out mode);
             mode &= ~ENABLE_QUICK_EDIT_MODE;//移除快速编辑模式
             mode &= ~ENABLE_INSERT_MODE;      //移除插入模式
             SetConsoleMode(hStdin, mode);
