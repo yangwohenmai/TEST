@@ -9,10 +9,10 @@ namespace MongoDB
 {
     class Program
     {
-        static IMongoDatabase Database = new MongoClient("mongodb://finchina:finchina@10.15.97.183:27017/DerivedData").GetDatabase("DerivedData");
+        static IMongoDatabase Database = new MongoClient("mongodb://finchina:finchina@10.15.97.**:27017/DerivedData").GetDatabase("DerivedData");
         static void Main(string[] args)
         {
-            updata();
+            Update();
             Console.WriteLine("Hello World!");
             List<WriteModel<BsonDocument>> InputDBList = new List<WriteModel<BsonDocument>>();
             IMongoCollection<BsonDocument> hk_test = Database.GetCollection<BsonDocument>("test");
@@ -55,10 +55,12 @@ namespace MongoDB
             //var DataList = BsonSerializer.Deserialize<List<BsonDocument>>(result).AsQueryable().ToList();
         }
 
-        public static  void updata()
+        /// <summary>
+        /// Update语法
+        /// </summary>
+        public static  void Update()
         {
             List<WriteModel<BsonDocument>> InputDBList = new List<WriteModel<BsonDocument>>();
-            IMongoDatabase Database = new MongoClient("mongodb://finchina:finchina@10.15.97.183:27017/DerivedData").GetDatabase("DerivedData");
             IMongoCollection<BsonDocument> CompanyList_ITCode2_Input = Database.GetCollection<BsonDocument>("test");
             var filter = Builders<BsonDocument>.Filter.Eq("ITCode2", "1");
             var update = Builders<BsonDocument>.Update.Set("ENTRYDT", new BsonDateTime(DateTime.Now.AddHours(8)));
@@ -67,6 +69,21 @@ namespace MongoDB
             InputDBList.Add(upsert);
             CompanyList_ITCode2_Input.BulkWrite(InputDBList);
         }
+
+
+        /// <summary>
+        /// In语法
+        /// </summary>
+        /// <param name="idlist"></param>
+        /// <returns></returns>
+        public List<BsonDocument> InFun(List<int> idlist)
+        {
+            var projection = Builders<BsonDocument>.Projection.Include("tcr0055_v3.id").Include("tcr0055_v3.cr0055_001").Exclude("_id");
+            var filter = Builders<BsonDocument>.Filter.In("tcr0055_v3.id", idlist);
+            var DataList = Database.GetCollection<BsonDocument>("TCR0055_V3").Find<BsonDocument>(filter).Project<BsonDocument>(projection).ToList<BsonDocument>();
+            return DataList;
+        }
+        
     }
 
     
