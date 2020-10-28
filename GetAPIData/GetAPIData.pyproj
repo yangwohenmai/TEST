@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>38da37ff-a9cc-441d-ae09-3e6fd0e83d3e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>BaiduIndex\2\main.py</StartupFile>
+    <StartupFile>UnderstandData\第二版.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -41,6 +41,8 @@
     <Compile Include="JQStockData\JQStockData.py" />
     <Compile Include="SinaFinance\sina_mian.py" />
     <Compile Include="SinaFinance\sina_stockholm.py" />
+    <Compile Include="UnderstandData\第一版.py" />
+    <Compile Include="UnderstandData\第二版.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaiduIndex\" />
@@ -50,6 +52,7 @@
     <Folder Include="GetHouseData\" />
     <Folder Include="JQStockData\" />
     <Folder Include="GetHKData\" />
+    <Folder Include="UnderstandData\" />
     <Folder Include="SinaFinance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
