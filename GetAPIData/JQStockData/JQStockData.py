@@ -220,6 +220,7 @@ def followorder():
     print('|                     退出当前聚宽帐号并切换帐号请输入:5')
     print('|                   从文档中删除第一个股票代码请输入:d')
     print('|                   获取所有的股票交易日并保存请输入:td')
+    print('|                   更新股票代码列表并保存请输入:-u')
     print('|+++++++++++结束程序请留空或输入其他任意字符++++++++++++')
     order = input('=============请输入你想要进行的操作=============:')
     if order == '1':
@@ -301,6 +302,15 @@ def followorder():
         print(type(daypd))
         daypd.to_csv(Path(str(homefolder + '/stockdb/tradedate.csv')), encoding='GBK', index=False)
         print('所有交易日已保存')
+        followorder()
+        exit()
+        return
+    elif order == '-u':
+        symbollist = list(get_all_securities(['stock']).index)
+        symbollist = pd.DataFrame(columns=["code"],data=symbollist)
+        print(type(symbollist))
+        symbollist.to_csv(Path(str(homefolder + '/stockdb/jqlist.cfg')), encoding='GBK', index=False,header=None)
+        print('已获取最新股票列表到jqlist')
         followorder()
         exit()
         return
