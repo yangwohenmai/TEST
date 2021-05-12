@@ -28,7 +28,7 @@ def write_db(param):
         #cx.commit()
 
         #cu.execute('''create table catalog (id text ,url text ,housing_estate text ,position text ,square_metre text ,unit_price text ,total_price text ,follow text ,take_look text ,pub_date text )''')
-        cu.execute('''insert into catalog values ('%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s')'''%('1',param["url"],param["housing_estate"],param["position"],param["square_metre"],param["unit_price"],param["total_price"],param["follow"],param["take_look"],param["pub_date"]))
+        cu.execute('''insert into catalog values ('%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s' , '%s')'''%('1',param["url"],param["housing_estate"],param["position"],param["square_metre"],param["unit_price"],param["total_price"],param["follow"],param["take_look"],param["pub_date"],param["pagelink"],param["keyword"]))
         cx.commit()
         #c = cu.execute('''select * from catalog''')
         #print(list(c))
@@ -66,14 +66,16 @@ def main():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
     page_max = 100
     count = 0
-    del_db()
+    #del_db()
+    keyword = 'hangtou/'
     for i in range(1, int(page_max) + 1):
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
             house = 'https://sh.lianjia.com/ershoufang/chuansha/'
             house = 'https://sh.lianjia.com/ershoufang/zhoupu/'
+            house = 'https://sh.lianjia.com/ershoufang/' + keyword
         else:
-            house = 'https://sh.lianjia.com/ershoufang/chuansha/pg'+str(i)
+            house = 'https://sh.lianjia.com/ershoufang/' + keyword + 'pg'+str(i)
         res = requests.get(house, headers=headers)
         soup = BeautifulSoup(res.text, 'html.parser')
         try:
@@ -119,6 +121,8 @@ def main():
                 # 挂牌时间(重要数据)
                 pub_date = soup.find('div', class_='transaction').find_all('li')[0].find_all('span')[1].text
                 house_param['pub_date'] = pub_date
+                house_param['pagelink'] = house
+                house_param['keyword'] = keyword
                 write_db(house_param)
                 #WriteHere(house_param,'house')
                 #没有数据库时，输出到console
