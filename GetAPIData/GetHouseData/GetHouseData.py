@@ -38,7 +38,7 @@ def write_db(param):
         print(e)
 
 
-# 写入数据库
+# 删除数据
 def del_db():
     try:
 
@@ -67,7 +67,7 @@ def main():
     page_max = 100
     count = 0
     #del_db()
-    keyword = 'hangtou/'
+    keyword = 'xuanqiao/'
     for i in range(1, int(page_max) + 1):
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
@@ -120,8 +120,11 @@ def main():
                 # --------------------------------------------------------#
                 # 挂牌时间(重要数据)
                 pub_date = soup.find('div', class_='transaction').find_all('li')[0].find_all('span')[1].text
+                # 发布日期
                 house_param['pub_date'] = pub_date
+                # 页面链接
                 house_param['pagelink'] = house
+                # 区域关键字
                 house_param['keyword'] = keyword
                 write_db(house_param)
                 #WriteHere(house_param,'house')
