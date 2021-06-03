@@ -145,10 +145,10 @@ def main():
         try:
             li_max = soup.find('ul', class_='sellListContent').find_all('li')
         except Exception as e:
-                print(e)
-                print(house)
-                print(soup)
-                continue
+            print(e)
+            print(house)
+            print(soup)
+            continue
 
         for li in li_max:
             try:

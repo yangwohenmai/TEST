@@ -11,7 +11,10 @@ import sys
 #from util.mysql_DBUtils import mysql
 import sqlite3
 import time
-
+"""
+删除数据时根据匹配的关键字进行删除
+每次只删除一个keyword对应的一批数据
+"""
 # 写入数据库
 def write_db(param):
     try:
@@ -140,10 +143,10 @@ def main():
         try:
             li_max = soup.find('ul', class_='sellListContent').find_all('li')
         except Exception as e:
-                print(e)
-                print(house)
-                print(soup)
-                continue
+            print("errormsg1:用于判断跳出循环", e)
+            print(house)
+            print(soup)
+            continue
 
         for li in li_max:
             try:
@@ -193,7 +196,7 @@ def main():
                 count += 1
                 print(count)
             except Exception as e:
-                print(e)
+                print("errormsg2:小错误可以忽略", e)
         #mysql.end("commit")
     #mysql.dispose()
 

@@ -11,7 +11,9 @@ import sys
 #from util.mysql_DBUtils import mysql
 import sqlite3
 import time
-
+"""
+每次全量删除数据表，再全量插入新数据
+"""
 # 写入数据库
 def write_db(param):
     try:
@@ -66,7 +68,7 @@ def main():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
     page_max = 100
     count = 0
-    #del_db()
+    del_db()
     keyword = 'xuanqiao/'
     for i in range(1, int(page_max) + 1):
         if i == 1:
@@ -81,10 +83,10 @@ def main():
         try:
             li_max = soup.find('ul', class_='sellListContent').find_all('li')
         except Exception as e:
-                print(e)
-                print(house)
-                print(soup)
-                continue
+            print(e)
+            print(house)
+            print(soup)
+            continue
 
         for li in li_max:
             try:

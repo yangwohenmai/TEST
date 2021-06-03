@@ -11,7 +11,9 @@ import sys
 #from util.mysql_DBUtils import mysql
 import sqlite3
 import time
-
+"""
+完全不删历史数据，每次只插入新数据，保留历史以便做对比
+"""
 # 写入数据库
 def write_db(param):
     try:
@@ -92,7 +94,7 @@ def releaseconn(conn):
 
 
 # 更新数据方法
-def Update_db(param):
+def Insert_db(param):
     try:
         conn = getconn(r"E:\MyGit\SomethingTemp\homemsg\HouseMessage.db3")
         sql = "insert into historydata (url,housing_estate,position,square_metre,unit_price,total_price,follow,take_look,pub_date,pagelink,keyword) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')".format(\
@@ -117,7 +119,8 @@ def main():
     page_max = 100
     count = 0
     keyword = 'hangtou/'
-    del_db(keyword)
+    errorcount = 0
+    #del_db(keyword)
     for i in range(1, int(page_max) + 1):
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
@@ -131,10 +134,10 @@ def main():
         try:
             li_max = soup.find('ul', class_='sellListContent').find_all('li')
         except Exception as e:
-                print(e)
-                print(house)
-                print(soup)
-                continue
+            print('big error', e)
+            print(house)
+            print(soup)
+            continue
 
         for li in li_max:
             try:
@@ -176,7 +179,7 @@ def main():
                 house_param['pagelink'] = house
                 # 区域关键字
                 house_param['keyword'] = keyword
-                Update_db(house_param)
+                Insert_db(house_param)
                 #write_db(house_param)
                 #WriteHere(house_param,'house')
                 #没有数据库时，输出到console
@@ -184,11 +187,19 @@ def main():
                 count += 1
                 print(count)
             except Exception as e:
-                print(e)
+                print('little error', e)
         #mysql.end("commit")
     #mysql.dispose()
 
 
 
 if __name__ == '__main__':
-    main()
+    location = list()
+    location.append('huinan/')
+    location.append('xuanqiao/')
+    location.append('hangtou/')
+    location.append('chuansha/')
+    location.append('zhoupu/')
+    location.append('tangzhen/')
+    for item in location:
+        main(item)
