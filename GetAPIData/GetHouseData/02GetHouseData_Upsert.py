@@ -125,13 +125,13 @@ def WriteHere( message, filmname):
     with open(fileName, 'a', encoding='utf-8') as f:
         f.write(strMessage)
 # 主方法
-def main():
+def main(keyword):
     # 给请求指定一个请求头来模拟chrome浏览器
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
     page_max = 100
     count = 0
     #del_db()
-    keyword = 'hangtou/'
+    #keyword = 'hangtou/'
     for i in range(1, int(page_max) + 1):
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
@@ -205,4 +205,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main('hangtou/')

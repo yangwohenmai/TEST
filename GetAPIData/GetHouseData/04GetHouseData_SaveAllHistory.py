@@ -14,15 +14,17 @@ import time
 """
 完全不删历史数据，每次只插入新数据，保留历史以便做对比
 """
+connectstr = r"E:\MyGit\SomethingTemp\homemsg\HouseMessage.db3"
 # 写入数据库
 def write_db(param):
+    global connectstr
     try:
         #sql = "insert into house (url,housing_estate,position,square_metre,unit_price,total_price,follow,take_look,pub_date) "
         #sql = "(%(url)s,%(housing_estate)s, %(position)s,%(square_metre)s,"
         #sql = sql + "%(unit_price)s,%(total_price)s,%(follow)s,%(take_look)s,%(pub_date)s)"
         #sql = sql
         #mysql.insert(sql, param)
-        cx = sqlite3.connect(r"E:\MyGit\SomethingTemp\homemsg\HouseMessage.db3")
+        cx = sqlite3.connect(connectstr)
         cu = cx.cursor()
         #cu.execute('''insert into keepalive values (2,'2019-04-18 16:59:26')''')
         #cu.execute('''CREATE TABLE stocks(date text,trans text,symbol text,gty real,price real)''')
@@ -42,8 +44,9 @@ def write_db(param):
 
 # 删除数据
 def del_db(keyword):
+    global connectstr
     try:
-        cx = sqlite3.connect(r"E:\MyGit\SomethingTemp\homemsg\HouseMessage.db3")
+        cx = sqlite3.connect(connectstr)
         cu = cx.cursor()
         cu.execute("delete from historydata where keyword = '{0}'".format(keyword))
         cx.commit()
@@ -95,8 +98,9 @@ def releaseconn(conn):
 
 # 更新数据方法
 def Insert_db(param):
+    global connectstr
     try:
-        conn = getconn(r"E:\MyGit\SomethingTemp\homemsg\HouseMessage.db3")
+        conn = getconn(connectstr)
         sql = "insert into historydata (url,housing_estate,position,square_metre,unit_price,total_price,follow,take_look,pub_date,pagelink,keyword) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')".format(\
             param["url"],param["housing_estate"],param["position"],param["square_metre"],param["unit_price"],param["total_price"],param["follow"],param["take_look"],param["pub_date"],param["pagelink"],param["keyword"])
         executeNoQuery(conn, sql)
@@ -113,15 +117,17 @@ def WriteHere( message, filmname):
     with open(fileName, 'a', encoding='utf-8') as f:
         f.write(strMessage)
 # 主方法
-def main():
+def main(keyword):
     # 给请求指定一个请求头来模拟chrome浏览器
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
     page_max = 100
     count = 0
-    keyword = 'hangtou/'
+    #keyword = 'hangtou/'
     errorcount = 0
     #del_db(keyword)
     for i in range(1, int(page_max) + 1):
+        if errorcount >= 3:
+            return
         if i == 1:
             house = 'https://qd.lianjia.com/ershoufang/shibei/'
             house = 'https://sh.lianjia.com/ershoufang/chuansha/'
@@ -134,6 +140,7 @@ def main():
         try:
             li_max = soup.find('ul', class_='sellListContent').find_all('li')
         except Exception as e:
+            errorcount += 1
             print('big error', e)
             print(house)
             print(soup)
@@ -203,3 +210,5 @@ if __name__ == '__main__':
     location.append('tangzhen/')
     for item in location:
         main(item)
+        time.sleep(600)
+    print('all has been finished')
