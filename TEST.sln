@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", "{4D3FDDB6-DA90-4C0A-865F-D32F8BB19148}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreThread", "MoreThread\MoreThread.csproj", "{6C4F6547-102B-4994-BAD8-1AD9A15F3D8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreThread1", "MoreThread1\MoreThread1.csproj", "{FD888546-42B4-4FE6-8B64-95C05C61E40C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDll", "TestDll\TestDll.csproj", "{CDE47A7B-2691-456E-B69C-981BB9A33944}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate", "Delegate\Delegate.csproj", "{4139570F-FD11-40AF-9518-356A814AFB5D}"
 EndProject
@@ -101,7 +99,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlHelper", "SqlHelper\SqlH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log4NetDemo", "Log4NetDemo\Log4NetDemo.csproj", "{9C496BE2-0177-44A5-A5A0-D95D376FAE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSystemInfo", "GetSystemInfo\GetSystemInfo.csproj", "{5070AC44-4B67-44D2-A0BF-9AC10672159D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetSystemInfo", "GetSystemInfo\GetSystemInfo.csproj", "{5070AC44-4B67-44D2-A0BF-9AC10672159D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,16 +143,6 @@ Global
 		{FD888546-42B4-4FE6-8B64-95C05C61E40C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FD888546-42B4-4FE6-8B64-95C05C61E40C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FD888546-42B4-4FE6-8B64-95C05C61E40C}.Release|x64.ActiveCfg = Release|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{CDE47A7B-2691-456E-B69C-981BB9A33944}.Release|x64.ActiveCfg = Release|Any CPU
 		{4139570F-FD11-40AF-9518-356A814AFB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4139570F-FD11-40AF-9518-356A814AFB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4139570F-FD11-40AF-9518-356A814AFB5D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

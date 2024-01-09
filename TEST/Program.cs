@@ -13,7 +13,7 @@ namespace TEST
             string Begin = "Begin";
             Console.WriteLine(Begin);
 
-            
+            Console.WriteLine(DateTime.Now.AddDays(-Convert.ToInt32(DateTime.Now.DayOfWeek)));
             
 
 

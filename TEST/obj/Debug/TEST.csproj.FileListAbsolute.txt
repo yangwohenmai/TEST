@@ -11,3 +11,10 @@ C:/Users/admin/Desktop/TEST/TEST/obj/Debug/TEST.csprojResolveAssemblyReference.c
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.csproj.CoreCompileInputs.cache
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.exe
 /Users/yzx/Desktop/MyGit/Test/TEST/obj/Debug/TEST.pdb
+E:\MyGit\Test\TEST\bin\Debug\TEST.exe.config
+E:\MyGit\Test\TEST\bin\Debug\TEST.exe
+E:\MyGit\Test\TEST\bin\Debug\TEST.pdb
+E:\MyGit\Test\TEST\obj\Debug\TEST.csproj.AssemblyReference.cache
+E:\MyGit\Test\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\TEST\obj\Debug\TEST.exe
+E:\MyGit\Test\TEST\obj\Debug\TEST.pdb
