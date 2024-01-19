@@ -32,7 +32,7 @@
     <Compile Include="GetHouseData\01GetHouseData_DeleteAll_Insert.py" />
     <Compile Include="GetHouseData\02GetHouseData_Upsert.py" />
     <Compile Include="GetHouseData\03GetHouseData_DeleteCompare_Insert.py" />
-    <Compile Include="GetHouseData\04GetHouseData_SaveHistory.py" />
+    <Compile Include="GetHouseData\04GetHouseData_SaveAllHistory.py" />
     <Compile Include="GetTushareData\01DownloadHistoryData.py" />
     <Compile Include="GetTushareData\02DownloadHistoryData.py" />
     <Compile Include="GetTushareData\03DownloadHistoryData.py" />
