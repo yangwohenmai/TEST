@@ -3,3 +3,10 @@ C:\Users\admin\Desktop\TEST\ReadText\bin\Debug\ReadText.exe
 C:\Users\admin\Desktop\TEST\ReadText\bin\Debug\ReadText.pdb
 C:\Users\admin\Desktop\TEST\ReadText\obj\Debug\ReadText.exe
 C:\Users\admin\Desktop\TEST\ReadText\obj\Debug\ReadText.pdb
+E:\MyGit\Test\ReadText\bin\Debug\ReadText.exe.config
+E:\MyGit\Test\ReadText\bin\Debug\ReadText.exe
+E:\MyGit\Test\ReadText\bin\Debug\ReadText.pdb
+E:\MyGit\Test\ReadText\obj\Debug\ReadText.csproj.AssemblyReference.cache
+E:\MyGit\Test\ReadText\obj\Debug\ReadText.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\ReadText\obj\Debug\ReadText.exe
+E:\MyGit\Test\ReadText\obj\Debug\ReadText.pdb

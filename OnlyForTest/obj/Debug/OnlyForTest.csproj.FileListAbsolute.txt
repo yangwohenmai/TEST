@@ -9,3 +9,10 @@ C:/Users/admin/Desktop/TEST/OnlyForTest/obj/Debug/OnlyForTest.pdb
 /Users/yzx/Desktop/MyGit/Test/OnlyForTest/obj/Debug/OnlyForTest.csproj.CoreCompileInputs.cache
 /Users/yzx/Desktop/MyGit/Test/OnlyForTest/obj/Debug/OnlyForTest.exe
 /Users/yzx/Desktop/MyGit/Test/OnlyForTest/obj/Debug/OnlyForTest.pdb
+E:\MyGit\Test\OnlyForTest\bin\Debug\OnlyForTest.exe.config
+E:\MyGit\Test\OnlyForTest\bin\Debug\OnlyForTest.exe
+E:\MyGit\Test\OnlyForTest\bin\Debug\OnlyForTest.pdb
+E:\MyGit\Test\OnlyForTest\obj\Debug\OnlyForTest.csproj.AssemblyReference.cache
+E:\MyGit\Test\OnlyForTest\obj\Debug\OnlyForTest.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\OnlyForTest\obj\Debug\OnlyForTest.exe
+E:\MyGit\Test\OnlyForTest\obj\Debug\OnlyForTest.pdb

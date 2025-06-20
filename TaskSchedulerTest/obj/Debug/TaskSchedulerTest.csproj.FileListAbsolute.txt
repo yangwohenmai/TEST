@@ -1,0 +1,7 @@
+E:\MyGit\Test\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe.config
+E:\MyGit\Test\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.exe
+E:\MyGit\Test\TaskSchedulerTest\bin\Debug\TaskSchedulerTest.pdb
+E:\MyGit\Test\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csproj.AssemblyReference.cache
+E:\MyGit\Test\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.exe
+E:\MyGit\Test\TaskSchedulerTest\obj\Debug\TaskSchedulerTest.pdb

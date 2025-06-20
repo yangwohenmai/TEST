@@ -11,3 +11,10 @@ C:/Users/admin/Desktop/TEST/MoreThread/obj/Debug/MoreThread.csprojResolveAssembl
 /Users/yzx/Desktop/MyGit/Test/MoreThread/obj/Debug/MoreThread.csproj.CoreCompileInputs.cache
 /Users/yzx/Desktop/MyGit/Test/MoreThread/obj/Debug/MoreThread.exe
 /Users/yzx/Desktop/MyGit/Test/MoreThread/obj/Debug/MoreThread.pdb
+E:\MyGit\Test\MoreThread\bin\Debug\MoreThread.exe.config
+E:\MyGit\Test\MoreThread\bin\Debug\MoreThread.exe
+E:\MyGit\Test\MoreThread\bin\Debug\MoreThread.pdb
+E:\MyGit\Test\MoreThread\obj\Debug\MoreThread.csproj.AssemblyReference.cache
+E:\MyGit\Test\MoreThread\obj\Debug\MoreThread.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\MoreThread\obj\Debug\MoreThread.exe
+E:\MyGit\Test\MoreThread\obj\Debug\MoreThread.pdb

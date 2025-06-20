@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "GetSystemInfo/1.0.0": {
+        "runtime": {
+          "GetSystemInfo.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GetSystemInfo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,7 @@
+E:\MyGit\Test\TaskException\bin\Debug\TaskException.exe.config
+E:\MyGit\Test\TaskException\bin\Debug\TaskException.exe
+E:\MyGit\Test\TaskException\bin\Debug\TaskException.pdb
+E:\MyGit\Test\TaskException\obj\Debug\TaskException.csproj.AssemblyReference.cache
+E:\MyGit\Test\TaskException\obj\Debug\TaskException.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\TaskException\obj\Debug\TaskException.exe
+E:\MyGit\Test\TaskException\obj\Debug\TaskException.pdb

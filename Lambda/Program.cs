@@ -10,6 +10,7 @@ namespace Lambda
     {
         static void Main(string[] args)
         {
+            Test2();
             int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             int oddNumbers = numbers.Count(n => n % 2 == 1);
             var firstNumbersLessThan6 = numbers.TakeWhile(n => n < 6);
@@ -45,8 +46,36 @@ namespace Lambda
             
             Console.WriteLine("j = {0}. b = {1}", j, boolResult);
             
-        }  
+        }
+
+        public static void Test2()
+        {
+            Stock stock = new Stock();
+            stock.tdate = 1;
+            stock.symbol = "11";
+            stock.price = 111.0;
+            Stock stock2 = new Stock();
+            stock2.tdate = 2;
+            stock2.symbol = "22";
+            stock2.price = 222.0;
+            SortedList<int, Stock> sortedList = new SortedList<int, Stock>();
+            sortedList.Add(1, stock);
+            sortedList.Add(2, stock2);
+            var a = (from item in sortedList where item.Value.price != double.NaN select item.Value.symbol).ToList();
+            var a1 = (from item in sortedList where item.Value.price != double.NaN select item.Value).ToDictionary(x => x.symbol, x=>x.price);
+            var dictionary = sortedList.Select((key, value) => new { Key = key, Value = key }).ToDictionary(x => x.Key, x => x.Key);
+            var dictionary1 = sortedList.ToDictionary(x => x.Key, x => x.Value.symbol);
+            //var a1 = (from item in sortedList where item.Value.price != double.NaN select item.Value.price).ToDictionary(p => p.symbol, p => p.price);
+        }
     }
+
+    public class Stock
+    {
+        public int tdate;
+        public string symbol;
+        public double price;
+    }
+
     delegate bool D();//定义委托类型
     delegate bool D2(int i);//定义委托类型
 }

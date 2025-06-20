@@ -1,0 +1,7 @@
+E:\MyGit\Test\SocketClient\bin\Debug\SocketClient.exe.config
+E:\MyGit\Test\SocketClient\bin\Debug\SocketClient.exe
+E:\MyGit\Test\SocketClient\bin\Debug\SocketClient.pdb
+E:\MyGit\Test\SocketClient\obj\Debug\SocketClient.csproj.AssemblyReference.cache
+E:\MyGit\Test\SocketClient\obj\Debug\SocketClient.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\SocketClient\obj\Debug\SocketClient.exe
+E:\MyGit\Test\SocketClient\obj\Debug\SocketClient.pdb

@@ -1,0 +1,7 @@
+E:\MyGit\Test\SetConfiguration\bin\Debug\SetConfiguration.exe.config
+E:\MyGit\Test\SetConfiguration\bin\Debug\SetConfiguration.exe
+E:\MyGit\Test\SetConfiguration\bin\Debug\SetConfiguration.pdb
+E:\MyGit\Test\SetConfiguration\obj\Debug\SetConfiguration.csproj.AssemblyReference.cache
+E:\MyGit\Test\SetConfiguration\obj\Debug\SetConfiguration.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\SetConfiguration\obj\Debug\SetConfiguration.exe
+E:\MyGit\Test\SetConfiguration\obj\Debug\SetConfiguration.pdb

@@ -1,0 +1,7 @@
+E:\MyGit\Test\WebText\bin\WebText.dll.config
+E:\MyGit\Test\WebText\bin\WebText.dll
+E:\MyGit\Test\WebText\bin\WebText.pdb
+E:\MyGit\Test\WebText\obj\Debug\WebTest.csproj.AssemblyReference.cache
+E:\MyGit\Test\WebText\obj\Debug\WebTest.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\WebText\obj\Debug\WebText.dll
+E:\MyGit\Test\WebText\obj\Debug\WebText.pdb

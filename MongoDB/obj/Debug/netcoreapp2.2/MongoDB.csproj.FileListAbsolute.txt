@@ -1,0 +1,13 @@
+E:\MyGit\Test\MongoDB\bin\Debug\netcoreapp2.2\MongoDB.deps.json
+E:\MyGit\Test\MongoDB\bin\Debug\netcoreapp2.2\MongoDB.runtimeconfig.json
+E:\MyGit\Test\MongoDB\bin\Debug\netcoreapp2.2\MongoDB.runtimeconfig.dev.json
+E:\MyGit\Test\MongoDB\bin\Debug\netcoreapp2.2\MongoDB.dll
+E:\MyGit\Test\MongoDB\bin\Debug\netcoreapp2.2\MongoDB.pdb
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.csproj.AssemblyReference.cache
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.GeneratedMSBuildEditorConfig.editorconfig
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.AssemblyInfoInputs.cache
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.AssemblyInfo.cs
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.dll
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.pdb
+E:\MyGit\Test\MongoDB\obj\Debug\netcoreapp2.2\MongoDB.genruntimeconfig.cache

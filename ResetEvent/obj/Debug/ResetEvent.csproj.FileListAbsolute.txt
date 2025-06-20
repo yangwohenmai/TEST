@@ -4,3 +4,10 @@
 /Users/yzx/Desktop/MyGit/Test/ResetEvent/obj/Debug/ResetEvent.csproj.CoreCompileInputs.cache
 /Users/yzx/Desktop/MyGit/Test/ResetEvent/obj/Debug/ResetEvent.exe
 /Users/yzx/Desktop/MyGit/Test/ResetEvent/obj/Debug/ResetEvent.pdb
+E:\MyGit\Test\ResetEvent\bin\Debug\ResetEvent.exe.config
+E:\MyGit\Test\ResetEvent\bin\Debug\ResetEvent.exe
+E:\MyGit\Test\ResetEvent\bin\Debug\ResetEvent.pdb
+E:\MyGit\Test\ResetEvent\obj\Debug\ResetEvent.csproj.AssemblyReference.cache
+E:\MyGit\Test\ResetEvent\obj\Debug\ResetEvent.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\ResetEvent\obj\Debug\ResetEvent.exe
+E:\MyGit\Test\ResetEvent\obj\Debug\ResetEvent.pdb

@@ -1,0 +1,7 @@
+E:\MyGit\Test\WriteText\bin\Debug\WriteText.exe.config
+E:\MyGit\Test\WriteText\bin\Debug\WriteText.exe
+E:\MyGit\Test\WriteText\bin\Debug\WriteText.pdb
+E:\MyGit\Test\WriteText\obj\Debug\WriteText.csproj.AssemblyReference.cache
+E:\MyGit\Test\WriteText\obj\Debug\WriteText.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\WriteText\obj\Debug\WriteText.exe
+E:\MyGit\Test\WriteText\obj\Debug\WriteText.pdb

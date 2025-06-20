@@ -1,0 +1,13 @@
+E:\MyGit\Test\Graph\bin\Debug\netcoreapp2.2\Graph.deps.json
+E:\MyGit\Test\Graph\bin\Debug\netcoreapp2.2\Graph.runtimeconfig.json
+E:\MyGit\Test\Graph\bin\Debug\netcoreapp2.2\Graph.runtimeconfig.dev.json
+E:\MyGit\Test\Graph\bin\Debug\netcoreapp2.2\Graph.dll
+E:\MyGit\Test\Graph\bin\Debug\netcoreapp2.2\Graph.pdb
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.csproj.AssemblyReference.cache
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.GeneratedMSBuildEditorConfig.editorconfig
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.AssemblyInfoInputs.cache
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.AssemblyInfo.cs
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.dll
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.pdb
+E:\MyGit\Test\Graph\obj\Debug\netcoreapp2.2\Graph.genruntimeconfig.cache

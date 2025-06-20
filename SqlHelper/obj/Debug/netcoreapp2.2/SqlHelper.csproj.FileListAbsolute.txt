@@ -1,0 +1,17 @@
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\config\log4net.config
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.deps.json
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.runtimeconfig.json
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.runtimeconfig.dev.json
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.dll
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\SqlHelper.pdb
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\Log4NetDemo.dll
+E:\MyGit\Test\SqlHelper\bin\Debug\netcoreapp2.2\Log4NetDemo.pdb
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.csproj.AssemblyReference.cache
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.GeneratedMSBuildEditorConfig.editorconfig
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.AssemblyInfoInputs.cache
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.AssemblyInfo.cs
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.csproj.CopyComplete
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.dll
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.pdb
+E:\MyGit\Test\SqlHelper\obj\Debug\netcoreapp2.2\SqlHelper.genruntimeconfig.cache

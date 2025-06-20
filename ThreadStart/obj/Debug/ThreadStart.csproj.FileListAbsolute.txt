@@ -1,0 +1,7 @@
+E:\MyGit\Test\ThreadStart\bin\Debug\ThreadStart.exe.config
+E:\MyGit\Test\ThreadStart\bin\Debug\ThreadStart.exe
+E:\MyGit\Test\ThreadStart\bin\Debug\ThreadStart.pdb
+E:\MyGit\Test\ThreadStart\obj\Debug\ThreadStart.csproj.AssemblyReference.cache
+E:\MyGit\Test\ThreadStart\obj\Debug\ThreadStart.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\ThreadStart\obj\Debug\ThreadStart.exe
+E:\MyGit\Test\ThreadStart\obj\Debug\ThreadStart.pdb

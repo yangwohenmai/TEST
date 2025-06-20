@@ -1,0 +1,10 @@
+E:\MyGit\Test\ThreadQueueWinFrom\bin\Debug\ThreadQueueWinFrom.exe.config
+E:\MyGit\Test\ThreadQueueWinFrom\bin\Debug\ThreadQueueWinFrom.exe
+E:\MyGit\Test\ThreadQueueWinFrom\bin\Debug\ThreadQueueWinFrom.pdb
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csproj.AssemblyReference.cache
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.Form1.resources
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.Properties.Resources.resources
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csproj.GenerateResource.cache
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.exe
+E:\MyGit\Test\ThreadQueueWinFrom\obj\Debug\ThreadQueueWinFrom.pdb

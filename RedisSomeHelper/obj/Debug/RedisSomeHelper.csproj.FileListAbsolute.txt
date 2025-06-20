@@ -1,0 +1,10 @@
+E:\MyGit\Test\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe.config
+E:\MyGit\Test\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe
+E:\MyGit\Test\RedisSomeHelper\bin\Debug\RedisSomeHelper.pdb
+E:\MyGit\Test\RedisSomeHelper\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.AssemblyReference.cache
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.exe.config
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.csproj.CopyComplete
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.exe
+E:\MyGit\Test\RedisSomeHelper\obj\Debug\RedisSomeHelper.pdb

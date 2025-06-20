@@ -1,0 +1,13 @@
+E:\MyGit\Test\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.deps.json
+E:\MyGit\Test\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.runtimeconfig.json
+E:\MyGit\Test\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.runtimeconfig.dev.json
+E:\MyGit\Test\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.dll
+E:\MyGit\Test\GetSystemInfo\bin\Debug\netcoreapp2.2\GetSystemInfo.pdb
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.csproj.AssemblyReference.cache
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.GeneratedMSBuildEditorConfig.editorconfig
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.AssemblyInfoInputs.cache
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.AssemblyInfo.cs
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.dll
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.pdb
+E:\MyGit\Test\GetSystemInfo\obj\Debug\netcoreapp2.2\GetSystemInfo.genruntimeconfig.cache

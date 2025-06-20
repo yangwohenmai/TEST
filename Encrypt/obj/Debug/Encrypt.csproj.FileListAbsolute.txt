@@ -1,0 +1,7 @@
+E:\MyGit\Test\Encrypt\bin\Debug\Encrypt.exe.config
+E:\MyGit\Test\Encrypt\bin\Debug\Encrypt.exe
+E:\MyGit\Test\Encrypt\bin\Debug\Encrypt.pdb
+E:\MyGit\Test\Encrypt\obj\Debug\Encrypt.csproj.AssemblyReference.cache
+E:\MyGit\Test\Encrypt\obj\Debug\Encrypt.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\Encrypt\obj\Debug\Encrypt.exe
+E:\MyGit\Test\Encrypt\obj\Debug\Encrypt.pdb

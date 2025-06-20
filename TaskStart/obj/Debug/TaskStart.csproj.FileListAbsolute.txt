@@ -1,0 +1,7 @@
+E:\MyGit\Test\TaskStart\bin\Debug\TaskStart.exe.config
+E:\MyGit\Test\TaskStart\bin\Debug\TaskStart.exe
+E:\MyGit\Test\TaskStart\bin\Debug\TaskStart.pdb
+E:\MyGit\Test\TaskStart\obj\Debug\TaskStart.csproj.AssemblyReference.cache
+E:\MyGit\Test\TaskStart\obj\Debug\TaskStart.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\TaskStart\obj\Debug\TaskStart.exe
+E:\MyGit\Test\TaskStart\obj\Debug\TaskStart.pdb

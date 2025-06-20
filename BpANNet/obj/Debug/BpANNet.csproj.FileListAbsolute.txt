@@ -3,3 +3,10 @@ C:\Users\admin\Desktop\TEST\BpANNet\bin\Debug\BpANNet.exe
 C:\Users\admin\Desktop\TEST\BpANNet\bin\Debug\BpANNet.pdb
 C:\Users\admin\Desktop\TEST\BpANNet\obj\Debug\BpANNet.exe
 C:\Users\admin\Desktop\TEST\BpANNet\obj\Debug\BpANNet.pdb
+E:\MyGit\Test\BpANNet\bin\Debug\BpANNet.exe.config
+E:\MyGit\Test\BpANNet\bin\Debug\BpANNet.exe
+E:\MyGit\Test\BpANNet\bin\Debug\BpANNet.pdb
+E:\MyGit\Test\BpANNet\obj\Debug\BpANNet.csproj.AssemblyReference.cache
+E:\MyGit\Test\BpANNet\obj\Debug\BpANNet.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\BpANNet\obj\Debug\BpANNet.exe
+E:\MyGit\Test\BpANNet\obj\Debug\BpANNet.pdb

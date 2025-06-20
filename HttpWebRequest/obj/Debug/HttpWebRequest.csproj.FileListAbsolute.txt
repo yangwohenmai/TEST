@@ -1,0 +1,10 @@
+E:\MyGit\Test\HttpWebRequest\bin\Debug\HttpWebRequest.exe.config
+E:\MyGit\Test\HttpWebRequest\bin\Debug\HttpWebRequest.exe
+E:\MyGit\Test\HttpWebRequest\bin\Debug\HttpWebRequest.pdb
+E:\MyGit\Test\HttpWebRequest\bin\Debug\Newtonsoft.Json.dll
+E:\MyGit\Test\HttpWebRequest\bin\Debug\Newtonsoft.Json.xml
+E:\MyGit\Test\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.AssemblyReference.cache
+E:\MyGit\Test\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\HttpWebRequest\obj\Debug\HttpWebRequest.csproj.CopyComplete
+E:\MyGit\Test\HttpWebRequest\obj\Debug\HttpWebRequest.exe
+E:\MyGit\Test\HttpWebRequest\obj\Debug\HttpWebRequest.pdb

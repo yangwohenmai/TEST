@@ -6,3 +6,13 @@ C:\Users\admin\Desktop\TEST\JSon\bin\Debug\Newtonsoft.Json.xml
 C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.exe
 C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.pdb
 C:\Users\admin\Desktop\TEST\JSon\obj\Debug\JSon.csprojResolveAssemblyReference.cache
+E:\MyGit\Test\JSon\bin\Debug\JSon.exe.config
+E:\MyGit\Test\JSon\bin\Debug\JSon.exe
+E:\MyGit\Test\JSon\bin\Debug\JSon.pdb
+E:\MyGit\Test\JSon\bin\Debug\Newtonsoft.Json.dll
+E:\MyGit\Test\JSon\bin\Debug\Newtonsoft.Json.xml
+E:\MyGit\Test\JSon\obj\Debug\JSon.csproj.AssemblyReference.cache
+E:\MyGit\Test\JSon\obj\Debug\JSon.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\JSon\obj\Debug\JSon.csproj.CopyComplete
+E:\MyGit\Test\JSon\obj\Debug\JSon.exe
+E:\MyGit\Test\JSon\obj\Debug\JSon.pdb

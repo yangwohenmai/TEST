@@ -1,0 +1,13 @@
+E:\MyGit\Test\TaskCancellationToken\bin\Debug\netcoreapp2.2\TaskCancellationToken.deps.json
+E:\MyGit\Test\TaskCancellationToken\bin\Debug\netcoreapp2.2\TaskCancellationToken.runtimeconfig.json
+E:\MyGit\Test\TaskCancellationToken\bin\Debug\netcoreapp2.2\TaskCancellationToken.runtimeconfig.dev.json
+E:\MyGit\Test\TaskCancellationToken\bin\Debug\netcoreapp2.2\TaskCancellationToken.dll
+E:\MyGit\Test\TaskCancellationToken\bin\Debug\netcoreapp2.2\TaskCancellationToken.pdb
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.csproj.AssemblyReference.cache
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.GeneratedMSBuildEditorConfig.editorconfig
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.AssemblyInfoInputs.cache
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.AssemblyInfo.cs
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.dll
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.pdb
+E:\MyGit\Test\TaskCancellationToken\obj\Debug\netcoreapp2.2\TaskCancellationToken.genruntimeconfig.cache

@@ -1,0 +1,7 @@
+E:\MyGit\Test\GetConfig\bin\Debug\GetConfig.exe.config
+E:\MyGit\Test\GetConfig\bin\Debug\GetConfig.exe
+E:\MyGit\Test\GetConfig\bin\Debug\GetConfig.pdb
+E:\MyGit\Test\GetConfig\obj\Debug\GetConfig.csproj.AssemblyReference.cache
+E:\MyGit\Test\GetConfig\obj\Debug\GetConfig.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\GetConfig\obj\Debug\GetConfig.exe
+E:\MyGit\Test\GetConfig\obj\Debug\GetConfig.pdb

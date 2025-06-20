@@ -3,3 +3,10 @@ C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.exe
 C:\Users\admin\Desktop\TEST\Delegate\bin\Debug\Delegate.pdb
 C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.exe
 C:\Users\admin\Desktop\TEST\Delegate\obj\Debug\Delegate.pdb
+E:\MyGit\Test\Delegate\bin\Debug\Delegate.exe.config
+E:\MyGit\Test\Delegate\bin\Debug\Delegate.exe
+E:\MyGit\Test\Delegate\bin\Debug\Delegate.pdb
+E:\MyGit\Test\Delegate\obj\Debug\Delegate.csproj.AssemblyReference.cache
+E:\MyGit\Test\Delegate\obj\Debug\Delegate.csproj.CoreCompileInputs.cache
+E:\MyGit\Test\Delegate\obj\Debug\Delegate.exe
+E:\MyGit\Test\Delegate\obj\Debug\Delegate.pdb
